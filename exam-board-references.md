@@ -44,6 +44,7 @@ These appear in the evidence notes, setting definitions and tooltips.
 7. **Anatol T, Hariharan S (2009).** Reliability of the evaluation of students' answers to essay-type questions. *West Indian Medical Journal* 58:13–16. [PubMed](https://pubmed.ncbi.nlm.nih.gov/19565993/) · [free PDF](https://www.mona.uwi.edu/fms/wimj/system/files/article_pdfs/anatol_reliability_of_the_evaluation_of_students_answers_to_essay-type_questions.pdf)
    - **Used for:** weak agreement between two essay markers (kappa 0.39).
    - **Check:** correct. The kappa between markers was 0.385, in final undergraduate surgery examinations.
+   - **Also used for (added 17 November 2026):** the one-hour essay range and the marker note. In the full text, each of three papers had 8 compulsory essay questions, every script was double marked, Cronbach's alpha was 0.672, and the two markers gave the same mark 46.3% of the time but were within ±5% of each other 90.7% of the time. By Spearman–Brown, 8 questions at 0.672 is about 0.50 for 4 questions. The paper does not state the time allowed, so the per-hour figure assumes 4 questions an hour.
 
 ### Written questions
 
@@ -221,6 +222,36 @@ These support the "AI detector" option on the coursework essay card. Entries 54 
     - **Used for:** the evidence note: UK guidance that decisions should never rest on AI detection alone; part of the reason for the detector's acceptability cost.
     - **Check:** correct (web page): "We suggest that decisions should never be based solely on AI detection, whether by a tool or a person."
 
+### Essay marking, pass rules and combining components (added 17 November 2026)
+
+These support the changes made after the research in `reports/Essay reliability in medical exams.md`: the marker's share of essay error falls from half to a quarter, a choice between holistic marking and a marking scheme, a choice between one marker per script and marking by question, overlapping errors between components, and the resit count on the board. Bibliographic details come from PubMed (or the journal page for #64), checked on 17 November 2026. Figures come from abstracts unless stated.
+
+60. **Park YS, Hyderi A, Bordage G, Xing K, Yudkowsky R (2016).** Inter-rater reliability and generalizability of patient note scores using a scoring rubric based on the USMLE Step-2 CS format. *Advances in Health Sciences Education* 21(4):761–773. [DOI](https://doi.org/10.1007/s10459-015-9664-3)
+    - **Used for:** the marker's share of essay error (a quarter with a marking scheme).
+    - **Check:** correct. "The majority of score variance was due to case specificity (13 %) and case-task specificity (31 %)… Variance associated with raters and its interactions were modest (<5 %)." Six trained faculty rescored notes from 55 students on 5 cases, using case-specific scoring guidelines.
+
+61. **Hulsman RL, Mollema ED, Oort FJ, Hoos AM, de Haes JCJM (2004).** Using standardized video cases for assessment of medical communication skills: reliability of an objective structured video examination by computer. *Patient Education and Counseling* 60(1):24–31. [DOI](https://doi.org/10.1016/j.pec.2004.11.010)
+    - **Used for:** the marker's share of essay error.
+    - **Check:** correct. Short-essay answers on three video cases, marked with a detailed rating manual: test G = 0.66 and inter-rater G = 0.93; "a single rater is permitted".
+
+62. **Olvet DM, Bird JB, Fulton TB, Kruidering M, Papp KK, Qua K, Willey JM, Brenner JM (2022).** A multi-institutional study of the feasibility and reliability of the implementation of constructed response exam questions. *Teaching and Learning in Medicine* 35(5):609–622. [DOI](https://doi.org/10.1080/10401334.2022.2111571)
+    - **Used for:** the holistic marking option.
+    - **Check:** correct. Weighted kappa between faculty content experts and non-content experts was 0.18–0.29 with holistic rubrics and 0.59–0.66 with an analytic rubric. Rubric type was confounded with school, since one school used the analytic rubric and two the holistic one.
+
+63. **Rademakers J, ten Cate TJ, Bär PR (2005).** Progress testing with short answer questions. *Medical Teacher* 27(7):578–582. [DOI](https://doi.org/10.1080/01421590500062749)
+    - **Used for:** the timed essay note: short-answer papers with many questions reach much higher reliability than essays.
+    - **Check:** correct. 40 cases, each with a clinical and a basic science short-answer key-feature question; Cronbach's alpha 0.85 to 0.87. Testing time is not given in the abstract.
+
+64. **Hassan S, Ganeson M, Burud IAS (2024).** Evaluating inter-rater reliability: transitioning to a single rater for marking modified essay questions in undergraduate medical education. *Acta Medica Iranica* 62(2):88–95. [DOI](https://doi.org/10.18502/acta.v62i2.17040)
+    - **Used for:** the "Scripts split" option: marker severity when one marker marks a whole script.
+    - **Check:** correct (journal page). "The Intraclass Correlation Coefficient (ICC) results were excellent, ranging from .815 to .997", and paired t-tests were significant in "9 pairs (81.81%)". The abstract gives no mean differences, so the size of the severity term (0.05) is an assumption.
+
+65. **Onishi H, Park YS, Takayanagi R, Fujinuma Y (2018).** Combining scores based on compensatory and noncompensatory scoring rules to assess resident readiness for unsupervised practice: implications from a national primary care certification examination in Japan. *Academic Medicine* 93(11S):S45–S51. [DOI](https://doi.org/10.1097/ACM.0000000000002380)
+    - **Used for:** the pass rule note and the resit count on the board.
+    - **Check:** correct. Japan Primary Care Association Board Certification Examination, n = 251, four parts. "Using a completely noncompensatory scoring approach on all four subcomponents, decision-consistency reliability was 0.33. Fully compensatory scoring yielded reliability of 0.86."
+
+Van der Vleuten & Schuwirth 2005 (#1) is also now cited for the essay note. Its Table 1 has no essay row. A "case-based short essay" row (0.68 / 0.81 / 0.89 / 0.94) appears on a 2018 van der Vleuten slide that credits the 2005 paper, but its source has not been found, so the game does not use it.
+
 ## References behind the cost figures
 
 
@@ -300,6 +331,14 @@ Added 16 November 2026 with the coursework essay:
 - The 0.05 educational impact gain for writing about a chosen topic. Scouller 1998 may support it, but only a search summary was seen, so it is not cited.
 - Time to read and comment on a draft essay (20 minutes), to write the essay instructions and marking rubric (3 hours), and to hold a moderation meeting (2 hours)
 - The error that comes from the topic of a coursework essay, borrowed from one portfolio entry (Michels et al. 2009, #17)
-- The share of the error in a timed essay mark that comes from the marker (half)
 - The effects of the "Some essays were written by AI" event: validity 15% lower when no viva checks who wrote the work (10% lower with an AI detector), and acceptability 0.10 lower (0.03 with a viva)
 - The acceptability cost of an AI detector (0.05), now justified by investigation workload, flags on permitted AI editing and the UK guidance (#58, #59) rather than by the 2023 false-positive figures
+
+Added 17 November 2026 with the essay marking changes:
+
+- The split of timed essay error per hour between question sampling (1.125) and the marker (0.375 with a marking scheme, a quarter of the total). The quarter is a judgement from #60, #61 and published inter-marker correlations, not a measured value.
+- Marker error with holistic marking (1.04 per hour, so two markers of one hour correlate 0.67)
+- Marker severity across a whole script (0.05), which does not fall as hours are added (#64 shows severity differences exist, not their size)
+- Time to write a model answer and marking scheme (30 minutes per question)
+- The correlation between errors in a coursework essay and a viva on its topic (0.2), and between a coursework essay and a timed essay paper marked by the same staff (0.1)
+- Rescaling reliability inside the utility as (R − 0.50) ÷ 0.50 with a floor of 0.05. This is a design choice, not an estimate: among designs that pass a brief, raw reliability varied so little that its weight barely changed the ranking.

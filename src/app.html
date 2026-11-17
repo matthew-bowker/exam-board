@@ -391,6 +391,7 @@ a{color:#FFD447}a:hover{color:#FFE48A}
           <h3>How the model scores a design</h3>
           <p>The game uses the utility model of van der Vleuten (1996), which judges an assessment on five criteria: reliability, validity, educational impact, acceptability and cost-efficiency. The model gives each criterion a score between 0 and 1.</p>
           <p>The utility is the product of the five scores, each raised to a power set by its weight in the brief. Because the scores are multiplied, a very low score on one criterion lowers the utility however good the others are. The game shows the utility out of 100.</p>
+          <p>Reliability enters the utility on a stretched scale, so that 0.50 counts as almost nothing and 1.00 counts in full. A mark with reliability 0.50 is half noise, and among designs that pass a brief the raw figure varies so little, for example from 0.80 to 0.87, that its weight would hardly change which design scores best.</p>
           <h3>The four constructs</h3>
           <p>Validity depends on four constructs. A construct is a quality that an assessment sets out to measure. Each brief says how much of each construct it needs, and each component measures the constructs in different amounts. The amounts for each component are the model's own estimates.</p>
           <dl class="abil-list">
@@ -401,7 +402,7 @@ a{color:#FFD447}a:hover{color:#FFE48A}
           <ul class="bands">
             <sc-for list="{{bands}}" as="b"><li><span class="band-name">{{b.name}}</span><span>{{b.rule}}</span></li></sc-for>
           </ul>
-          <p>To show what the design means for candidates, the model simulates 4,000 candidates whose true competence is known and marks each of them with your design. The board reports how many would pass without being competent and how many competent candidates would fail.</p>
+          <p>To show what the design means for candidates, the model simulates 4,000 candidates whose true competence is known and marks each of them with your design. The board reports how many would pass without being competent and how many competent candidates would fail. It then marks the same candidates again with an equivalent assessment and reports how many results would change.</p>
           <p>The first time a design for a brief meets every requirement, the game also picks one unexpected event at random. It might be a budget cut, a shortage of examiners, leaked questions, a report of an attainment gap, essays written by AI or an appeal. In the sandbox, events happen only if you set "Unexpected events at the board" to on.</p>
           <h3>Where the numbers come from</h3>
           <p>Reliabilities, times and costs come from published studies, from the Unit Costs of Health and Social Care 2025 published by the Personal Social Services Research Unit (PSSRU), and from university pay scales and marking tariffs. Where no source was found, the model uses an estimate, and the evidence note in the game says so.</p>
@@ -413,7 +414,7 @@ a{color:#FFD447}a:hover{color:#FFE48A}
             <sc-for list="{{criteria}}" as="k"><div><dt>{{k.name}}</dt><dd>{{k.text}}</dd></div></sc-for>
           </dl>
           <div class="formula">Utility = 100 × R<sup>a</sup> × V<sup>b</sup> × E<sup>c</sup> × A<sup>d</sup> × C<sup>e</sup></div>
-          <p class="formula-note">R, V, E, A and C are the five scores. The powers a to e are the brief's weights for each criterion, divided by the total of the weights.</p>
+          <p class="formula-note">V, E, A and C are four of the scores. R is the reliability rescaled as (reliability − 0.50) ÷ 0.50, with a floor of 0.05. The powers a to e are the brief's weights for each criterion, divided by the total of the weights.</p>
         </aside>
       </div>
 
@@ -618,6 +619,7 @@ a{color:#FFD447}a:hover{color:#FFE48A}
             <div style="height: 10px; background: #0F5B45; border-radius: 999px; overflow: hidden"><div style="height: 10px; width: {{spentWidth}}; background: {{spentBar}}; border-radius: 999px"></div></div>
           </div>
           <div style="display: flex; justify-content: space-between; font-size: 15px"><span>Wrong pass or fail decisions</span><span style="font-weight: 600; font-variant-numeric: tabular-nums">{{wrongText}}</span></div>
+          <div style="display: flex; justify-content: space-between; gap: 12px; font-size: 15px"><span class="tip"><button type="button" class="tipbtn" aria-describedby="tip-flips">Results that change on a resit<span aria-hidden="true" class="tipq">?</span></button><span role="tooltip" id="tip-flips" class="tipbox" style="background: #FFFDF6; color: #18261F">The model marks the same candidates a second time with an equivalent assessment and counts how many would move from pass to fail or from fail to pass. Unlike the reliability figure, this count reflects the pass rule, so it rises when candidates must pass every component.</span></span><span style="font-weight: 600; font-variant-numeric: tabular-nums">{{flipText}}</span></div>
         </div>
       </div>
     </div>
@@ -731,8 +733,17 @@ var PARAMS = {
   printPerHead: 4,           // stationery per candidate per sitting (Brown et al. 2015: GBP 757 for 185 OSCE candidates)
   sbaR1: 0.62,               // reliability of 1 h of multiple choice (van der Vleuten & Schuwirth 2005, Table 1)
   vsaqR1: 0.62,              // assumed equal to SBA per hour
-  essayErr1: 1.5,            // error variance for 1 h of essay/SAQ, single marker => reliability 0.40 (assumed)
-  essayMarkerShare: 0.50,    // share of essay error from the marker; inter-marker kappa 0.12-0.39 (Smith 2002; Anatol 2009)
+  // Timed essay paper: four extended answers an hour (not a short-answer paper, which the VSAQ and KF components cover).
+  // Error per hour = question sampling + marker; one marker with a marking scheme gives 1 h reliability 0.40 (assumed).
+  // Published 1 h figures: 0.32 for write-in key-features cases (van der Vleuten & Schuwirth 2005, Table 1) to about 0.50
+  // for 4 surgery essay questions (Anatol & Hariharan 2009: 8 questions, alpha 0.672, by Spearman-Brown).
+  essayQ1: 1.125,            // error from question sampling per hour: 75% of single-marker error, because content specificity dominates (van der Vleuten & Schuwirth 2005)
+  essayMs: 0.375,            // marker error per hour with a marking scheme: 25% of single-marker error. Rater variance under 5% (Park et al. 2016); inter-rater G 0.93 (Hulsman et al. 2004). Two markers of one hour then correlate 0.85
+  essayMh: 1.04,             // marker error per hour with holistic marking: two markers of one hour correlate 0.67 (assumed; holistic kappas 0.18-0.29 against 0.59-0.66 analytic, Olvet et al. 2022)
+  essaySev: 0.05,            // marker severity per script when one marker marks a candidate's whole script; it does not fall as hours are added (assumed; 9 of 11 marker pairs differed in mean marks, Hassan et al. 2024)
+  essaySchemeH: 0.5,         // estimate: hours to write a model answer and marking scheme for one essay question
+  errCorrVivaCw: 0.2,        // correlation between coursework essay and viva errors: the viva examines the essay's topic (assumed)
+  errCorrEssayCw: 0.1,       // correlation between coursework essay and timed essay errors: the same staff mark both (assumed)
   vivaPC: 0.518, vivaSE: 1.04, vivaRES: 0.222, // per 30-minute case; reproduces Swanson 1987 (0.45 / 0.69 / 0.82) and van der Vleuten & Schuwirth 2005 (2 h 0.69, 4 h 0.82)
   vivaUnstructured: 1.5,     // multiplier on examiner-related error when unstructured (assumed)
   portA: 1.277, portB: 1.973,// fitted to Michels et al. 2009
@@ -793,7 +804,7 @@ var BRIEFS = {
 };
 
 var DEFAULT_DESIGN = {
-  sbaH: 2, vsaqH: 0, kfH: 0, kfMenu: false, essayH: 0, essayMark: 1,
+  sbaH: 2, vsaqH: 0, kfH: 0, kfMenu: false, essayH: 0, essayMark: 1, essayScheme: 1, essayByQ: true,
   vivaCases: 0, vivaExam: 2, vivaRotate: false, vivaStruct: false,
   portEntries: 0, portRaters: 1, mentor: false,
   itemQuality: 0, blueprint: 0, stdset: 0, rule: 0, sittings: 1, feedback: 0, fairness: false
@@ -815,8 +826,9 @@ function components(d) {
   if (d.vsaqH > 0) list.push({ key: 'vsaq', label: 'Very short answer', rel: sb(P.vsaqR1, d.vsaqH), time: d.vsaqH, fit: [0.75, [0.40, 0.60, 0.70][q], 0.05, 0], civ: [0.25, 0.12, 0.08][q] });
   if (d.kfH > 0) list.push({ key: 'kf', label: 'Key features', rel: sb(P.kfR1, d.kfH), time: d.kfH, fit: [0.55, [0.55, 0.70, 0.80][q], 0.10, 0], civ: [0.30, 0.20, 0.15][q] }); // fit and civ are assumptions (research-new-components.md, 2.1)
   if (d.essayH > 0) {
-    var e1 = P.essayErr1 * (d.essayMark === 2 ? (1 - P.essayMarkerShare / 2) : 1);
-    list.push({ key: 'essay', label: 'Short essay', rel: 1 / (1 + e1 / d.essayH), time: d.essayH, fit: [0.50, [0.45, 0.60, 0.65][q], 0.40, 0.10], civ: [0.40, 0.30, 0.25][q] });
+    var em = d.essayMark === 2 ? 2 : 1, mh = d.essayScheme === 0 ? P.essayMh : P.essayMs;
+    var eErr = (P.essayQ1 + mh / em) / d.essayH + (d.essayByQ ? 0 : P.essaySev / em); // by question, a marker's severity is the same for every candidate
+    list.push({ key: 'essay', label: 'Timed essay', rel: 1 / (1 + eErr), time: d.essayH, fit: [0.50, [0.45, 0.60, 0.65][q], 0.40, 0.10], civ: [0.40, 0.30, 0.25][q] });
   }
   if (d.vivaCases > 0) {
     var n = d.vivaCases, e = d.vivaExam, k = d.vivaStruct ? 1 : P.vivaUnstructured;
@@ -844,7 +856,7 @@ function costOf(d, brief, ev) {
   var writtenH = d.sbaH + d.vsaqH + d.kfH + d.essayH, written = writtenH > 0;
   var perQ = function (writeH) { return writeH + (q >= 1 ? P.writerTrainH / P.qsPerWriterYear : 0); };
   var revQ = q === 2 ? P.reviewPanel * P.reviewMin / 60 : 0; // review panel hours per new question, charged at the senior lecturer rate
-  var wSba = sbaItems * perQ(P.sbaWriteH), wVsaq = vsaqItems * perQ(P.vsaqWriteH), wEssay = essayQs * perQ(P.essayWriteH), wKf = kfCases * perQ(P.kfWriteH), wViva = d.vivaStruct ? d.vivaCases * P.vivaCaseH : 0;
+  var wSba = sbaItems * perQ(P.sbaWriteH), wVsaq = vsaqItems * perQ(P.vsaqWriteH), wEssay = essayQs * (perQ(P.essayWriteH) + (d.essayScheme === 0 ? 0 : P.essaySchemeH)), wKf = kfCases * perQ(P.kfWriteH), wViva = d.vivaStruct ? d.vivaCases * P.vivaCaseH : 0;
   var mKf = d.kfMenu ? 0 : N * kfQs * P.vsaqMarkSec / 3600; // write-in answers marked like VSAQs; a long menu is machine-scored (Rotthoff et al. 2006)
   var mVsaq = N * vsaqItems * P.vsaqMarkSec / 3600, mEssay = N * d.essayH * (P.essayMarkMin / 60) * d.essayMark;
   var exH = N * d.vivaCases * (P.vivaCaseMin / 60) * d.vivaExam, vAdmin = d.vivaCases > 0 ? N * P.vivaAdminH * d.sittings : 0;
@@ -894,39 +906,66 @@ var SIM = (function () {
   }
   for (i = 0; i < n; i++) { eps[i].push(gauss()); zeta[i].push(gauss()); } // key-features paper
   for (i = 0; i < n; i++) { eps[i].push(gauss()); zeta[i].push(gauss()); } // coursework essay
-  return { n: n, theta: theta, eps: eps, zeta: zeta };
+  var eps2 = []; // a second sitting: the same candidates with fresh measurement error
+  for (i = 0; i < n; i++) { var e2 = []; for (j = 0; j < 7; j++) e2.push(gauss()); eps2.push(e2); }
+  return { n: n, theta: theta, eps: eps, eps2: eps2, zeta: zeta };
 })();
 var EPS_INDEX = { sba: 0, vsaq: 1, essay: 2, viva: 3, port: 4, kf: 5, cw: 6 };
 
 function quantile(arr, p) { var a = arr.slice().sort(function (x, y) { return x - y; }); return a[Math.min(a.length - 1, Math.max(0, Math.floor(p * a.length)))]; }
 
+/* Pairs of components whose measurement errors overlap: [index, index, correlation] */
+function errPairs(comps) {
+  var idx = {}, out = []; comps.forEach(function (c, i) { idx[c.key] = i; });
+  if (idx.cw !== undefined && idx.viva !== undefined) out.push([idx.cw, idx.viva, PARAMS.errCorrVivaCw]);
+  if (idx.cw !== undefined && idx.essay !== undefined) out.push([idx.cw, idx.essay, PARAMS.errCorrEssayCw]);
+  return out;
+}
+
 function simulate(d, brief, comps) {
   var n = SIM.n, f = brief.failRate, shift = PARAMS.cutShift[d.stdset];
   var t = brief.target, tn = Math.sqrt(quadForm(t, t)) || 1;
-  var T = new Array(n), X = new Array(n), obs = comps.map(function () { return new Array(n); });
+  // Each component's error is its own draw, mixed with the draws of components whose errors overlap with it
+  var mix = comps.map(function (c) { return { own: 1, other: [] }; });
+  errPairs(comps).forEach(function (p) { mix[p[0]].other.push([EPS_INDEX[comps[p[1]].key], p[2]]); });
+  mix.forEach(function (m) { var s = 0; m.other.forEach(function (o) { s += o[1] * o[1]; }); m.own = Math.sqrt(1 - s); });
+  var T = new Array(n), tru = comps.map(function () { return new Array(n); });
   for (var i = 0; i < n; i++) {
     var th = SIM.theta[i], tt = 0; for (var k = 0; k < 4; k++) tt += t[k] * th[k]; T[i] = tt / tn;
-    var x = 0;
     for (var j = 0; j < comps.length; j++) {
-      var c = comps[j], tr = c.civ * SIM.zeta[i][EPS_INDEX[c.key]]; for (k = 0; k < 4; k++) tr += c.fit[k] * th[k]; tr /= c.norm;
-      var o = Math.sqrt(c.rel) * tr + Math.sqrt(1 - c.rel) * SIM.eps[i][EPS_INDEX[c.key]];
-      obs[j][i] = o; x += c.w * o;
+      var c = comps[j], tr = c.civ * SIM.zeta[i][EPS_INDEX[c.key]]; for (k = 0; k < 4; k++) tr += c.fit[k] * th[k];
+      tru[j][i] = Math.sqrt(c.rel) * tr / c.norm;
     }
-    X[i] = x;
   }
-  var mean = 0, sd = 0; for (i = 0; i < n; i++) mean += X[i]; mean /= n; for (i = 0; i < n; i++) sd += (X[i] - mean) * (X[i] - mean); sd = Math.sqrt(sd / n) || 1;
-  var tcut = quantile(T, f), xcut = quantile(X, f) + shift * sd;
-  var cuts = obs.map(function (o) { return quantile(o, f) + shift; });
-  var fp = 0, fn = 0, fail = 0, cls = new Array(n);
+  function sitting(E) { // observed marks and pass decisions for one sitting, given its error draws
+    var X = new Array(n), obs = comps.map(function () { return new Array(n); });
+    for (var i = 0; i < n; i++) {
+      var x = 0;
+      for (var j = 0; j < comps.length; j++) {
+        var c = comps[j], m = mix[j], e = m.own * E[i][EPS_INDEX[c.key]];
+        for (var q = 0; q < m.other.length; q++) e += m.other[q][1] * E[i][m.other[q][0]];
+        var o = tru[j][i] + Math.sqrt(1 - c.rel) * e;
+        obs[j][i] = o; x += c.w * o;
+      }
+      X[i] = x;
+    }
+    var mean = 0, sd = 0; for (i = 0; i < n; i++) mean += X[i]; mean /= n; for (i = 0; i < n; i++) sd += (X[i] - mean) * (X[i] - mean); sd = Math.sqrt(sd / n) || 1;
+    var xcut = quantile(X, f) + shift * sd, cuts = obs.map(function (o) { return quantile(o, f) + shift; }), pass = new Array(n);
+    for (i = 0; i < n; i++) {
+      if (d.rule === 1) { pass[i] = true; for (j = 0; j < comps.length; j++) if (obs[j][i] < cuts[j]) { pass[i] = false; break; } }
+      else pass[i] = X[i] >= xcut;
+    }
+    return { X: X, sd: sd, mean: mean, xcut: xcut, pass: pass };
+  }
+  var s1 = sitting(SIM.eps), s2 = sitting(SIM.eps2), tcut = quantile(T, f);
+  var fp = 0, fn = 0, fail = 0, flip = 0, cls = new Array(n);
   for (i = 0; i < n; i++) {
-    var pass;
-    if (d.rule === 1) { pass = true; for (j = 0; j < comps.length; j++) if (obs[j][i] < cuts[j]) { pass = false; break; } }
-    else pass = X[i] >= xcut;
-    var comp = T[i] >= tcut;
+    var pass = s1.pass[i], comp = T[i] >= tcut;
     if (!pass) fail++;
+    if (pass !== s2.pass[i]) flip++;
     if (pass && !comp) { fp++; cls[i] = 2; } else if (!pass && comp) { fn++; cls[i] = 3; } else cls[i] = pass ? 0 : 1;
   }
-  return { T: T, X: X, sd: sd, mean: mean, tcut: tcut, xcut: xcut, cls: cls, fpRate: fp / n, fnRate: fn / n, failRate: fail / n };
+  return { T: T, X: s1.X, sd: s1.sd, mean: s1.mean, tcut: tcut, xcut: s1.xcut, cls: cls, fpRate: fp / n, fnRate: fn / n, failRate: fail / n, flipRate: flip / n };
 }
 
 function clamp(x, a, b) { return Math.max(a, Math.min(b, x)); }
@@ -949,6 +988,9 @@ function evaluate(d, brief, ev) {
     var s = cp.w * Math.sqrt(cp.rel) / cp.norm, u = cp.w / cp.norm;
     for (var k = 0; k < 4; k++) { a[k] += s * cp.fit[k]; c[k] += u * cp.fit[k]; }
     civA += s * s * cp.civ * cp.civ; civC += u * u * cp.civ * cp.civ; noise += cp.w * cp.w * (1 - cp.rel);
+  });
+  errPairs(comps).forEach(function (p) { // overlapping errors do not cancel out in the combined mark
+    var ci = comps[p[0]], cj = comps[p[1]]; noise += 2 * ci.w * cj.w * p[2] * Math.sqrt((1 - ci.rel) * (1 - cj.rel));
   });
   var sig = quadForm(a, a) + civA; out.R = sig / (sig + noise);
 
@@ -1012,16 +1054,18 @@ function evaluate(d, brief, ev) {
   /* Decisions */
   if (!ev.noSim) {
   var sim = simulate(d, b, comps); out.sim = sim;
-  out.falsePass = Math.round(sim.fpRate * b.cohort); out.falseFail = Math.round(sim.fnRate * b.cohort); out.fails = Math.round(sim.failRate * b.cohort);
+  out.falsePass = Math.round(sim.fpRate * b.cohort); out.falseFail = Math.round(sim.fnRate * b.cohort); out.fails = Math.round(sim.failRate * b.cohort); out.flips = Math.round(sim.flipRate * b.cohort);
   var sem = Math.sqrt(1 - out.R), near = 0;
   if (d.rule === 0) { for (var i = 0; i < sim.X.length; i++) if (Math.abs(sim.X[i] - sim.xcut) / sim.sd < sem) near++; out.nearCut = Math.round(near / sim.X.length * b.cohort); } else out.nearCut = null;
   }
 
-  /* Utility: weighted product */
+  /* Utility: weighted product. Reliability enters rescaled so that 0.50, half the mark being noise, counts as almost nothing;
+     raw R varies so little among designs that pass a brief that its weight would otherwise barely change the ranking. */
+  out.Ru = Math.max(0.05, (out.R - 0.5) / 0.5);
   var w = b.weights, ws = w.R + w.V + w.E + w.A + w.C;
   if (!ws) { w = { R: 1, V: 1, E: 1, A: 1, C: 1 }; ws = 5; }
-  out.U = 100 * Math.pow(out.R, w.R / ws) * Math.pow(out.V, w.V / ws) * Math.pow(out.E, w.E / ws) * Math.pow(out.A, w.A / ws) * Math.pow(Math.max(out.C, 0.001), w.C / ws);
-  var parts = [['R', out.R], ['V', out.V], ['E', out.E], ['A', out.A], ['C', out.C]];
+  out.U = 100 * Math.pow(out.Ru, w.R / ws) * Math.pow(out.V, w.V / ws) * Math.pow(out.E, w.E / ws) * Math.pow(out.A, w.A / ws) * Math.pow(Math.max(out.C, 0.001), w.C / ws);
+  var parts = [['R', out.Ru], ['V', out.V], ['E', out.E], ['A', out.A], ['C', out.C]];
   var wt = b.weights, wsum = (wt.R + wt.V + wt.E + wt.A + wt.C) || 5;
   parts.sort(function (p, q) { return (wsum ? wt[q[0]] : 1) * Math.log(1 / Math.max(q[1], 0.001)) - (wsum ? wt[p[0]] : 1) * Math.log(1 / Math.max(p[1], 0.001)); }); out.weakest = parts[0][0];
 
@@ -1037,7 +1081,7 @@ function evaluate(d, brief, ev) {
 }
 
 var SPACE = {
-  sbaH: [0, .5, 1, 1.5, 2, 2.5, 3, 3.5, 4], vsaqH: [0, .5, 1, 1.5, 2, 2.5, 3, 3.5, 4], kfH: [0, .5, 1, 1.5, 2, 2.5, 3, 3.5, 4], kfMenu: [false, true], cwN: [0, 1, 2, 3], cwMark: [1, 2], cwDraft: [false, true], essayH: [0, .5, 1, 1.5, 2, 2.5, 3, 3.5, 4], essayMark: [1, 2],
+  sbaH: [0, .5, 1, 1.5, 2, 2.5, 3, 3.5, 4], vsaqH: [0, .5, 1, 1.5, 2, 2.5, 3, 3.5, 4], kfH: [0, .5, 1, 1.5, 2, 2.5, 3, 3.5, 4], kfMenu: [false, true], cwN: [0, 1, 2, 3], cwMark: [1, 2], cwDraft: [false, true], essayH: [0, .5, 1, 1.5, 2, 2.5, 3, 3.5, 4], essayMark: [1, 2], essayScheme: [0, 1], essayByQ: [false, true],
   vivaCases: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], vivaExam: [1, 2, 3], vivaRotate: [false, true], vivaStruct: [false, true],
   portEntries: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], portRaters: [1, 2, 3], mentor: [false, true],
   itemQuality: [0, 1, 2], blueprint: [0, 1, 2], stdset: [0, 1, 2], rule: [0, 1], sittings: [1, 2, 4], feedback: [0, 1, 2], fairness: [false, true],
@@ -1227,7 +1271,7 @@ return { title: c.title, line: c.line, cls: c.cls || '', action: progress(k) || 
 }),
 bands: [['Commended', 'utility at least 95% of the best design found'], ['Approved', 'at least 88%'], ['Approved with conditions', 'at least 78%'], ['Revise and resubmit', 'below 78%'], ['Referred back', 'the design does not meet every requirement of the brief']].map(function (b) { return { name: b[0], rule: b[1] }; }),
 criteria: [
-['Reliability', 'How closely candidates\' marks would repeat if they sat an equivalent assessment with different questions, cases or examiners. It depends on the reliability of each component and on its share of the marks.'],
+['Reliability', 'How closely candidates\' marks would repeat if they sat an equivalent assessment with different questions, cases or examiners. It depends on the reliability of each component, on its share of the marks, and on whether the errors in two components overlap, as when a viva examines the topic of a student\'s essay.'],
 ['Validity', 'The share of the real differences between candidates\' marks that comes from the constructs, or qualities, that the brief asks the assessment to measure, in the proportions that the brief sets.'],
 ['Educational impact', 'How the assessment is likely to change what candidates study and how they study it, for example through feedback, sittings spread across the year, and formats in which candidates produce the answer themselves.'],
 ['Acceptability', 'Whether candidates, faculty and the external examiner would accept the design, given its testing time, staff workload, pass mark method and fairness measures.'],
@@ -1243,7 +1287,7 @@ credits: [
 ].map(function (c) { return { role: c[0], text: c[1] }; }),
 refsNote: 'These are the sources cited in the game\'s evidence notes, setting definitions and tooltips, and the sources behind the cost figures. Journal details and DOIs come from PubMed where available, and each source was checked in November 2026 against the figures it supports.',
 refGroups: this.refData(),
-estimates: ['Time to write an essay question (2 hours)', 'Time to write a key-features case (2 hours)', 'Student writing time for a coursework essay (16 hours)', 'Time to read and comment on a draft essay (20 minutes)', 'Time to write the coursework essay instructions and marking rubric (3 hours) and to hold a moderation meeting (2 hours)', 'The error that comes from the topic of a coursework essay, which the model sets to the same size as for a portfolio entry', 'The 0.05 educational impact gain for writing about a chosen topic', 'The share of the error in a timed essay mark that comes from the marker (half)', 'The effects of the event in which some essays were written by AI. Without a viva, validity is 15% lower, or 10% lower if the design uses an AI detector. Acceptability is 0.10 lower, or 0.03 lower if the design has a viva.', 'The acceptability cost of an AI detector (0.05)', 'Angoff judging time for essay questions (5 minutes per question per judge)', 'Bias review (8 hours) and feedback profile preparation (3 hours)', 'Invigilator setup time (1 hour per sitting)', 'Time per written feedback comment (5 minutes)', 'Reliability of one hour of essays with one marker (0.40), and VSAQ reliability assumed equal to SBA per hour', 'The 10% validity reduction without a blueprint, and the 0.05 educational impact gain from sharing it', 'How much each component measures each of the four constructs, and the correlation of 0.3 between the constructs']
+estimates: ['Time to write an essay question (2 hours)', 'Time to write a key-features case (2 hours)', 'Student writing time for a coursework essay (16 hours)', 'Time to read and comment on a draft essay (20 minutes)', 'Time to write the coursework essay instructions and marking rubric (3 hours) and to hold a moderation meeting (2 hours)', 'The error that comes from the topic of a coursework essay, which the model sets to the same size as for a portfolio entry', 'The 0.05 educational impact gain for writing about a chosen topic', 'The share of the error in a timed essay mark that comes from the marker (a quarter with a marking scheme, nearly half with holistic marking), the severity of one marker across a whole script, and the time to write a marking scheme (30 minutes per question)', 'The overlap between the errors in a coursework essay and a viva on its topic (correlation 0.2) or a timed essay paper marked by the same staff (0.1)', 'The effects of the event in which some essays were written by AI. Without a viva, validity is 15% lower, or 10% lower if the design uses an AI detector. Acceptability is 0.10 lower, or 0.03 lower if the design has a viva.', 'The acceptability cost of an AI detector (0.05)', 'Angoff judging time for essay questions (5 minutes per question per judge)', 'Bias review (8 hours) and feedback profile preparation (3 hours)', 'Invigilator setup time (1 hour per sitting)', 'Time per written feedback comment (5 minutes)', 'Reliability of one hour of essays with one marker (0.40), and VSAQ reliability assumed equal to SBA per hour', 'The 10% validity reduction without a blueprint, and the 0.05 educational impact gain from sharing it', 'How much each component measures each of the four constructs, and the correlation of 0.3 between the constructs']
 };
 }
 /* Reference list, from exam-board-references.md. Each entry: a = authors and year, b = title and any text before the italic part, j = journal or book (italic), d = details after it, k = short citation, u = what the game uses it for. */
@@ -1265,7 +1309,13 @@ R('Swing S, Bashook PG (2000).', 'Cited in Davis & Karunathilake (2005).', '', '
 R('Jacobsohn E, Klock PA, Avidan M (2006).', 'Poor inter-rater reliability on mock anesthesia oral examinations. ', 'Canadian Journal of Anaesthesia', ' 53:659–668.', 'Jacobsohn et al. 2006', 'examiner agreement of 0.24 when examiners mark independently.', [doi('10.1007/BF03021624')])
 ] },
 { title: 'Timed essay papers', refs: [
-R('Anatol T, Hariharan S (2009).', 'Reliability of the evaluation of students\' answers to essay-type questions. ', 'West Indian Medical Journal', ' 58:13–16.', 'Anatol & Hariharan 2009', 'weak agreement between two essay markers (kappa 0.39).', [['PubMed', 'https://pubmed.ncbi.nlm.nih.gov/19565993/'], ['Free PDF', 'https://www.mona.uwi.edu/fms/wimj/system/files/article_pdfs/anatol_reliability_of_the_evaluation_of_students_answers_to_essay-type_questions.pdf']])
+R('Anatol T, Hariharan S (2009).', 'Reliability of the evaluation of students\' answers to essay-type questions. ', 'West Indian Medical Journal', ' 58:13–16.', 'Anatol & Hariharan 2009', 'a surgery finals essay paper of eight questions with reliability 0.67, about 0.50 for four questions, and two markers who gave the same mark only 46% of the time (kappa 0.39) but were within 5% of each other on 91% of scripts.', [['PubMed', 'https://pubmed.ncbi.nlm.nih.gov/19565993/'], ['Free PDF', 'https://www.mona.uwi.edu/fms/wimj/system/files/article_pdfs/anatol_reliability_of_the_evaluation_of_students_answers_to_essay-type_questions.pdf']]),
+R('Park YS, Hyderi A, Bordage G, Xing K, Yudkowsky R (2016).', 'Inter-rater reliability and generalizability of patient note scores using a scoring rubric based on the USMLE Step-2 CS format. ', 'Advances in Health Sciences Education', ' 21:761–773.', 'Park et al. 2016', 'the finding that raters accounted for under 5% of the variance in written patient note scores marked against case-specific guidelines, against 44% for the case and its interaction with the task.', [['DOI', 'https://doi.org/10.1007/s10459-015-9664-3']]),
+R('Hulsman RL, Mollema ED, Oort FJ, Hoos AM, de Haes JCJM (2004).', 'Using standardized video cases for assessment of medical communication skills: reliability of an objective structured video examination by computer. ', 'Patient Education and Counseling', ' 60:24–31.', 'Hulsman et al. 2004', 'inter-rater reliability of 0.93 for short-essay answers marked with a detailed manual, against 0.66 for the three-case test as a whole.', [['DOI', 'https://doi.org/10.1016/j.pec.2004.11.010']]),
+R('Olvet DM, Bird JB, Fulton TB, Kruidering M, Papp KK, Qua K, Willey JM, Brenner JM (2022).', 'A multi-institutional study of the feasibility and reliability of the implementation of constructed response exam questions. ', 'Teaching and Learning in Medicine', ' 35:609–622.', 'Olvet et al. 2022', 'agreement between subject experts and other faculty of kappa 0.18 to 0.29 with holistic rubrics and 0.59 to 0.66 with an analytic rubric.', [['DOI', 'https://doi.org/10.1080/10401334.2022.2111571']]),
+R('Hassan S, Ganeson M, Burud IAS (2024).', 'Evaluating inter-rater reliability: transitioning to a single rater for marking modified essay questions in undergraduate medical education. ', 'Acta Medica Iranica', ' 62:88–95.', 'Hassan et al. 2024', 'marker pairs whose marks agreed closely (intraclass correlations 0.815 to 0.997) but differed significantly in average severity in 9 of 11 pairs.', [['DOI', 'https://doi.org/10.18502/acta.v62i2.17040']]),
+R('Rademakers J, ten Cate TJ, Bär PR (2005).', 'Progress testing with short answer questions. ', 'Medical Teacher', ' 27:578–582.', 'Rademakers et al. 2005', 'reliability of 0.85 to 0.87 for a short-answer progress test of 80 questions, which shows that short-answer papers with many questions sample far more widely than essays.', [['DOI', 'https://doi.org/10.1080/01421590500062749']]),
+R('Onishi H, Park YS, Takayanagi R, Fujinuma Y (2018).', 'Combining scores based on compensatory and noncompensatory scoring rules to assess resident readiness for unsupervised practice: implications from a national primary care certification examination in Japan. ', 'Academic Medicine', ' 93(11S):S45–S51.', 'Onishi et al. 2018', 'decision consistency of 0.86 when the four parts of an examination could compensate for each other and 0.33 when candidates had to pass every part.', [['DOI', 'https://doi.org/10.1097/ACM.0000000000002380']])
 ] },
 { title: 'Coursework essays', refs: [
 R('McKinstry BH, Cameron HS, Elton RA, Riley SC (2004).', 'Leniency and halo effects in marking undergraduate short research projects. ', 'BMC Medical Education', ' 4:28.', 'McKinstry et al. 2004', 'a correlation of 0.28 between supervisors and second markers of the same project reports, and supervisors marking about half a grade higher.', [doi('10.1186/1472-6920-4-28')]),
@@ -1452,7 +1502,10 @@ var slots = [
 slot(0, 'sbaH', 'sba', 'SBA paper', 'Single best answer questions', 'an SBA paper', ' h', null, 4, 0.5, 1, []),
 slot(1, 'vsaqH', 'vsaq', 'VSAQ paper', 'Very short answer questions', 'a VSAQ paper', ' h', null, 4, 0.5, 1, []),
 slot(2, 'kfH', 'kf', 'KF paper', 'Key-features cases, about 8 an hour', 'a KF paper', ' h', null, 4, 0.5, 1, [cyc('kfMenu', 'Answers', [[false, 'marked by a clinician'], [true, 'matched by computer']])]),
-slot(3, 'essayH', 'essay', 'Timed essay paper', 'Four short essays per hour, in an exam', 'a timed essay paper', ' h', null, 4, 0.5, 1, [cyc('essayMark', 'Markers per script', [[1, '1'], [2, '2']])]),
+slot(3, 'essayH', 'essay', 'Timed essay paper', 'Four extended answers per hour, in an exam', 'a timed essay paper', ' h', null, 4, 0.5, 1, [
+cyc('essayMark', 'Markers per script', [[1, '1'], [2, '2']]),
+cyc('essayScheme', 'Marking', [[0, 'holistic'], [1, 'marking scheme']]),
+cyc('essayByQ', 'Scripts split', [[false, 'one marker per script'], [true, 'by question']])]),
 slot(4, 'vivaCases', 'viva', 'Viva', '30 minutes per case', 'a viva', null, ['case', 'cases'], 12, 1, 2, [
 cyc('vivaExam', 'Examiners per case', [[1, '1'], [2, '2'], [3, '3']]),
 cyc('vivaRotate', 'Examiners', [[false, 'same for every case'], [true, 'new for each case']]),
@@ -1480,9 +1533,11 @@ sbaH: ['One hour of multiple-choice testing has reliability 0.62. Each additiona
 kfH: ['A key-features case is a short clinical scenario followed by two or three questions about the critical decisions only. A 2-hour paper of 15 cases had reliability 0.49, which corresponds to 0.32 for one hour, about half the reliability of an hour of single best answer questions. Scores on key-features papers correlate only modestly with knowledge tests, so the papers measure something partly different. The model charges 2 hours of clinician time to write each case. No study we found measured this time, so it is an estimate.', 'Page, Bordage & Allen 1995; Hatala & Norman 2002; van der Vleuten & Schuwirth 2005; Hrynchak et al. 2014'],
 kfMenu: ['Candidates can type an answer that the computer matches against a long list of accepted terms, instead of writing an answer for a clinician to mark. In a randomised trial, students got the same marks and took the same time with either format, about 100 seconds a question. The long list removes the cost of marking.', 'Rotthoff et al. 2006'],
 vsaqH: ['Candidates write an answer of one to five words instead of choosing from a list. On the same questions, single best answer marks were 21 percentage points higher.', 'Sam et al. 2019'],
-essayH: ['Only about four essay questions fit in an hour, so a timed essay paper samples little of the curriculum. In this model, one hour of essays with one marker has reliability 0.40.', 'Assumption in this model'],
-essayMark: ['When two markers marked the same final-year surgery examination answers, they agreed only weakly (kappa 0.39). In this model a second marker raises the reliability of one hour of essays from 0.40 to 0.47 and doubles the cost of marking. How much of the error in an essay mark comes from the marker is an assumption of this model.', 'Anatol & Hariharan 2009'],
-cwN: ['Each student writes an essay of about 2,000 words on their own topic during the term. When two markers marked the same medical students\' project reports, their marks correlated only 0.24 to 0.36, and in a study of third-year community course essays the two markers agreed even less (kappa 0.12). A student\'s mark also depends on the topic they chose, as it does for a portfolio entry. The model assumes that the topic matters as much for an essay as for a portfolio entry. In this model one essay marked once has reliability 0.15, and three essays each marked twice reach 0.47. The model counts 16 hours of writing for each essay, which is also an estimate. Students write coursework outside the exam, so these hours do not count towards the brief\'s limit on testing time.', 'Yeo et al. 2024; McKinstry et al. 2004; Smith et al. 2002; Michels et al. 2009'],
+essayH: ['Only about four extended answers fit in an hour, so a timed essay paper samples little of the curriculum, and that is the main source of its error. A surgery finals paper of eight essay questions had reliability 0.67, which corresponds to about 0.50 for four questions. Write-in key-features cases reach 0.32 in an hour. In this model one hour of essays, marked once against a marking scheme, has reliability 0.40, which is an assumption within that range. Four hours reach 0.73, short of 0.80. Papers of many short-answer questions sample far more widely and reach 0.85 to 0.91, which is why the VSAQ and key-features papers are separate components.', 'Anatol & Hariharan 2009; van der Vleuten & Schuwirth 2005; Rademakers et al. 2005; Sam et al. 2018'],
+essayMark: ['When two markers marked the same final-year surgery examination answers, they gave exactly the same mark only 46% of the time (kappa 0.39), but their marks were within 5% of each other on 91% of scripts. In studies of written answers marked against a scheme, markers accounted for under 5% of the differences in marks, and the agreement between raters was 0.93. In this model the marker causes a quarter of the error in a schemed essay mark. A second marker raises one hour of essays from 0.40 to 0.43, or from 0.32 to 0.38 with holistic marking, and doubles the cost of marking. Adding questions raises reliability more than adding markers.', 'Anatol & Hariharan 2009; Park et al. 2016; Hulsman et al. 2004'],
+essayScheme: ['When faculty who were not experts in the subject marked the same short answers as subject experts, their agreement was kappa 0.18 to 0.29 with a holistic rubric and 0.59 to 0.66 with an analytic one. In this model holistic marking raises the marker\'s share of the error from a quarter to nearly half, and one hour of essays falls from 0.40 to 0.32. A marking scheme costs about 30 minutes of clinician time per question to write, which is an estimate.', 'Olvet et al. 2022'],
+essayByQ: ['In one medical school, 11 pairs of examiners marking modified essay questions agreed closely on how they ranked candidates (intraclass correlations of 0.815 to 0.997), yet 9 of the pairs differed significantly in their average marks, so some markers were consistently harsher than others. When one marker marks a candidate\'s whole script, that marker\'s severity affects every answer, and adding questions does not average it out. When each question is marked by one marker for every candidate, a marker\'s severity affects all candidates alike. The size of the severity effect in this model is an assumption.', 'Hassan et al. 2024'],
+cwN: ['Each student writes an essay of about 2,000 words on their own topic during the term. When two markers marked the same medical students\' project reports, their marks correlated only 0.24 to 0.36, and in a study of third-year community course essays the two markers agreed even less (kappa 0.12). A student\'s mark also depends on the topic they chose, as it does for a portfolio entry. The model assumes that the topic matters as much for an essay as for a portfolio entry. In this model one essay marked once has reliability 0.15, and three essays each marked twice reach 0.47. The model counts 16 hours of writing for each essay, which is also an estimate. Students write coursework outside the exam, so these hours do not count towards the brief\'s limit on testing time. When the design also has a viva, the viva examines the topic of the essay, so the errors in the two marks overlap and do not cancel out in the combined mark. The model sets their correlation at 0.2, and at 0.1 between the coursework and a timed essay paper marked by the same staff. Both values are assumptions.', 'Yeo et al. 2024; McKinstry et al. 2004; Smith et al. 2002; Michels et al. 2009'],
 cwMark: ['When supervisors marked their own students\' project reports, their marks were about half a grade higher than those of second markers. A second marker halves the error that comes from the marker, which raises the reliability of one essay from 0.15 to 0.23, but it doubles the time spent marking. Marking a 2,000-word essay takes about 30 minutes. With one marker, a moderator also re-reads every fail and a 5% sample of the other essays.', 'McKinstry et al. 2004; University of Sussex marking tariff; University of Southampton marking policy'],
 aiDetect: ['Some schools run every essay through an AI detector, software that claims to recognise writing produced by AI. A detector gives each essay a score from 0 to 100% for how strongly it judges the essay to be written by AI, and some detectors also give each essay a label, such as human, mixed or AI. An essay is flagged when its score or label suggests that AI wrote it. Early detectors were unreliable. In 2023, an independent test of 14 detectors found them neither accurate nor reliable, and seven detectors labelled on average 61% of essays by non-native English speakers as written by AI. The paid detectors tested independently in 2026 make far fewer false accusations against writing that is entirely human. In one 2026 study, four detectors flagged none of 40 master\'s theses by non-native English-speaking students. In another, on admissions essays written before ChatGPT existed, two detectors gave their most confident AI label to at most 0.3% of essays. But detectors differ widely in what they catch. In the first of these studies, Pangram gave 39 of 40 long papers written entirely by AI a score of 60% or more, while Turnitin gave all 40 a score of 20% or less. Rewriting software can still defeat the best detectors. After a humaniser, which is software sold to make AI writing look human, rewrote AI-written abstracts, Pangram and GPTZero missed more than 96% of them. Detectors also flag work that students have only polished with AI, which a course may allow, so a flag cannot show on its own that a student broke the rules. Jisc, which advises UK universities and colleges on digital technology, says that decisions should never rest on AI detection alone. In this model, the detector affects validity only when the board finds essays written by AI and the design has no viva. Validity then falls by 10% instead of 15%. Whenever the design uses a detector, acceptability is also 0.05 lower, because each flag needs investigating and a detector cannot tell allowed AI editing from AI-written work. Both effects are assumptions. The model charges nothing for the licence or for investigating flagged essays.', 'Weber-Wulff et al. 2023; Liang et al. 2023; Van Vlasselaer et al. 2026; Isley et al. 2026; Karr et al. 2026; Jisc 2025'],
 cwDraft: ['The supervisor reads one draft and writes comments before the student submits the final essay. A meta-analysis of 435 studies found that feedback improved learning by about half a standard deviation, and in one study nursing students who had comments on a draft got higher marks than students who had comments on an outline. The model charges 20 minutes of lecturer time for each draft, which is an estimate.', 'Wisniewski et al. 2020; Ghazal et al. 2018'],
@@ -1496,7 +1551,7 @@ mentor: ['Two reviews linked the success of portfolios to support from a mentor,
 itemQuality: ['In one nursing department, 46% of 2,770 multiple-choice questions had a writing flaw and over 90% tested low cognitive levels (Tarrant et al. 2006). Subject-matter experts writing for a certification programme took an average of 52 minutes to draft one question (Meazure Learning). From the experience of the course lead who wrote this game, training is a 90-minute session and each writer writes about 30 questions a year across the school, so each question carries 3 minutes of training. From the same experience, a review panel of about 5 people spends about 5 minutes on each question, which is 25 minutes of senior lecturer time. Exams in one Canadian programme contained 25 to 60% reused questions (Joncas et al. 2018), so the model charges for 60% of the questions as new.', 'Tarrant et al. 2006; Meazure Learning; Joncas et al. 2018; course lead\'s experience'],
 blueprint: ['A blueprint maps each question to the curriculum. Experienced authors put the time to draw one up at 1 to 2 hours, and the model charges 2 hours of lecturer time for it. Sharing the blueprint with candidates costs nothing more. This model lowers validity by 10% when there is no blueprint, and raises educational impact by 0.05 when candidates can see it. No study we found measures either effect, so both figures are estimates.', 'Reznich & Wagner 2013'],
 stdset: ['Questions on medical school papers are answered correctly 70 to 80% of the time on average, so a fixed 50% pass mark is lenient and passes too many candidates. The Cohen method follows the marks of the best candidates, but its pass mark moved by 3.5 to 4 points between two years, although the two papers were of similar difficulty. In the Angoff method judges rate every question, and a simulation study found that panels of about 15 judges gave the most precise pass marks.', 'Joncas et al. 2018; Appelhaus et al. 2022; Homer & Darling 2016; Shulruf et al. 2016'],
-rule: ['When candidates must pass every component, measurement error in any one component can fail a competent candidate. The board shows the effect as false passes and false fails. The pass rule does not change the utility score.', 'Result of this model'],
+rule: ['When candidates must pass every component, measurement error in any one component can fail a competent candidate. The reliability figure is for the combined mark and does not change with the pass rule, so the board shows the effect as false passes and false fails, and as the number of results that would change on a resit. In a Japanese primary care board certification examination of four parts, the consistency of pass or fail decisions was 0.86 when strengths in one part could offset weaknesses in another, and 0.33 when candidates had to pass every part. The pass rule does not change the utility score.', 'Onishi et al. 2018; result of this model'],
 sittings: ['In a meta-analysis of 222 classroom studies, students who were tested did about half a standard deviation better than students in comparison conditions such as restudying.', 'Yang et al. 2021'],
 feedback: ['In one interview study, students made little use of feedback after summative assessment, so the model gives feedback a smaller gain in a high-stakes brief. Feedback from an unreliable result is less useful, so the gain also shrinks when reliability is below 0.70. Individual feedback releases the questions, so none of them can be reused the next year.', 'Harrison et al. 2015; Joncas et al. 2018'],
 fairness: ['A randomised trial of rater training found no significant gain in agreement between raters, so the model leaves reliability unchanged. Instead, the model assumes that candidates and external examiners are more willing to accept a design in which examiners are trained and questions are reviewed for bias, so it raises acceptability.', 'Cook et al. 2009']
@@ -1562,6 +1617,12 @@ aiDetect: { title: 'AI detector', intro: '', opts: [
 essayMark: { title: 'Markers per essay script', intro: '', opts: [
 [1, 'One', 'Each script is marked once.'],
 [2, 'Two', 'Two markers mark each script independently, and their marks are averaged.'] ] },
+essayScheme: { title: 'Essay marking', intro: '', opts: [
+[0, 'Holistic', 'Markers give each answer a mark from their overall impression of it.'],
+[1, 'Marking scheme', 'Each question has a model answer and a scheme listing the points a good answer makes, and markers award marks against it. Writing them takes about 30 minutes per question.'] ] },
+essayByQ: { title: 'How essay scripts are split between markers', intro: '', opts: [
+[false, 'One marker per script', 'One marker marks every answer in a candidate\'s script.'],
+[true, 'By question', 'Each question is marked by one marker for every candidate, so each script passes through several markers.'] ] },
 vivaExam: { title: 'Examiners per viva case', intro: 'The number of examiners who examine and mark each case together.', opts: [] },
 vivaRotate: { title: 'Viva examiners', intro: '', opts: [
 [false, 'Same for every case', 'One panel of examiners examines a candidate on all of their cases.'],
@@ -1617,6 +1678,7 @@ u: o.empty ? '–' : String(uNow), deltaNum: o.empty ? '' : deltaNum, deltaRest:
 gatesText: o.empty ? 'Your design has no components yet.' : notMet.length ? 'The design does not meet the brief yet, because ' + listed + '.' : 'The design meets every requirement of the brief.', gatesColor: notMet.length ? '#FFB199' : '#F1FAF5',
 rows: rows, pinNote: po ? 'Each figure above shows your saved design first and your current design second.' : 'Save a design you like. Your later changes are then shown against it, and you can return to it if a change makes the design worse.',
 wrongText: o.empty ? '–' : (po && !po.empty ? (po.falsePass + po.falseFail) + ' → ' : '') + wrongNow + ' of ' + b.cohort + ' candidates',
+flipText: o.empty ? '–' : (po && !po.empty ? po.flips + ' → ' : '') + o.flips + ' of ' + b.cohort + ' candidates',
 backColor: pinD ? '#F1FAF5' : '#8CCBB1',
 pin: function () { s.pinned[id] = Object.assign({}, d); self.forceUpdate(); },
 backToPinned: function () { if (!s.pinned[id]) return; var before = self.utilityNow(); s.designs[id] = Object.assign({}, s.pinned[id]); self.logTry(before, null); },
@@ -1661,6 +1723,7 @@ if (b.relGate && o.R2 < b.relGate) stat = 'The combined mark has reliability ' +
 else if (d.rule === 1 && o.comps.length > 1) stat = 'You require a pass in each of ' + o.comps.length + ' components, so the measurement error in each component can fail a competent candidate. I expect ' + o.falseFail + ' competent candidates to fail and ' + o.falsePass + ' candidates who are not competent to pass.';
 else stat = 'Reliability is ' + f2(o.R) + '. In a cohort of ' + N + ', I expect ' + o.falsePass + ' false passes and ' + o.falseFail + ' false fails' + (o.nearCut !== null ? ', and ' + o.nearCut + ' candidates have a mark within one standard error of measurement of the pass mark, which means that measurement error alone could have put them on either side of it.' : '.');
 if (d.vivaCases > 1 && !d.vivaRotate) stat += ' The same examiners assess each candidate on every viva case, so their stringency affects the whole viva mark.';
+if (d.essayH > 0 && !d.essayByQ) stat += ' One marker marks each candidate\'s whole essay script, so that marker\'s severity affects every answer.';
 if (o.testH > b.timeCap) stud = 'The design has ' + o.testH.toFixed(1) + ' hours of testing, which is more than the ' + b.timeCap + ' hours allowed. I expect candidates to object.';
 else if (d.feedback === 0) stud = 'Candidates receive only a mark, so they cannot tell what to work on.';
 else if (d.itemQuality === 0 && written > 0) stud = 'Questions that nobody has reviewed reward recall and cue-spotting, so candidates will practise recall and cue-spotting.';
