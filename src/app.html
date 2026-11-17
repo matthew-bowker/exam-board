@@ -1,0 +1,1711 @@
+<!DOCTYPE html>
+<html lang="en-GB"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="An assessment design game for medical educators. Build an assessment for a brief, balance reliability, validity, educational impact, acceptability and cost, and submit it to the exam board.">
+<meta name="theme-color" content="#0F5B45">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<title>The Exam Board</title>
+<script src="35b626f5-fd93-419a-a027-a70eeee01349"></script>
+<meta name="hz:slide-selector" content="[data-canvas-width]"><meta name="hz:canvas-width" content="1366"><meta name="hz:canvas-height" content="980"></head>
+<body>
+<x-dc>
+<helmet>
+<style>/* arabic */
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/rubik/v31/iJWKBXyIfDnIV7nErXyw023e1Ik.woff2) format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC7, U+10EC9-10EEE, U+10EF0-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/rubik/v31/iJWKBXyIfDnIV7nMrXyw023e1Ik.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/rubik/v31/iJWKBXyIfDnIV7nFrXyw023e1Ik.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* hebrew */
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/rubik/v31/iJWKBXyIfDnIV7nDrXyw023e1Ik.woff2) format('woff2');
+  unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/rubik/v31/iJWKBXyIfDnIV7nPrXyw023e1Ik.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("6016f127-046e-4ddf-af48-3ea3d302d8c0") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* arabic */
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/rubik/v31/iJWKBXyIfDnIV7nErXyw023e1Ik.woff2) format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC7, U+10EC9-10EEE, U+10EF0-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/rubik/v31/iJWKBXyIfDnIV7nMrXyw023e1Ik.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/rubik/v31/iJWKBXyIfDnIV7nFrXyw023e1Ik.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* hebrew */
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/rubik/v31/iJWKBXyIfDnIV7nDrXyw023e1Ik.woff2) format('woff2');
+  unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/rubik/v31/iJWKBXyIfDnIV7nPrXyw023e1Ik.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("6016f127-046e-4ddf-af48-3ea3d302d8c0") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* arabic */
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/rubik/v31/iJWKBXyIfDnIV7nErXyw023e1Ik.woff2) format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC7, U+10EC9-10EEE, U+10EF0-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/rubik/v31/iJWKBXyIfDnIV7nMrXyw023e1Ik.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/rubik/v31/iJWKBXyIfDnIV7nFrXyw023e1Ik.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* hebrew */
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/rubik/v31/iJWKBXyIfDnIV7nDrXyw023e1Ik.woff2) format('woff2');
+  unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/rubik/v31/iJWKBXyIfDnIV7nPrXyw023e1Ik.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("6016f127-046e-4ddf-af48-3ea3d302d8c0") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+body{margin:0}
+a{color:#FFD447}a:hover{color:#FFE48A}
+.handcard{position:relative}
+.handcard:hover,.handcard:focus-within{z-index:10}
+.tip{position:relative;display:inline-flex;align-items:center}
+.tipbtn{background:none;border:none;padding:4px 0;margin:-4px 0;font:inherit;color:inherit;cursor:help;display:inline-flex;align-items:center;gap:5px;text-align:left;text-decoration:underline dotted;text-underline-offset:3px}
+.tipq{display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;border:1.5px solid currentColor;font-size:10.5px;font-weight:600;text-decoration:none}
+.tipbox{display:none;position:absolute;left:-6px;bottom:calc(100% + 8px);width:250px;z-index:20;padding:10px 12px;border-radius:10px;font-size:13.5px;line-height:1.45;font-weight:400;text-align:left;box-shadow:0 6px 18px rgba(0,0,0,0.25)}
+.tip:hover .tipbox,.tip:focus-within .tipbox{display:block}
+:focus-visible{outline:3px solid #FFD447;outline-offset:2px}
+.page h1,.page h2,.page h3{text-wrap:balance}
+.page > *{width:100%;max-width:1440px;margin-left:auto;margin-right:auto;box-sizing:border-box}
+@media (max-width:640px){.page{padding:16px 20px 20px !important}}
+
+/* Top bar */
+.topbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 24px}
+.brand{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;min-width:0}
+.wordmark{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0;background:none;border:none;color:#F1FAF5;font:800 28px/1.1 'Rubik','Trebuchet MS',Arial,sans-serif;letter-spacing:-0.01em;cursor:pointer;text-align:left}
+.wordmark svg{flex:none}
+.chip{display:inline-flex;align-items:center;min-height:36px;padding:0 14px;border-radius:999px;background:#FFD447;color:#18261F;font-size:15px;font-weight:600}
+.nav{display:flex;flex-wrap:wrap;gap:2px;margin:0 -12px}
+.navlink{min-height:44px;padding:0 12px;background:none;border:none;border-radius:999px;color:#F1FAF5;font:400 15px 'Rubik',Arial,sans-serif;cursor:pointer;text-decoration:underline;text-decoration-color:transparent;text-underline-offset:5px;text-decoration-thickness:2px}
+.navlink:hover{text-decoration-color:currentColor}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;border-radius:999px;border:none;font:600 16px 'Rubik',Arial,sans-serif;cursor:pointer;text-align:center}
+.btn:active{transform:translateY(2px)}
+.btn-coral{background:#FF8A66;color:#18261F;font-weight:800;font-size:17px;min-height:52px;box-shadow:0 6px 0 #0A4433}
+.btn-ghost{background:none;color:#F1FAF5;border:2px solid #F1FAF5}
+.btn-dark{background:#18261F;color:#FFFDF6}
+.btn-yellow{background:#FFD447;color:#18261F;font-weight:800}
+
+/* Home */
+.home{display:flex;flex-direction:column;gap:64px;padding:8px 0 4px}
+.hero{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px 48px;padding-top:28px}
+.hero-text{flex:1 1 520px;max-width:700px;display:flex;flex-direction:column;gap:16px}
+.kicker{font-size:15px;font-weight:600;color:#FFD447;letter-spacing:0.02em}
+.hero-h{margin:0;font-size:clamp(42px,6vw,76px);line-height:0.95;font-weight:800;letter-spacing:-0.03em}
+.lead{margin:0;font-size:19px;line-height:1.5;max-width:60ch}
+.lead-2{margin:0;font-size:16px;line-height:1.55;color:#C6E6D8;max-width:62ch}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px}
+.fan{position:relative;flex:0 1 460px;height:330px;min-width:320px}
+.fancard{position:absolute;left:50%;bottom:30px;width:150px;height:212px;margin-left:-75px;box-sizing:border-box;padding:14px;border-radius:16px;background:#FFFDF6;color:#18261F;box-shadow:0 6px 0 #0A4433;transform-origin:50% 100%;display:flex;flex-direction:column;gap:2px}
+.fan-short{font-size:19px;font-weight:800}
+.fan-long{font-size:12.5px;color:#4D5F56}
+.fan-pips{margin-top:auto;height:14px;background:radial-gradient(circle at 7px 7px,#FFD447 6px,rgba(0,0,0,0) 6.5px);background-size:18px 14px}
+.stamp{position:absolute;z-index:10;right:0;bottom:4px;transform:rotate(-8deg);padding:8px 16px;border:3px solid #FFD447;border-radius:12px;background:#0F5B45;color:#FFD447;font-weight:800;font-size:21px;letter-spacing:0.06em;text-transform:uppercase}
+@media (max-width:760px){.fan{display:none}.hero{padding-top:12px}}
+.anchor{scroll-margin-top:16px}
+.sec-head{display:flex;flex-direction:column;gap:6px;margin-bottom:20px}
+.sec-h{margin:0;font-size:32px;line-height:1.1;font-weight:800;letter-spacing:-0.01em}
+.sec-sub{margin:0;font-size:16px;line-height:1.5;color:#C6E6D8;max-width:72ch}
+.steplist{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(270px,100%),1fr));gap:16px}
+.step{display:flex;gap:14px;align-items:flex-start;background:#0A4433;border-radius:16px;padding:18px 20px}
+.stepnum{flex:none;width:36px;height:36px;border-radius:50%;background:#FFD447;color:#18261F;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px}
+.step h3{margin:4px 0 6px;font-size:18px;font-weight:600}
+.step p{margin:0;font-size:15px;line-height:1.5}
+.scengrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(250px,100%),1fr));gap:18px;align-items:stretch}
+.scard{display:flex;flex-direction:column;align-items:flex-start;gap:6px;box-sizing:border-box;min-height:200px;padding:20px 20px 18px;border:none;border-radius:18px;background:#FFFDF6;color:#18261F;box-shadow:0 6px 0 #0A4433;font-family:'Rubik',Arial,sans-serif;text-align:left;cursor:pointer;transition:transform .15s ease}
+.scard:hover{transform:translateY(-3px)}
+.scard-h{display:block;font-size:22px;line-height:1.15;font-weight:800;letter-spacing:-0.01em}
+.scard-meta{display:block;font-size:14px;color:#4D5F56}
+.scard-p{display:block;margin-top:6px;font-size:15px;line-height:1.45}
+.scard-go{margin-top:auto;padding-top:14px;font-size:15px;font-weight:600;color:#0F5B45}
+.scard-sb{background:none;color:#F1FAF5;border:2px dashed #8CCBB1;box-shadow:none}
+.scard-sb .scard-meta{color:#C6E6D8}
+.scard-sb .scard-go{color:#FFD447}
+@media (prefers-reduced-motion:reduce){.scard{transition:none}.scard:hover{transform:none}.btn:active{transform:none}}
+
+/* About */
+.about-grid{display:flex;flex-wrap:wrap;gap:28px 48px;align-items:flex-start}
+.prose{flex:1 1 520px;max-width:72ch;display:flex;flex-direction:column;gap:12px}
+.prose p{margin:0;font-size:16px;line-height:1.6}
+.prose h3{margin:18px 0 0;font-size:20px;font-weight:600}
+.compwrap{container-type:inline-size}
+.compgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));align-items:stretch;gap:14px}
+.abil-list{margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:10px 24px}
+.abil-list dt{font-weight:600;color:#FFD447;font-size:15.5px}
+.abil-list dd{margin:3px 0 0;font-size:15px;line-height:1.5}
+.bands{margin:0;padding:12px 16px;list-style:none;display:flex;flex-direction:column;gap:6px;background:#0A4433;border-radius:14px}
+.bands li{display:flex;flex-wrap:wrap;gap:2px 14px;font-size:15px;line-height:1.45}
+.band-name{font-weight:600;min-width:210px}
+.criteria{flex:1 1 320px;max-width:460px;box-sizing:border-box;background:#0A4433;border-radius:20px;padding:20px 22px;display:flex;flex-direction:column;gap:14px}
+.criteria h3{margin:0;font-size:18px;font-weight:600}
+.crit-list{margin:0;display:flex;flex-direction:column;gap:12px}
+.crit-list dt{font-weight:600;color:#FFD447;font-size:15.5px}
+.crit-list dd{margin:3px 0 0;font-size:14.5px;line-height:1.5}
+.formula{padding:12px 14px;border-radius:12px;background:#0F5B45;font-size:16px;font-weight:600;line-height:1.7}
+.formula sup{font-size:11.5px;font-weight:600}
+.formula-note{margin:-4px 0 0;font-size:13.5px;line-height:1.45;color:#C6E6D8}
+.sub-h{margin:0 0 14px;font-size:24px;font-weight:800;letter-spacing:-0.01em}
+.credits{margin-top:44px}
+.credit-list{margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));gap:14px}
+.credit-list div{background:#FFFDF6;color:#18261F;border-radius:14px;padding:14px 16px;box-shadow:0 6px 0 #0A4433}
+.credit-list dt{font-size:12.5px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:#4D5F56}
+.credit-list dd{margin:5px 0 0;font-size:15px;line-height:1.45}
+.refs{margin-top:44px}
+.refs-note{margin:0 0 16px;font-size:15px;line-height:1.5;color:#C6E6D8;max-width:76ch}
+.refcols{columns:2 440px;column-gap:48px}
+.refgroup-h{margin:22px 0 10px;font-size:15px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:#FFD447;break-after:avoid}
+.refcols > .refgroup-h:first-child{margin-top:0}
+.reflist{margin:0;padding:0;list-style:none}
+.reflist li{break-inside:avoid;margin:0 0 14px;padding-left:1.4em;text-indent:-1.4em;font-size:14.5px;line-height:1.5}
+.reflist strong{font-weight:600}
+.reflinks a{margin-right:12px;overflow-wrap:anywhere;font-weight:600}
+.refuse{display:block;text-indent:0;margin-top:3px;font-size:13.5px;line-height:1.45;color:#C6E6D8}
+.estlist{margin:0;padding-left:20px;font-size:14.5px;line-height:1.6}
+.estlist li{break-inside:avoid}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px 24px;border-top:1px solid #2E7A62;padding-top:14px;font-size:14px;color:#C6E6D8}
+.foot p{margin:0;max-width:84ch;line-height:1.5}
+
+/* Sandbox editor */
+.sbx{display:flex;flex-direction:column;gap:14px;padding:14px 0;border-top:1px solid #2E7A62;border-bottom:1px solid #2E7A62}
+.sbx-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:10px 24px}
+.sbx-intro{flex:1 1 480px;display:flex;flex-direction:column;gap:6px;max-width:80ch}
+.sbx-intro h2{margin:0;font-size:18px;font-weight:600}
+.sbx-intro p{margin:0;font-size:15.5px;line-height:1.5}
+.presets{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;font-size:14.5px;color:#C6E6D8}
+.preset{min-height:40px;padding:0 14px;border-radius:999px;border:2px solid #8CCBB1;background:none;color:#F1FAF5;font:400 14.5px 'Rubik',Arial,sans-serif;cursor:pointer}
+.preset:hover{background:#0A4433}
+.sbx-cols{display:flex;flex-wrap:wrap;gap:14px}
+.sbx-col{flex:1 1 300px;box-sizing:border-box;background:#0A4433;border-radius:16px;padding:14px 16px;display:flex;flex-direction:column;gap:4px}
+.sbx-col h3{margin:0;font-size:16px;font-weight:600}
+.sbx-hint{margin:0 0 6px;font-size:13.5px;line-height:1.4;color:#C6E6D8}
+.sbrow{display:flex;align-items:center;gap:8px;min-height:46px}
+.sblabel{flex:1;min-width:0;font-size:15px}
+.sbval{font-weight:600;font-variant-numeric:tabular-nums;font-size:15px;text-align:right;white-space:nowrap}
+.sbbar{display:block;width:56px;height:8px;flex:none;background:#0F5B45;border-radius:999px;overflow:hidden}
+.sbbar span{display:block;height:8px;background:#FFD447}
+.sbbtn{flex:none;width:44px;height:44px;border-radius:50%;border:none;font:800 21px/1 'Rubik',Arial,sans-serif;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0}
+.sbminus{background:#E7EFEA;color:#18261F}
+.sbplus{background:#FFD447;color:#18261F}
+.sbbtn[aria-disabled="true"]{opacity:0.3;cursor:not-allowed}
+.sbcycle{margin-top:6px;min-height:44px;padding:0 16px;border:none;border-radius:999px;background:#FFFDF6;color:#18261F;font:400 14.5px 'Rubik',Arial,sans-serif;cursor:pointer;text-align:left}
+.linkbtn{min-height:44px;padding:0;background:none;border:none;color:#FFD447;font:600 15px 'Rubik',Arial,sans-serif;text-decoration:underline;text-underline-offset:4px;cursor:pointer;align-self:flex-start}
+</style>
+</helmet>
+<div class="page" style="min-height: 100vh; box-sizing: border-box; background: #0F5B45; color: #F1FAF5; font-family: 'Rubik', 'Trebuchet MS', Arial, sans-serif; padding: 26px clamp(20px, 5vw, 96px) 28px; display: flex; flex-direction: column; gap: 14px" data-canvas-width="1366" data-canvas-height="980" data-document-role="page" data-label="D · Card table">
+
+  <header class="topbar">
+    <div class="brand">
+      <button type="button" class="wordmark" sc-camel-on-click="{{goHome}}" aria-label="The Exam Board, home page">
+        <svg aria-hidden="true" width="34" height="34" sc-camel-view-box="0 0 64 64"><rect width="64" height="64" rx="14" fill="#0A4433"></rect><rect x="12" y="13" width="26" height="36" rx="5" fill="#FF8A66" transform="rotate(-12 25 31)"></rect><rect x="25" y="14" width="26" height="36" rx="5" fill="#FFFDF6" transform="rotate(8 38 32)"></rect><path d="M31 33 L36 38 L45 27" fill="none" stroke="#0F5B45" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" transform="rotate(8 38 32)"></path></svg>
+        <span>The Exam Board</span>
+      </button>
+      <sc-if value="{{inGame}}">
+        <span class="chip">{{chipText}}</span>
+      </sc-if>
+    </div>
+    <nav class="nav" aria-label="Site">
+      <sc-for list="{{nav}}" as="n">
+        <button type="button" class="navlink" sc-camel-on-click="{{n.pick}}">{{n.label}}</button>
+      </sc-for>
+    </nav>
+  </header>
+
+  <sc-if value="{{isHome}}">
+  <main class="home">
+
+    <section class="hero" aria-labelledby="welcome-h">
+      <div class="hero-text">
+        <div class="kicker">An assessment design game for medical educators</div>
+        <h1 id="welcome-h" class="hero-h">Welcome to The Exam Board</h1>
+        <p class="lead">In 'The Exam Board', you are tasked with designing an assessment for medical learners. The brief tells you who the candidates are and what the assessment has to measure, and it sets limits on money, staff time and testing time. You design the assessment within those limits and then send it to an exam board, which decides whether to approve it.</p>
+        <div class="hero-actions">
+          <button type="button" class="btn btn-coral" sc-camel-on-click="{{goScenarios}}">Choose a brief</button>
+          <button type="button" class="btn btn-ghost" sc-camel-on-click="{{goAbout}}">How the scoring works</button>
+        </div>
+      </div>
+      <div class="fan" aria-hidden="true">
+        <sc-for list="{{fan}}" as="f">
+          <div class="fancard" style="transform: translateX({{f.x}}) translateY({{f.y}}) rotate({{f.r}}); z-index: {{f.z}}">
+            <div class="fan-short">{{f.short}}</div>
+            <div class="fan-long">{{f.long}}</div>
+            <div class="fan-pips" style="width: {{f.pips}}"></div>
+          </div>
+        </sc-for>
+        <div class="stamp">Commended</div>
+      </div>
+    </section>
+
+    <section aria-labelledby="how-h">
+      <div class="sec-head"><h2 id="how-h" class="sec-h">How the game works</h2></div>
+      <ol class="steplist">
+        <li class="step"><span class="stepnum" aria-hidden="true">1</span><div><h3>Choose a brief</h3><p>Pick one of the three briefs below. If you would rather describe an assessment of your own, open the sandbox instead.</p></div></li>
+        <li class="step"><span class="stepnum" aria-hidden="true">2</span><div><h3>Build the assessment</h3><p>Add components, such as a question paper or a viva, and decide how many of the marks each one carries. After each change the game updates the utility score, which rates the whole design out of 100, and shows the evidence for that change at the foot of the page.</p></div></li>
+        <li class="step"><span class="stepnum" aria-hidden="true">3</span><div><h3>Submit your design to the board</h3><p>A psychometrician, a student representative, a finance lead and an external examiner comment on your design, and the board gives its verdict. The game may also pick an unexpected event at random, such as a budget cut or an appeal, and show how it changes the verdict.</p></div></li>
+      </ol>
+    </section>
+
+    <section id="briefs" class="anchor" aria-labelledby="scen-h">
+      <div class="sec-head">
+        <h2 id="scen-h" class="sec-h">Choose a brief</h2>
+        <p class="sec-sub">The game keeps your design for each brief until you close or reload this page.</p>
+      </div>
+      <div class="scengrid">
+        <sc-for list="{{scenarios}}" as="c">
+          <button type="button" class="scard {{c.cls}}" sc-camel-on-click="{{c.pick}}">
+            <span class="scard-h">{{c.title}}</span>
+            <span class="scard-p">{{c.line}}</span>
+            <span class="scard-go">{{c.action}} <span aria-hidden="true">→</span></span>
+          </button>
+        </sc-for>
+      </div>
+    </section>
+
+    <section id="about" class="anchor" aria-labelledby="about-h">
+      <div class="sec-head"><h2 id="about-h" class="sec-h">About</h2></div>
+      <div class="about-grid">
+        <div class="prose">
+          <p>The Exam Board is a teaching simulation for people who design or run assessments in medical education. It lets you try a design and see its consequences before you use it with real candidates.</p>
+          <h3>How the model scores a design</h3>
+          <p>The game uses the utility model of van der Vleuten (1996), which judges an assessment on five criteria: reliability, validity, educational impact, acceptability and cost-efficiency. The model gives each criterion a score between 0 and 1.</p>
+          <p>The utility is the product of the five scores, each raised to a power set by its weight in the brief. Because the scores are multiplied, a very low score on one criterion lowers the utility however good the others are. The game shows the utility out of 100.</p>
+          <h3>The four constructs</h3>
+          <p>Validity depends on four constructs. A construct is a quality that an assessment sets out to measure. Each brief says how much of each construct it needs, and each component measures the constructs in different amounts. The amounts for each component are the model's own estimates.</p>
+          <dl class="abil-list">
+            <sc-for list="{{abilities}}" as="k"><div><dt>{{k.name}}</dt><dd>{{k.text}}</dd></div></sc-for>
+          </dl>
+          <h3>How the board decides</h3>
+          <p>A design must first meet every requirement of the brief. It must cost no more than the budget, keep within the testing time allowed, and reach the minimum reliability if the brief sets one. If it does not, the board refers it back. Otherwise the board compares its utility with the best utility that a computer search found for the same brief.</p>
+          <ul class="bands">
+            <sc-for list="{{bands}}" as="b"><li><span class="band-name">{{b.name}}</span><span>{{b.rule}}</span></li></sc-for>
+          </ul>
+          <p>To show what the design means for candidates, the model simulates 4,000 candidates whose true competence is known and marks each of them with your design. The board reports how many would pass without being competent and how many competent candidates would fail.</p>
+          <p>The first time a design for a brief meets every requirement, the game also picks one unexpected event at random. It might be a budget cut, a shortage of examiners, leaked questions, a report of an attainment gap, essays written by AI or an appeal. In the sandbox, events happen only if you set "Unexpected events at the board" to on.</p>
+          <h3>Where the numbers come from</h3>
+          <p>Reliabilities, times and costs come from published studies, from the Unit Costs of Health and Social Care 2025 published by the Personal Social Services Research Unit (PSSRU), and from university pay scales and marking tariffs. Where no source was found, the model uses an estimate, and the evidence note in the game says so.</p>
+          <p>The scores are meant for teaching and for comparing one design with another. Judging a real assessment needs an analysis of its own results.</p>
+        </div>
+        <aside class="criteria" aria-labelledby="crit-h">
+          <h3 id="crit-h">The five criteria</h3>
+          <dl class="crit-list">
+            <sc-for list="{{criteria}}" as="k"><div><dt>{{k.name}}</dt><dd>{{k.text}}</dd></div></sc-for>
+          </dl>
+          <div class="formula">Utility = 100 × R<sup>a</sup> × V<sup>b</sup> × E<sup>c</sup> × A<sup>d</sup> × C<sup>e</sup></div>
+          <p class="formula-note">R, V, E, A and C are the five scores. The powers a to e are the brief's weights for each criterion, divided by the total of the weights.</p>
+        </aside>
+      </div>
+
+      <div id="credits" class="anchor credits">
+        <h3 class="sub-h">Credits</h3>
+        <dl class="credit-list">
+          <sc-for list="{{credits}}" as="c"><div><dt>{{c.role}}</dt><dd>{{c.text}}</dd></div></sc-for>
+        </dl>
+      </div>
+
+      <div id="references" class="anchor refs">
+        <h3 class="sub-h">References</h3>
+        <p class="refs-note">{{refsNote}}</p>
+        <div class="refcols">
+          <sc-for list="{{refGroups}}" as="g">
+            <h4 class="refgroup-h">{{g.title}}</h4>
+            <ul class="reflist">
+              <sc-for list="{{g.refs}}" as="r"><li><strong>{{r.a}}</strong> {{r.b}}<em>{{r.j}}</em>{{r.d}} <span class="reflinks"><sc-for list="{{r.links}}" as="l"><a href="{{l.href}}" target="_blank" rel="noopener" aria-label="{{l.aria}}">{{l.label}}</a></sc-for></span><span class="refuse">{{r.u}}</span></li></sc-for>
+            </ul>
+          </sc-for>
+          <h4 class="refgroup-h">Figures that are still estimates</h4>
+          <p class="refs-note" style="font-size: 14.5px; margin-bottom: 8px">No source was found for the figures below, so the game labels them as estimates or assumptions.</p>
+          <ul class="estlist">
+            <sc-for list="{{estimates}}" as="e"><li>{{e}}</li></sc-for>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer class="foot" style="justify-content: flex-end">
+      <button type="button" class="navlink" style="margin: 0 -12px" sc-camel-on-click="{{goTop}}">Back to top</button>
+    </footer>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{showEditor}}">
+  <section class="sbx" aria-labelledby="sbx-h">
+    <div class="sbx-head">
+      <div class="sbx-intro">
+        <h2 id="sbx-h">Sandbox: your own context</h2>
+        <p>These controls describe the situation that your assessment is for. A change here updates the scores straight away and leaves your design as it is.</p>
+      </div>
+      <button type="button" class="btn btn-ghost" style="min-height: 44px; font-size: 15px" sc-camel-on-click="{{closeEditor}}">Hide this panel</button>
+    </div>
+    <div class="presets" role="group" aria-label="Replace the values in this panel with those of a brief, or with the defaults">
+      <span>Replace the values in this panel with those of a brief, or with the defaults:</span>
+      <sc-for list="{{sbPresets}}" as="p"><button type="button" class="preset" sc-camel-on-click="{{p.pick}}">{{p.label}}</button></sc-for>
+    </div>
+    <div class="sbx-cols">
+      <div class="sbx-col">
+        <h3>Candidates and limits</h3>
+        <p class="sbx-hint">The board checks every design against the budget, staff time, testing time and minimum reliability that you set here.</p>
+        <sc-for list="{{sbContext}}" as="r">
+          <div class="sbrow">
+            <span class="sblabel">{{r.label}}</span>
+            <span class="sbval">{{r.value}}</span>
+            <button type="button" class="sbbtn sbminus" sc-camel-on-click="{{r.dec}}" aria-label="{{r.decLabel}}" aria-disabled="{{r.atMin}}">−</button>
+            <button type="button" class="sbbtn sbplus" sc-camel-on-click="{{r.inc}}" aria-label="{{r.incLabel}}" aria-disabled="{{r.atMax}}">+</button>
+          </div>
+        </sc-for>
+        <sc-for list="{{sbCycles}}" as="k"><button type="button" class="sbcycle" sc-camel-on-click="{{k.pick}}">{{k.label}}: <span style="font-weight: 600">{{k.value}}</span></button></sc-for>
+      </div>
+      <div class="sbx-col">
+        <h3>What the assessment must measure</h3>
+        <p class="sbx-hint">Each row is a construct, a quality that the assessment sets out to measure. Press − or + to take away or add one point of emphasis, up to 10 points for each construct. The percentage shows each construct's points as a share of all the points, so a change to one row also changes the percentages in the other rows.</p>
+        <sc-for list="{{sbMeasure}}" as="r">
+          <div class="sbrow">
+            <span class="sblabel"><span class="tip"><button type="button" class="tipbtn" aria-describedby="{{r.tipId}}">{{r.label}}<span aria-hidden="true" class="tipq">?</span></button><span role="tooltip" id="{{r.tipId}}" class="tipbox" style="background: #FFFDF6; color: #18261F">{{r.tip}}</span></span></span>
+            <span class="sbbar" aria-hidden="true"><span style="width: {{r.value}}"></span></span>
+            <span class="sbval" style="min-width: 42px">{{r.value}}</span>
+            <button type="button" class="sbbtn sbminus" sc-camel-on-click="{{r.dec}}" aria-label="{{r.decLabel}}" aria-disabled="{{r.atMin}}">−</button>
+            <button type="button" class="sbbtn sbplus" sc-camel-on-click="{{r.inc}}" aria-label="{{r.incLabel}}" aria-disabled="{{r.atMax}}">+</button>
+          </div>
+        </sc-for>
+      </div>
+      <div class="sbx-col">
+        <h3>How much each criterion matters</h3>
+        <p class="sbx-hint">Each criterion has a weight from 0 to 5. A higher weight gives the criterion more influence on the utility, and a weight of 0 leaves it out of the utility altogether.</p>
+        <sc-for list="{{sbWeights}}" as="r">
+          <div class="sbrow">
+            <span class="sblabel">{{r.label}}</span>
+            <span class="sbval">{{r.value}}</span>
+            <button type="button" class="sbbtn sbminus" sc-camel-on-click="{{r.dec}}" aria-label="{{r.decLabel}}" aria-disabled="{{r.atMin}}">−</button>
+            <button type="button" class="sbbtn sbplus" sc-camel-on-click="{{r.inc}}" aria-label="{{r.incLabel}}" aria-disabled="{{r.atMax}}">+</button>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+  </sc-if>
+
+  <sc-if value="{{showBriefing}}">
+  <div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 14px 48px; padding: 14px 0; border-top: 1px solid #2E7A62; border-bottom: 1px solid #2E7A62; position: relative">
+    <div style="flex: 1 1 440px; max-width: 66ch; display: flex; flex-direction: column; gap: 6px">
+      <h2 style="margin: 0; font-size: 18px; font-weight: 600">{{briefingTitle}}</h2>
+      <p style="margin: 0; font-size: 16px; line-height: 1.55">{{purpose}}</p>
+      <sc-if value="{{showSbEdit}}"><button type="button" class="linkbtn" sc-camel-on-click="{{openEditor}}">Show the context controls</button></sc-if>
+    </div>
+    <div style="flex: 0 1 400px; display: flex; flex-direction: column; gap: 4px; font-size: 15px">
+      <sc-for list="{{facts}}" as="f" hint-placeholder-count="5">
+        <div style="display: flex; gap: 14px"><span style="width: 100px; flex: none; color: #C6E6D8">{{f.label}}</span><span style="font-weight: 600; font-variant-numeric: tabular-nums">{{f.value}}</span></div>
+      </sc-for>
+    </div>
+    <div style="flex: 0 1 360px; display: flex; flex-direction: column; gap: 6px; font-size: 15px">
+      <div style="color: #C6E6D8">What the assessment must measure:</div>
+      <sc-for list="{{measure}}" as="m" hint-placeholder-count="3">
+        <div style="display: flex; align-items: center; gap: 10px">
+          <span style="width: 190px; flex: none"><span class="tip"><button type="button" class="tipbtn" aria-describedby="{{m.tipId}}">{{m.label}}<span aria-hidden="true" class="tipq">?</span></button><span role="tooltip" id="{{m.tipId}}" class="tipbox" style="background: #FFFDF6; color: #18261F">{{m.tip}}</span></span></span>
+          <span style="width: 90px; height: 8px; flex: none; background: #0A4433; border-radius: 999px; overflow: hidden"><span style="display: block; height: 8px; width: {{m.pct}}; background: #FFD447"></span></span>
+          <span style="font-weight: 600; font-variant-numeric: tabular-nums">{{m.pct}}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{isDesign}}" hint-placeholder-val="{{false}}">
+  <div style="flex: 1; display: flex; flex-direction: column; gap: 14px">
+
+    <div style="flex: 1; display: flex; flex-wrap: wrap; gap: 20px 28px">
+
+      <div class="compwrap" style="flex: 999 1 600px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+        <h2 style="margin: 0; font-size: 18px; font-weight: 600">Components</h2>
+        <sc-if value="{{blockedNotice}}"><p style="margin: 0; font-size: 14.5px; line-height: 1.45; color: #C6E6D8; max-width: 90ch">{{blockedNotice}}</p></sc-if>
+        <div class="compgrid">
+          <sc-for list="{{slots}}" as="c" hint-placeholder-count="5">
+            <div class="handcard" style="display: flex; min-height: 320px">
+              <sc-if value="{{c.used}}" hint-placeholder-val="{{true}}">
+                <div style="flex: 1; box-sizing: border-box; background: #FFFDF6; color: #18261F; border-radius: 16px; padding: 14px; display: flex; flex-direction: column; gap: 10px; box-shadow: 0 6px 0 #0A4433">
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 6px">
+                  <div style="display: flex; flex-direction: column; gap: 1px">
+                    <div style="font-size: 20px; font-weight: 800">{{c.short}}</div>
+                    <div style="font-size: 12.5px; color: #4D5F56">{{c.long}}</div>
+                  </div>
+                  <button type="button" sc-camel-on-click="{{c.remove}}" aria-label="{{c.removeLabel}}" title="Remove" style="flex: none; width: 36px; height: 36px; margin: -6px -6px 0 0; border-radius: 999px; background: none; color: #4D5F56; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="14" height="14" sc-camel-view-box="0 0 14 14"><path d="M2 2 L12 12 M12 2 L2 12" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"></path></svg></button>
+                  </div>
+                  <div style="display: flex; flex-direction: column; gap: 5px">
+                    <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px"><span style="font-size: 13.5px">{{c.amountLabel}}</span><span style="font-size: 24px; line-height: 1; font-weight: 800; font-variant-numeric: tabular-nums">{{c.value}}</span></div>
+                    <div style="display: flex; gap: 6px">
+                      <button type="button" sc-camel-on-click="{{c.dec}}" aria-label="{{c.decLabel}}" style="flex: 1; height: 44px; border-radius: 999px; background: #E7EFEA; color: #18261F; border: none; font: 800 22px 'Rubik', Arial, sans-serif; cursor: pointer">−</button>
+                      <button type="button" sc-camel-on-click="{{c.inc}}" aria-label="{{c.incLabel}}" style="flex: 1; height: 44px; border-radius: 999px; background: #18261F; color: #FFFDF6; border: none; font: 800 22px 'Rubik', Arial, sans-serif; cursor: pointer">+</button>
+                    </div>
+                  </div>
+                  <div style="display: flex; flex-direction: column; gap: 5px">
+                    <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px"><span style="font-size: 13.5px">Share of marks</span><span style="font-size: 24px; line-height: 1; font-weight: 800; font-variant-numeric: tabular-nums">{{c.share}}</span></div>
+                    <div style="display: flex; gap: 6px">
+                      <button type="button" sc-camel-on-click="{{c.shareDec}}" aria-label="{{c.shareDecLabel}}" style="flex: 1; height: 44px; border-radius: 999px; background: #E7EFEA; color: #18261F; border: none; font: 800 22px 'Rubik', Arial, sans-serif; cursor: pointer">−</button>
+                      <button type="button" sc-camel-on-click="{{c.shareInc}}" aria-label="{{c.shareIncLabel}}" style="flex: 1; height: 44px; border-radius: 999px; background: #18261F; color: #FFFDF6; border: none; font: 800 22px 'Rubik', Arial, sans-serif; cursor: pointer">+</button>
+                    </div>
+                  </div>
+                  <sc-if value="{{c.hasChips}}" hint-placeholder-val="{{false}}">
+                    <div style="display: flex; flex-direction: column; gap: 4px">
+                      <sc-for list="{{c.chips}}" as="k" hint-placeholder-count="1">
+                        <button type="button" sc-camel-on-click="{{k.pick}}" style="min-height: 44px; padding: 4px 10px; background: #ffffff; color: #18261F; border: 2px solid #18261F; border-radius: 10px; font: 400 13px/1.2 'Rubik', Arial, sans-serif; text-align: left; cursor: pointer">{{k.label}}: <span style="font-weight: 600">{{k.value}}</span></button>
+                      </sc-for>
+                    </div>
+                  </sc-if>
+                  <div style="margin-top: auto; display: flex; flex-direction: column; gap: 3px; font-size: 13.5px; border-top: 2px solid #E7EFEA; padding-top: 8px; font-variant-numeric: tabular-nums">
+                    <div style="display: flex; justify-content: space-between"><span class="tip"><button type="button" class="tipbtn" aria-describedby="{{c.tipId}}">Reliability<span aria-hidden="true" class="tipq">?</span></button><span role="tooltip" id="{{c.tipId}}" class="tipbox" style="background: #18261F; color: #FFFDF6">Reliability is how closely candidates' marks would repeat if they sat an equivalent assessment with different questions, cases or examiners. It is a number between 0 and 1, and 0.80 is often treated as the minimum for high-stakes decisions (van der Vleuten &amp; Schuwirth 2005). This figure is for this component alone.</span></span><span style="font-weight: 600">{{c.rel}}</span></div>
+                    <div style="display: flex; justify-content: space-between"><span>Staff cost</span><span style="font-weight: 600">{{c.cost}}</span></div>
+                  </div>
+                </div>
+              </sc-if>
+              <sc-if value="{{c.unused}}" hint-placeholder-val="{{false}}">
+                <button type="button" sc-camel-on-click="{{c.add}}" style="flex: 1; box-sizing: border-box; background: none; color: #F1FAF5; border: 2px dashed #8CCBB1; border-radius: 16px; padding: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; font-family: 'Rubik', Arial, sans-serif; cursor: pointer">
+                  <span aria-hidden="true" style="font-size: 34px; font-weight: 400; line-height: 1">+</span>
+                  <span style="font-size: 17px; font-weight: 600">{{c.addLabel}}</span>
+                  <span style="font-size: 13px; color: #C6E6D8">{{c.long}}</span>
+                </button>
+              </sc-if>
+              <sc-if value="{{c.blocked}}" hint-placeholder-val="{{false}}">
+                <div style="flex: 1; box-sizing: border-box; border: 2px dashed #2E7A62; border-radius: 16px; padding: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; text-align: center; color: #C6E6D8">
+                  <span style="font-size: 17px; font-weight: 600; color: #8CCBB1">{{c.short}}</span>
+                  <span style="font-size: 13px; line-height: 1.4">{{c.blockedNote}}</span>
+                </div>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <div style="flex: 1 1 300px; max-width: 350px; box-sizing: border-box; background: #0A4433; border-radius: 20px; padding: 20px 22px; display: flex; flex-direction: column; gap: 13px">
+        <h2 style="margin: 0; font-size: 18px; font-weight: 600">Utility</h2>
+        <div style="display: flex; align-items: flex-end; gap: 12px">
+          <div style="font-size: 92px; line-height: 0.85; font-weight: 800; letter-spacing: -0.04em; color: #FFD447; font-variant-numeric: tabular-nums">{{u}}</div>
+          <div style="font-size: 15px; color: #C6E6D8; line-height: 1.3">out of 100<br><span style="font-weight: 800; color: #FFD447">{{deltaNum}}</span> {{deltaRest}}</div>
+        </div>
+        <div style="font-size: 14px; line-height: 1.35; font-weight: 600; color: {{gatesColor}}">{{gatesText}}</div>
+
+        <div style="display: flex; flex-direction: column; gap: 9px">
+          <sc-for list="{{rows}}" as="r" hint-placeholder-count="5">
+            <div style="display: flex; flex-direction: column; gap: 4px">
+              <div style="display: flex; justify-content: space-between; gap: 8px; font-size: 15px; color: {{r.color}}"><span style="font-weight: {{r.weight}}"><sc-if value="{{r.isRel}}" hint-placeholder-val="{{false}}"><span class="tip"><button type="button" class="tipbtn" aria-describedby="{{r.tipId}}">{{r.name}}<span aria-hidden="true" class="tipq">?</span></button><span role="tooltip" id="{{r.tipId}}" class="tipbox" style="background: #FFFDF6; color: #18261F">{{r.tipText}}</span></span></sc-if><sc-if value="{{r.notRel}}" hint-placeholder-val="{{true}}">{{r.name}}</sc-if> <span style="font-weight: 400; color: #C6E6D8">{{r.w}}</span></span><span style="font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap">{{r.valText}}</span></div>
+              <div style="width: 180px; height: 14px; background: radial-gradient(circle at 7px 7px, #2E7A62 6px, rgba(0,0,0,0) 6.5px); background-size: 18px 14px"><div style="width: {{r.pipW}}; height: 14px; background: radial-gradient(circle at 7px 7px, {{r.pip}} 6px, rgba(0,0,0,0) 6.5px); background-size: 18px 14px"></div></div>
+            </div>
+          </sc-for>
+        </div>
+
+        <div style="margin-top: auto; display: flex; flex-direction: column; gap: 8px">
+          <div style="display: flex; flex-direction: column; gap: 6px">
+            <div style="display: flex; justify-content: space-between; gap: 12px; font-size: 15px"><span>Cost</span><span style="font-weight: 600; font-variant-numeric: tabular-nums; color: {{spentColor}}">{{spentText}}</span></div>
+            <div style="height: 10px; background: #0F5B45; border-radius: 999px; overflow: hidden"><div style="height: 10px; width: {{spentWidth}}; background: {{spentBar}}; border-radius: 999px"></div></div>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 15px"><span>Wrong pass or fail decisions</span><span style="font-weight: 600; font-variant-numeric: tabular-nums">{{wrongText}}</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 8px">
+      <div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px">
+        <h2 style="margin: 0; font-size: 18px; font-weight: 600">Settings</h2>
+        <div style="font-size: 14px; color: #C6E6D8">Press a setting to move it to its next option. After the last option, it returns to the first.</div>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px">
+        <sc-for list="{{rules}}" as="k" hint-placeholder-count="7">
+          <button type="button" sc-camel-on-click="{{k.pick}}" style="flex: none; width: {{k.w}}; white-space: nowrap; text-align: left; min-height: 44px; padding: 0 16px; background: #FFFDF6; color: #18261F; border: none; border-radius: 999px; font: 400 15px 'Rubik', Arial, sans-serif; cursor: pointer">{{k.label}}: <span style="font-weight: 600">{{k.value}}</span></button>
+        </sc-for>
+      </div>
+      <div style="background: #0A4433; border-radius: 14px; padding: 8px 16px 12px; display: flex; flex-direction: column; gap: 6px">
+        <div role="group" aria-label="Explain a setting" style="display: flex; flex-wrap: wrap; align-items: center; gap: 0 16px; font-size: 14.5px">
+          <span style="color: #C6E6D8">What the settings mean:</span>
+          <sc-for list="{{explainTabs}}" as="x" hint-placeholder-count="7">
+            <button type="button" sc-camel-on-click="{{x.pick}}" aria-pressed="{{x.pressed}}" style="min-height: 44px; background: none; border: none; padding: 0; font-family: 'Rubik', Arial, sans-serif; font-size: 14.5px; font-weight: {{x.weight}}; color: #F1FAF5; text-decoration: underline; text-decoration-thickness: {{x.thick}}; text-underline-offset: 5px; cursor: pointer">{{x.label}}</button>
+          </sc-for>
+        </div>
+        <sc-if value="{{hasExplain}}" hint-placeholder-val="{{false}}">
+          <div style="display: flex; flex-direction: column; gap: 5px; max-width: 96ch">
+            <div style="font-size: 16px; font-weight: 600">{{explainTitle}}</div>
+            <sc-for list="{{explainRows}}" as="e" hint-placeholder-count="3">
+              <div style="font-size: 14.5px; line-height: 1.45"><span style="font-weight: 600; color: {{e.color}}">{{e.opt}}</span> {{e.text}}</div>
+            </sc-for>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px 28px; border-top: 2px solid #0A4433; padding-top: 12px">
+      <div style="flex: 1 1 460px; display: flex; flex-direction: column; gap: 4px; max-width: 78ch">
+        <div style="font-size: 15px; line-height: 1.4"><span style="font-weight: 600">{{evTitle}}</span> {{evText}} <span style="color: #C6E6D8">{{evSource}}</span></div>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px">
+        <button type="button" sc-camel-on-click="{{reset}}" style="min-height: 44px; padding: 0 18px; background: none; color: #F1FAF5; border: 2px solid #F1FAF5; border-radius: 999px; font: 600 15px 'Rubik', Arial, sans-serif; cursor: pointer">Start this brief again</button>
+        <button type="button" sc-camel-on-click="{{submit}}" style="min-height: 52px; padding: 0 30px; background: #FF8A66; color: #18261F; border: none; border-radius: 999px; font: 800 18px 'Rubik', Arial, sans-serif; cursor: pointer; box-shadow: 0 6px 0 #0A4433">Submit to the board</button>
+      </div>
+    </div>
+
+  </div>
+  </sc-if>
+
+  <sc-if value="{{isBoard}}" hint-placeholder-val="{{false}}">
+  <div style="flex: 1; display: flex; flex-wrap: wrap; gap: 20px 28px">
+
+    <div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+      <div style="font-size: 16px; color: #C6E6D8">The board's verdict</div>
+      <h1 style="margin: 0; font-size: 72px; line-height: 0.95; font-weight: 800; letter-spacing: -0.03em; color: {{verdictColor}}; text-wrap: balance">{{verdict}}</h1>
+      <p style="margin: 0; font-size: 17px; line-height: 1.45; max-width: 66ch">{{verdictLine}} <span style="color: #C6E6D8">{{verdictScale}}</span></p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(290px, 100%), 1fr)); gap: 14px">
+        <sc-for list="{{members}}" as="m" hint-placeholder-count="4">
+          <div style="background: #FFFDF6; color: #18261F; border-radius: 16px; padding: 14px 16px; display: flex; flex-direction: column; gap: 4px; box-shadow: 0 6px 0 #0A4433">
+            <h3 style="margin: 0; font-size: 15px; font-weight: 600">{{m.role}}</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 1.45">{{m.text}}</p>
+          </div>
+        </sc-for>
+      </div>
+
+      <sc-if value="{{hasEvent}}" hint-placeholder-val="{{false}}">
+        <div style="background: #FF8A66; color: #18261F; border-radius: 16px; padding: 16px 18px; display: flex; flex-direction: column; gap: 6px; box-shadow: 0 6px 0 #0A4433">
+          <div style="font-size: 24px; font-weight: 800; letter-spacing: -0.01em">{{eventTitle}}</div>
+          <p style="margin: 0; font-size: 15px; line-height: 1.45; max-width: 74ch">{{eventText}} {{eventBefore}}</p>
+          <div>
+            <button type="button" sc-camel-on-click="{{clearEvent}}" style="min-height: 44px; padding: 0 18px; background: #18261F; color: #FFFDF6; border: none; border-radius: 999px; font: 600 15px 'Rubik', Arial, sans-serif; cursor: pointer">Remove this event</button>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+
+    <div style="flex: 1 1 320px; max-width: 390px; box-sizing: border-box; background: #0A4433; border-radius: 20px; padding: 20px 22px; display: flex; flex-direction: column; gap: 12px">
+      <h2 style="margin: 0; font-size: 18px; font-weight: 600">Pass and fail decisions</h2>
+      <div role="img" aria-label="Simulated candidates plotted by true competence and by mark" style="position: relative; height: 240px; background: #0F5B45; border-radius: 12px; overflow: hidden">
+        <div aria-hidden="true" style="position: absolute; left: {{tcutLeft}}; top: 0; width: 0; height: 100%; border-left: 2px dashed #F1FAF5"></div>
+        <div aria-hidden="true" style="position: absolute; left: {{tcutLeft}}; top: 6px; margin-left: 6px; font-size: 12px; color: #F1FAF5">competence needed</div>
+        <div aria-hidden="true" style="position: absolute; right: 8px; top: {{xcutTop}}; margin-top: -18px; font-size: 12px; color: #F1FAF5; display: {{xcutShow}}">pass mark</div>
+        <div aria-hidden="true" style="position: absolute; left: 0; top: {{xcutTop}}; width: 100%; height: 0; border-top: 2px dashed #F1FAF5; display: {{xcutShow}}"></div>
+        <sc-for list="{{dots}}" as="p" hint-placeholder-count="3">
+          <div style="position: absolute; left: {{p.l}}; top: {{p.t}}; width: {{p.s}}; height: {{p.s}}; margin: -3px 0 0 -3px; border-radius: 50%; background: {{p.bg}}; opacity: {{p.op}}"></div>
+        </sc-for>
+      </div>
+      <div style="display: flex; justify-content: space-between; font-size: 13px; color: #C6E6D8"><span>Across: true competence</span><span>Up: mark awarded</span></div>
+      <div style="display: flex; flex-direction: column; gap: 6px; font-size: 15px">
+        <div style="display: flex; justify-content: space-between"><span><span aria-hidden="true" style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #FF8A66; margin-right: 8px"></span>False passes</span><span style="font-weight: 600; font-variant-numeric: tabular-nums">{{fp}}</span></div>
+        <div style="display: flex; justify-content: space-between"><span><span aria-hidden="true" style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #FFD447; margin-right: 8px"></span>False fails</span><span style="font-weight: 600; font-variant-numeric: tabular-nums">{{fn}}</span></div>
+        <div style="display: flex; justify-content: space-between"><span>Candidates who fail</span><span style="font-weight: 600; font-variant-numeric: tabular-nums">{{failsText}}</span></div>
+      </div>
+      <p style="margin: 0; font-size: 13px; line-height: 1.4; color: #C6E6D8">Each dot is a simulated candidate, and false passes are the dots left of the competence line and above the pass mark. The counts are averages over many simulated cohorts, so they can differ slightly from the dots.</p>
+      <button type="button" sc-camel-on-click="{{backToDesign}}" style="margin-top: auto; min-height: 52px; background: #FFD447; color: #18261F; border: none; border-radius: 999px; font: 800 17px 'Rubik', Arial, sans-serif; cursor: pointer">Back to the design</button>
+    </div>
+
+  </div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;$preview&quot;:{&quot;width&quot;:1366,&quot;height&quot;:980} }">
+class Component extends DCLogic {
+getModel() {
+if (this._m) return this._m;
+/* Assessment design model. Pure functions, shared by the page and the Node tests. */
+var PARAMS = {
+  rate: 140,                 // clinician (consultant) time, GBP per working hour (PSSRU Unit Costs 2025, cost year 2024/25)
+  rateSL: 49,                // senior lecturer time: spine point 43, top of grade 8 (GBP 57,666 from August 2026, Stirling), with the same on-cost ratio as spine point 38 (63,986 / 49,798 = x 1.285) / 1,526.4 workload hours = about GBP 48.50
+  rateAcad: 42,              // lecturer time: spine point 38 with on-costs, GBP 63,986 (Exeter 2026) / 1,526.4 workload hours (St Mary's)
+  rateAdmin: 28,             // administrator time: spine point 24 (GBP 33,662) with the same on-cost ratio / 1,526.4 h
+  invigRate: 14.12, chiefRate: 17.24, invigRatio: 40, invigExtraH: 1, // Newcastle 2025 rates; 1 invigilator per 40 (LJMU); setup time estimated
+  printPerHead: 4,           // stationery per candidate per sitting (Brown et al. 2015: GBP 757 for 185 OSCE candidates)
+  sbaR1: 0.62,               // reliability of 1 h of multiple choice (van der Vleuten & Schuwirth 2005, Table 1)
+  vsaqR1: 0.62,              // assumed equal to SBA per hour
+  essayErr1: 1.5,            // error variance for 1 h of essay/SAQ, single marker => reliability 0.40 (assumed)
+  essayMarkerShare: 0.50,    // share of essay error from the marker; inter-marker kappa 0.12-0.39 (Smith 2002; Anatol 2009)
+  vivaPC: 0.518, vivaSE: 1.04, vivaRES: 0.222, // per 30-minute case; reproduces Swanson 1987 (0.45 / 0.69 / 0.82) and van der Vleuten & Schuwirth 2005 (2 h 0.69, 4 h 0.82)
+  vivaUnstructured: 1.5,     // multiplier on examiner-related error when unstructured (assumed)
+  portA: 1.277, portB: 1.973,// fitted to Michels et al. 2009
+  constructCorr: 0.3,        // correlation between the four abilities (assumed)
+  sbaPerH: 50, vsaqPerH: 40, essayPerH: 4,
+  sbaWriteH: 0.87,           // first draft of one question: 52 min (Meazure Learning, 75 writers); no evidence that training changes drafting time
+  kfR1: 0.324,               // 1 h of key-features cases, write-in; reproduces van der Vleuten & Schuwirth 2005 Table 1 (0.32 / 0.49 / 0.66 / 0.79 for 1 / 2 / 4 / 8 h), from Hatala & Norman 2002: 2 h, 15 cases, alpha 0.49
+  kfPerH: 8,                 // cases per hour (Hatala & Norman 2002: 15 cases in 2 h; Medical Council of Canada 2019 report: 38 cases in up to 3.5 h)
+  kfQsPerCase: 2.5,          // 2-3 questions per case (Norman et al. 2006; Toronto CDM guide)
+  kfWriteH: 2,               // estimate: no source found for the time to write a key-features case
+  vsaqWriteH: 0.87,          // assumed equal to SBA; reviewing the machine-marked answers took 1 min 36 s per question for all students (Sam et al. 2018)
+  essayWriteH: 2,            // estimate: no source found
+  writerTrainH: 1.5,         // item-writing training session: about 90 minutes (course lead's experience)
+  qsPerWriterYear: 30,       // estimate: a trained writer writes about 30 questions a year across all the school's assessments, so this exam carries 1/30 of the training per question
+  reviewPanel: 5, reviewMin: 5, // review panel: about 5 people spend about 5 minutes on each question (course lead's experience)
+  vivaCaseH: 5,              // structured case: 4 h writing + 1 h review (Brown et al. 2015, OSCE station analogue)
+  vsaqMarkSec: 1.25,         // seconds per candidate per question, clinician time (Sam et al. 2019)
+  essayMarkMin: 15,          // marker minutes per candidate per hour of essay paper (Sussex and Nottingham marking tariffs)
+  vivaCaseMin: 32,           // 30-minute case (matches Swanson's four cases to the 2 h of oral testing in van der Vleuten & Schuwirth 2005) + 2 minutes changeover (FFICM Final SOE)
+  vivaAdminH: 0.3,           // admin hours per candidate per sitting (Brown et al. 2015: 55.5 h for 185 candidates)
+  portMarkMin: 12,           // assessor minutes per entry per rater (Michels et al. 2009: 181 min per 15 tasks)
+  portStudentH: 7.6,         // student hours per entry (Michels et al. 2009)
+  mentorH: 1,                // two 30-minute meetings (one-to-one meeting length, UiT; 3-5 meetings a year, Maastricht)
+  platform: 11,              // e-portfolio licence per student (PebblePad quote, about GBP 11,000 per 1,000 licences)
+  blueprintH: 2,             // 1-2 hours (MedEdPORTAL 2013, authors' experience)
+  angoffJudges: 15, angoffMinItem: 0.75, angoffTrainH: 0.6, angoffEssayMin: 5, // about 15 judges (Shulruf 2016); 0.5-0.9 min per item and 35 min training in published panels; essay time estimated
+  analysisH: 2.67,           // formatting and analysis per written exam sitting (Mandel et al. 2011)
+  boardH: 25.5,              // exam board: 17 staff for 1.5 h (Brown et al. 2015)
+  trainH: 1,                 // per examiner or marker (Brown et al. 2015)
+  biasReviewH: 8,            // estimate: no source found
+  profileH: 3, feedbackMin: 5, reuseShare: 0.4, // profile time estimated; 5 min per written comment (estimate); exams in one Canadian programme contained 25-60% reused items (Joncas et al. 2018)
+  cwT: 1.277,                // coursework essay: error from the topic, per essay. Borrowed from one portfolio entry (Michels et al. 2009); no study separates this for coursework essays, so it is an estimate
+  cwM: 4.23,                 // error per marker per essay, from a correlation of 0.35 between two markers of the same work: (1 + cwT)(1 / 0.35 - 1). Project reports: r 0.24-0.36 (Yeo et al. 2024), 0.28 (McKinstry et al. 2004)
+  cwMarkMin: 30,             // lecturer minutes to mark a 2,000-word essay (University of Sussex tariff: "Essays/exam scripts ~2000 words - 30 mins each")
+  cwModShare: 0.10, cwModH: 2, // single marking: a moderator re-reads all fails plus a 5% sample (University of Southampton policy, 2025), about 10% of essays; the 2-hour meeting is an estimate
+  cwStudentH: 16,            // estimate: student hours to write a 2,000-word essay (no source we could read)
+  cwDraftMin: 20,            // estimate: lecturer minutes to read a draft and write comments
+  cwSetupH: 3,               // estimate: hours to write the essay brief, rubric and marker guidance
+  cwCiv: 0.40, cwCivViva: 0.30, // assumption: unsupervised writing adds construct-irrelevant variance (Scarfe et al. 2024: 94% of AI-written submissions went undetected); a viva on the work checks authorship
+  cutShift: [-0.40, 0.20, 0.10] // fixed 50% is lenient when items average 70-80% correct (Joncas et al. 2018; Appelhaus et al. 2022); Cohen standard moved 3.5-4 points between years on papers of similar difficulty (Homer & Darling 2016)
+};
+
+var CONSTRUCTS = ['Applied knowledge', 'Reasoning without cues', 'Explaining and defending', 'Reflection over time'];
+
+var BRIEFS = {
+  A: { id: 'A', name: 'Finals written paper', cohort: 300, budget: 28000, staffCap: 300, timeCap: 8, relGate: 0.80, failRate: 0.08, stakes: 'high',
+       target: [0.50, 0.40, 0.10, 0.00], weights: { R: 3, V: 2, E: 1, A: 2, C: 1 },
+       blurb: 'Brief A, finals written paper. You lead assessment for a medical school. 300 final-year candidates sit the written component of finals. Candidates who pass go on to graduate, the regulator reads your reports, and appeals are likely.' },
+  B: { id: 'B', name: 'First-year SSC', cohort: 250, budget: 28000, staffCap: 600, timeCap: 1, relGate: 0.6, failRate: 0.05, stakes: 'low', mentorAcad: true, acadExaminers: true, ownTopics: true,
+       target: [0.10, 0.25, 0.40, 0.25], weights: { R: 1.5, V: 2, E: 3, A: 2, C: 1.5 },
+       blurb: 'Brief B, first-year SSC. You lead a student-selected component in the first year of a medical degree. Each of the 250 students chooses a medical topic, studies it with an academic supervisor, and explains what they have learned. Students must pass to progress, but they can resubmit.' },
+  C: { id: 'C', name: 'PGCert module', cohort: 40, budget: 9000, staffCap: 110, timeCap: 4, relGate: 0.65, failRate: 0.10, stakes: 'medium', mentorAcad: true,
+       target: [0.15, 0.15, 0.30, 0.40], weights: { R: 1.5, V: 3, E: 2.5, A: 2, C: 1 },
+       blurb: 'Brief C, PGCert module. You run a module on a PGCert in Medical Education. The 40 candidates are clinicians like you. The module assessment must show that they can apply educational theory to their own teaching and reflect on it.' },
+  D: { id: 'D', name: 'Your own context', cohort: 60, budget: 15000, staffCap: 120, timeCap: 5, relGate: 0.75, failRate: 0.10, stakes: 'medium',
+       target: [0.35, 0.30, 0.20, 0.15], weights: { R: 2, V: 2, E: 2, A: 2, C: 2 }, custom: true,
+       blurb: 'Describe an assessment you are responsible for. Set the cohort, the budget, what the assessment must measure and how much each criterion matters to your stakeholders.' }
+};
+
+var DEFAULT_DESIGN = {
+  sbaH: 2, vsaqH: 0, kfH: 0, kfMenu: false, essayH: 0, essayMark: 1,
+  vivaCases: 0, vivaExam: 2, vivaRotate: false, vivaStruct: false,
+  portEntries: 0, portRaters: 1, mentor: false,
+  itemQuality: 0, blueprint: 0, stdset: 0, rule: 0, sittings: 1, feedback: 0, fairness: false
+,
+  mSba: 5, mVsaq: 5, mKf: 5, mEssay: 5, mViva: 5, mPort: 5, cwN: 0, cwMark: 1, cwDraft: false, aiDetect: false, mCw: 5
+};
+
+function sb(r1, h) { return h <= 0 ? 0 : (h * r1) / (1 + (h - 1) * r1); }
+
+function quadForm(a, b) { // a' S b where S has 1 on the diagonal and constructCorr elsewhere
+  var c = PARAMS.constructCorr, sa = 0, sbb = 0, dot = 0;
+  for (var i = 0; i < 4; i++) { sa += a[i]; sbb += b[i]; dot += a[i] * b[i]; }
+  return (1 - c) * dot + c * sa * sbb;
+}
+
+function components(d) {
+  var P = PARAMS, q = d.itemQuality, list = [];
+  if (d.sbaH > 0) list.push({ key: 'sba', label: 'Single best answer', rel: sb(P.sbaR1, d.sbaH), time: d.sbaH, fit: [0.80, [0.20, 0.35, 0.55][q], 0, 0], civ: [0.45, 0.30, 0.20][q] });
+  if (d.vsaqH > 0) list.push({ key: 'vsaq', label: 'Very short answer', rel: sb(P.vsaqR1, d.vsaqH), time: d.vsaqH, fit: [0.75, [0.40, 0.60, 0.70][q], 0.05, 0], civ: [0.25, 0.12, 0.08][q] });
+  if (d.kfH > 0) list.push({ key: 'kf', label: 'Key features', rel: sb(P.kfR1, d.kfH), time: d.kfH, fit: [0.55, [0.55, 0.70, 0.80][q], 0.10, 0], civ: [0.30, 0.20, 0.15][q] }); // fit and civ are assumptions (research-new-components.md, 2.1)
+  if (d.essayH > 0) {
+    var e1 = P.essayErr1 * (d.essayMark === 2 ? (1 - P.essayMarkerShare / 2) : 1);
+    list.push({ key: 'essay', label: 'Short essay', rel: 1 / (1 + e1 / d.essayH), time: d.essayH, fit: [0.50, [0.45, 0.60, 0.65][q], 0.40, 0.10], civ: [0.40, 0.30, 0.25][q] });
+  }
+  if (d.vivaCases > 0) {
+    var n = d.vivaCases, e = d.vivaExam, k = d.vivaStruct ? 1 : P.vivaUnstructured;
+    var err = P.vivaPC / n + (d.vivaRotate ? (P.vivaSE * k) / (n * e) : (P.vivaSE * k) / e) + (P.vivaRES * k) / (n * e);
+    list.push({ key: 'viva', label: 'Viva', rel: 1 / (1 + err), time: n / 2, fit: d.vivaStruct ? [0.40, 0.65, 0.80, 0.20] : [0.30, 0.50, 0.80, 0.15], civ: d.vivaStruct ? 0.30 : 0.45 });
+  }
+  if (d.portEntries > 0) {
+    var m = d.portEntries, r = d.portRaters;
+    list.push({ key: 'port', label: 'Portfolio', rel: 1 / (1 + P.portA / m + P.portB / (m * r)), time: m / 3, fit: [0.10, 0.20, 0.30, 0.90], civ: 0.25 });
+  }
+  if (d.cwN > 0) { // coursework essay on the candidate's own topic: one error from the topic and one from each marker, as for the portfolio
+    var ce = d.cwN, cm = d.cwMark;
+    list.push({ key: 'cw', label: 'Coursework essay', rel: 1 / (1 + P.cwT / ce + P.cwM / (ce * cm)), time: 0, fit: [0.35, 0.40, 0.65, 0.15], civ: d.vivaCases > 0 ? P.cwCivViva : P.cwCiv }); // fit is an assumption
+  }
+  var MK = { sba: 'mSba', vsaq: 'mVsaq', kf: 'mKf', essay: 'mEssay', viva: 'mViva', port: 'mPort', cw: 'mCw' };
+  var tot = 0; list.forEach(function (c) { c.pts = d[MK[c.key]] || 5; tot += c.pts; });
+  list.forEach(function (c) { c.w = c.pts / tot; c.norm = Math.sqrt(quadForm(c.fit, c.fit) + c.civ * c.civ); });
+  return list;
+}
+
+function costOf(d, brief, ev) {
+  var P = PARAMS, N = brief.cohort, q = d.itemQuality, h = {}, m = {}, cash = {}, comp = {};
+  var kfCases = d.kfH * P.kfPerH, kfQs = kfCases * P.kfQsPerCase;
+  var sbaItems = d.sbaH * P.sbaPerH, vsaqItems = d.vsaqH * P.vsaqPerH, essayQs = d.essayH * P.essayPerH, items = sbaItems + vsaqItems + kfQs;
+  var writtenH = d.sbaH + d.vsaqH + d.kfH + d.essayH, written = writtenH > 0;
+  var perQ = function (writeH) { return writeH + (q >= 1 ? P.writerTrainH / P.qsPerWriterYear : 0); };
+  var revQ = q === 2 ? P.reviewPanel * P.reviewMin / 60 : 0; // review panel hours per new question, charged at the senior lecturer rate
+  var wSba = sbaItems * perQ(P.sbaWriteH), wVsaq = vsaqItems * perQ(P.vsaqWriteH), wEssay = essayQs * perQ(P.essayWriteH), wKf = kfCases * perQ(P.kfWriteH), wViva = d.vivaStruct ? d.vivaCases * P.vivaCaseH : 0;
+  var mKf = d.kfMenu ? 0 : N * kfQs * P.vsaqMarkSec / 3600; // write-in answers marked like VSAQs; a long menu is machine-scored (Rotthoff et al. 2006)
+  var mVsaq = N * vsaqItems * P.vsaqMarkSec / 3600, mEssay = N * d.essayH * (P.essayMarkMin / 60) * d.essayMark;
+  var exH = N * d.vivaCases * (P.vivaCaseMin / 60) * d.vivaExam, vAdmin = d.vivaCases > 0 ? N * P.vivaAdminH * d.sittings : 0;
+  var pAssess = N * d.portEntries * d.portRaters * (P.portMarkMin / 60), pMentor = d.mentor && d.portEntries > 0 ? N * P.mentorH : 0;
+  var cwN = d.cwN || 0, cwEssays = N * cwN; // supervision of the essay is teaching, so it is not charged
+  var mCw = cwEssays * d.cwMark * P.cwMarkMin / 60 + (cwN > 0 && d.cwMark === 1 ? cwEssays * P.cwModShare * P.cwMarkMin / 60 + P.cwModH : 0);
+  var fCw = d.cwDraft && cwN > 0 ? cwEssays * P.cwDraftMin / 60 : 0, sCw = cwN > 0 ? P.cwSetupH : 0;
+  function add(key, hours, rate) { h[key] = (h[key] || 0) + hours; m[key] = (m[key] || 0) + hours * rate; }
+  var newShare = d.feedback === 2 ? 1 : 1 - P.reuseShare; // released questions cannot be reused
+  wSba *= newShare; wVsaq *= newShare; wEssay *= newShare; wKf *= newShare;
+  var rSba = sbaItems * newShare * revQ, rVsaq = vsaqItems * newShare * revQ, rEssay = essayQs * newShare * revQ, rKf = kfCases * newShare * revQ;
+  var eRate = brief.acadExaminers ? P.rateAcad : P.rate; // viva examiners: clinicians, or lecturers when the brief says so (e.g. SSC presentations)
+  add('review', rSba + rVsaq + rEssay + rKf, P.rateSL);
+  add('writing', wSba + wVsaq + wEssay + wKf, P.rate); add('writing', wViva, eRate);
+  add('marking', mVsaq + mKf, P.rate); add('marking', mEssay, P.rateAcad);
+  add('examiners', exH, eRate); add('vivaAdmin', vAdmin, P.rateAdmin);
+  var mRate = brief.mentorAcad ? P.rateAcad : P.rate; // PGCert tutors are lecturers; clinical mentors are clinicians
+  add('portfolio', pAssess, P.rateAcad); add('portfolio', pMentor, mRate);
+  add('standard', d.stdset === 2 ? P.angoffJudges * (items * P.angoffMinItem / 60 + (essayQs + cwN) * P.angoffEssayMin / 60 + P.angoffTrainH) : 0, P.rate);
+  add('coursework', mCw + fCw + sCw, P.rateAcad);
+  add('feedback', d.feedback === 1 ? P.profileH : (d.feedback === 2 ? P.profileH + N * P.feedbackMin / 60 : 0), P.rateAcad);
+  var examiners = Math.ceil(exH / 6), markers = Math.ceil(mEssay / 10) + Math.ceil(pAssess / 10) + Math.ceil(mCw / 10);
+  add('fairness', d.fairness ? examiners * P.trainH : 0, eRate); add('fairness', d.fairness ? markers * P.trainH + P.biasReviewH : 0, P.rateAcad);
+  add('blueprint', d.blueprint ? P.blueprintH : 0, P.rateAcad);
+  add('analysis', written ? P.analysisH * d.sittings : 0, P.rateAcad);
+  add('board', P.boardH, P.rateAcad);
+  cash.invigilation = written ? (Math.ceil(N / P.invigRatio) * P.invigRate + P.chiefRate) * (writtenH + d.sittings * P.invigExtraH) : 0;
+  cash.printing = written ? N * P.printPerHead * d.sittings : 0;
+  cash.platform = d.portEntries > 0 ? N * P.platform : 0;
+  comp.sba = wSba * P.rate + rSba * P.rateSL; comp.vsaq = (wVsaq + mVsaq) * P.rate + rVsaq * P.rateSL; comp.essay = wEssay * P.rate + rEssay * P.rateSL + mEssay * P.rateAcad; comp.kf = (wKf + mKf) * P.rate + rKf * P.rateSL;
+  comp.viva = (wViva + exH) * eRate + vAdmin * P.rateAdmin; comp.port = pAssess * P.rateAcad + pMentor * mRate; comp.cw = (mCw + fCw + sCw) * P.rateAcad;
+  var staffH = 0, total = 0, k; for (k in h) { staffH += h[k]; total += m[k]; } for (k in cash) total += cash[k];
+  return { hours: h, money: m, cash: cash, comp: comp, staffH: staffH, total: total, perStudent: total / N };
+}
+
+/* Fixed random draws so that outputs change smoothly as the design changes. */
+var SIM = (function () {
+  var n = 4000, s = 20261113;
+  function rnd() { s |= 0; s = s + 0x6D2B79F5 | 0; var t = Math.imul(s ^ s >>> 15, 1 | s); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }
+  function gauss() { var u = 0, v = 0; while (u === 0) u = rnd(); v = rnd(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v); }
+  var c = PARAMS.constructCorr, theta = [], eps = [], zeta = [];
+  for (var i = 0; i < n; i++) {
+    var g = gauss(), t = [], e = [], z = [];
+    for (var k = 0; k < 4; k++) t.push(Math.sqrt(c) * g + Math.sqrt(1 - c) * gauss());
+    for (var j = 0; j < 5; j++) { e.push(gauss()); z.push(gauss()); }
+    theta.push(t); eps.push(e); zeta.push(z);
+  }
+  for (i = 0; i < n; i++) { eps[i].push(gauss()); zeta[i].push(gauss()); } // key-features paper
+  for (i = 0; i < n; i++) { eps[i].push(gauss()); zeta[i].push(gauss()); } // coursework essay
+  return { n: n, theta: theta, eps: eps, zeta: zeta };
+})();
+var EPS_INDEX = { sba: 0, vsaq: 1, essay: 2, viva: 3, port: 4, kf: 5, cw: 6 };
+
+function quantile(arr, p) { var a = arr.slice().sort(function (x, y) { return x - y; }); return a[Math.min(a.length - 1, Math.max(0, Math.floor(p * a.length)))]; }
+
+function simulate(d, brief, comps) {
+  var n = SIM.n, f = brief.failRate, shift = PARAMS.cutShift[d.stdset];
+  var t = brief.target, tn = Math.sqrt(quadForm(t, t)) || 1;
+  var T = new Array(n), X = new Array(n), obs = comps.map(function () { return new Array(n); });
+  for (var i = 0; i < n; i++) {
+    var th = SIM.theta[i], tt = 0; for (var k = 0; k < 4; k++) tt += t[k] * th[k]; T[i] = tt / tn;
+    var x = 0;
+    for (var j = 0; j < comps.length; j++) {
+      var c = comps[j], tr = c.civ * SIM.zeta[i][EPS_INDEX[c.key]]; for (k = 0; k < 4; k++) tr += c.fit[k] * th[k]; tr /= c.norm;
+      var o = Math.sqrt(c.rel) * tr + Math.sqrt(1 - c.rel) * SIM.eps[i][EPS_INDEX[c.key]];
+      obs[j][i] = o; x += c.w * o;
+    }
+    X[i] = x;
+  }
+  var mean = 0, sd = 0; for (i = 0; i < n; i++) mean += X[i]; mean /= n; for (i = 0; i < n; i++) sd += (X[i] - mean) * (X[i] - mean); sd = Math.sqrt(sd / n) || 1;
+  var tcut = quantile(T, f), xcut = quantile(X, f) + shift * sd;
+  var cuts = obs.map(function (o) { return quantile(o, f) + shift; });
+  var fp = 0, fn = 0, fail = 0, cls = new Array(n);
+  for (i = 0; i < n; i++) {
+    var pass;
+    if (d.rule === 1) { pass = true; for (j = 0; j < comps.length; j++) if (obs[j][i] < cuts[j]) { pass = false; break; } }
+    else pass = X[i] >= xcut;
+    var comp = T[i] >= tcut;
+    if (!pass) fail++;
+    if (pass && !comp) { fp++; cls[i] = 2; } else if (!pass && comp) { fn++; cls[i] = 3; } else cls[i] = pass ? 0 : 1;
+  }
+  return { T: T, X: X, sd: sd, mean: mean, tcut: tcut, xcut: xcut, cls: cls, fpRate: fp / n, fnRate: fn / n, failRate: fail / n };
+}
+
+function clamp(x, a, b) { return Math.max(a, Math.min(b, x)); }
+
+function evaluate(d, brief, ev) {
+  ev = ev || {};
+  var b = {}; for (var kk in brief) b[kk] = brief[kk];
+  if (ev.budgetCut) b.budget = brief.budget * 0.8;
+  if (ev.staffCut) b.staffCap = brief.staffCap * 2 / 3;
+  var comps = components(d);
+  var cost = costOf(d, b, ev);
+  var out = { comps: comps, cost: cost, brief: b, empty: comps.length === 0 };
+  var testH = d.sbaH + d.vsaqH + d.kfH + d.essayH + d.vivaCases / 2;
+  out.testH = testH; out.studentH = testH + d.portEntries * PARAMS.portStudentH + (d.cwN || 0) * PARAMS.cwStudentH; // coursework is not testing time
+  if (out.empty) { out.R = 0; out.V = 0; out.E = 0; out.A = 0; out.C = 0; out.U = 0; out.gates = [{ ok: false, text: 'The design has at least one component', fail: 'it has no components' }]; out.pass = false; out.notes = { E: [], A: [] }; return out; }
+
+  /* Reliability of the combined mark: share of the mark that is repeatable signal */
+  var a = [0, 0, 0, 0], c = [0, 0, 0, 0], noise = 0, civA = 0, civC = 0;
+  comps.forEach(function (cp) {
+    var s = cp.w * Math.sqrt(cp.rel) / cp.norm, u = cp.w / cp.norm;
+    for (var k = 0; k < 4; k++) { a[k] += s * cp.fit[k]; c[k] += u * cp.fit[k]; }
+    civA += s * s * cp.civ * cp.civ; civC += u * u * cp.civ * cp.civ; noise += cp.w * cp.w * (1 - cp.rel);
+  });
+  var sig = quadForm(a, a) + civA; out.R = sig / (sig + noise);
+
+  /* Validity: share of the programme's signal that is the competence the brief asks for */
+  var t = b.target, rho = quadForm(a, t) / (Math.sqrt((quadForm(a, a) + civA) * quadForm(t, t)) || 1);
+  var match = rho * rho;
+  var V = match * (d.blueprint ? 1 : 0.90);
+  var leak = ev.leak && d.itemQuality === 0 && (d.sbaH + d.vsaqH + d.kfH) > 0;
+  if (leak) V *= 0.80;
+  var aiHit = !!ev.ai && d.cwN > 0, vivaCheck = d.vivaCases > 0; // event "Essays written by AI"; effect sizes are assumptions
+  if (aiHit && !vivaCheck) V *= d.aiDetect ? 0.90 : 0.85; // assumption: a detector recovers about a third of the loss (Van Vlasselaer et al. 2026; Karr et al. 2026)
+  out.match = match; out.V = clamp(V, 0, 1); out.leak = leak;
+
+  /* Educational impact */
+  var En = [], E = 0.20; En.push(['Starting point', 0.20]);
+  var gen = 0; comps.forEach(function (cp) { if (cp.key !== 'sba') gen += cp.w; });
+  var x = 0.15 * gen; E += x; En.push(['Share of marks from formats where candidates generate the answer', x]);
+  var sat = 0; comps.forEach(function (cp) { if (cp.key !== 'port') sat += cp.w; });
+  x = [0, 0.08, 0.15][[1, 2, 4].indexOf(d.sittings)] * sat; E += x; if (x) En.push(['Exams spread over ' + d.sittings + ' sittings', x]);
+  var fbScale = b.stakes === 'high' ? 0.6 : 1;
+  x = [0, 0.10, 0.20][d.feedback] * fbScale * Math.min(1, out.R / 0.7); E += x; if (x) En.push([d.feedback === 2 ? 'Individual written feedback' : 'Domain profile feedback', x]);
+  if (d.portEntries > 0) { x = d.mentor ? 0.15 : 0; E += x; En.push([d.mentor ? 'Portfolio with mentor meetings' : 'Portfolio without a mentor', x]); }
+  if (d.cwN > 0) { E += 0.05; En.push(['Researching and writing about a chosen topic', 0.05]); } // estimate
+  if (d.cwN > 0 && d.cwDraft) { x = 0.08 * fbScale; E += x; En.push(['Feedback on a draft before the final essay', x]); } // assumption (Wisniewski et al. 2020; Ghazal et al. 2018)
+  if (d.vivaCases > 0) { E += 0.05; En.push(['Preparing to explain answers aloud', 0.05]); }
+  if (d.blueprint === 2 || d.blueprint === true) { E += 0.05; En.push(['Blueprint shared with candidates', 0.05]); }
+  if (d.itemQuality === 0 && (d.sbaH + d.vsaqH + d.kfH + d.essayH) > 0) { E -= 0.12; En.push(['Unreviewed questions reward recall', -0.12]); }
+  out.E = clamp(E, 0.05, 0.95);
+
+  /* Acceptability */
+  var An = [], A = 0.55; An.push(['Starting point', 0.55]);
+  if (testH > b.timeCap) { x = -Math.min(0.30, 0.08 * (testH - b.timeCap)); A += x; An.push(['Candidates: ' + testH.toFixed(1) + ' h of testing exceeds the ' + b.timeCap + ' h limit', x]); }
+  var cwHours = d.portEntries * PARAMS.portStudentH + (d.cwN || 0) * PARAMS.cwStudentH, cwCap = 4 * PARAMS.portStudentH; // same as the old portfolio rule when there is no essay
+  if (cwHours > cwCap + 1e-9) { x = -0.02 * (cwHours - cwCap) / PARAMS.portStudentH; A += x; An.push(['Candidates: ' + Math.round(cwHours) + ' hours of coursework writing', x]); }
+  x = [0, 0.05, 0.10][d.feedback]; A += x; if (x) An.push(['Candidates: feedback', x]);
+  var ratio = cost.staffH / b.staffCap;
+  if (Math.round(cost.staffH) > Math.round(b.staffCap)) { x = -Math.max(0.01, Math.min(0.30, 0.25 * (ratio - 1))); A += x; An.push(['Faculty: ' + Math.round(cost.staffH) + ' staff hours against ' + Math.round(b.staffCap) + ' available', x]); }
+  else { A += 0.05; An.push(['Faculty: workload fits the hours available', 0.05]); }
+  x = [-0.12, 0.03, 0.08][d.stdset]; A += x; An.push(['External examiner: ' + ['fixed 50% pass mark', 'Cohen standard setting', 'Angoff standard setting'][d.stdset], x]);
+  var R2 = Math.round(out.R * 100) / 100; out.R2 = R2;
+  if (b.relGate && R2 < b.relGate) { A -= 0.15; An.push(['External examiner: reliability below ' + b.relGate.toFixed(2), -0.15]); }
+  if (d.blueprint) { A += 0.05; An.push(['External examiner: blueprint', 0.05]); }
+  if (d.fairness) { A += 0.08; An.push(['All: examiner training and bias review', 0.08]); }
+  if (d.vivaCases > 0 && !d.vivaStruct) { A -= 0.12; An.push(['All: unstructured viva', -0.12]); }
+  if (d.vivaCases > 0 && d.vivaStruct) { A += 0.03; An.push(['Candidates: rate orals as useful and authentic', 0.03]); }
+  if (d.kfH > 0) { A += 0.03; An.push(['Candidates: key-features cases reflect clinical practice', 0.03]); } // one student survey (Bronander et al. 2015); weak evidence
+  if (d.essayH > 0 && d.essayMark === 2) { A += 0.03; An.push(['Candidates: essays double marked', 0.03]); }
+  if (d.cwN > 0) { x = d.cwMark === 2 ? 0.03 : -0.03; A += x; An.push([d.cwMark === 2 ? 'Candidates: coursework essays double marked' : 'External examiner: each essay marked once, often by the student\'s own supervisor', x]); } // assumption; supervisors mark higher (McKinstry et al. 2004)
+  if (d.cwN > 0 && d.cwDraft) { A += 0.03; An.push(['Candidates: feedback on a draft', 0.03]); } // assumption
+  var judged = d.vivaCases > 0 || d.essayH > 0 || d.portEntries > 0 || d.cwN > 0;
+  if (ev.gap && judged && !d.fairness) { A -= 0.12; An.push(['Attainment gap report with no fairness measures', -0.12]); }
+  if (leak) { A -= 0.10; An.push(['Leaked paper reused', -0.10]); }
+  if (aiHit) { x = vivaCheck ? -0.03 : -0.10; A += x; An.push([vivaCheck ? 'Essays written by AI: the viva checks who wrote the work' : 'Essays written by AI: nothing checks who wrote the work', x]); }
+  if (d.cwN > 0 && d.aiDetect) { A -= 0.05; An.push(['AI detector: flags need investigating and cannot tell allowed AI editing from AI-written work', -0.05]); } // assumption (Karr et al. 2026; Jisc 2025)
+  out.A = clamp(A, 0.05, 0.95);
+
+  /* Cost-efficiency */
+  var xr = cost.total / b.budget; out.costRatio = xr;
+  out.C = xr <= 1 ? 1 - 0.6 * xr : 0.4 * Math.exp(-4 * (xr - 1));
+
+  /* Decisions */
+  if (!ev.noSim) {
+  var sim = simulate(d, b, comps); out.sim = sim;
+  out.falsePass = Math.round(sim.fpRate * b.cohort); out.falseFail = Math.round(sim.fnRate * b.cohort); out.fails = Math.round(sim.failRate * b.cohort);
+  var sem = Math.sqrt(1 - out.R), near = 0;
+  if (d.rule === 0) { for (var i = 0; i < sim.X.length; i++) if (Math.abs(sim.X[i] - sim.xcut) / sim.sd < sem) near++; out.nearCut = Math.round(near / sim.X.length * b.cohort); } else out.nearCut = null;
+  }
+
+  /* Utility: weighted product */
+  var w = b.weights, ws = w.R + w.V + w.E + w.A + w.C;
+  if (!ws) { w = { R: 1, V: 1, E: 1, A: 1, C: 1 }; ws = 5; }
+  out.U = 100 * Math.pow(out.R, w.R / ws) * Math.pow(out.V, w.V / ws) * Math.pow(out.E, w.E / ws) * Math.pow(out.A, w.A / ws) * Math.pow(Math.max(out.C, 0.001), w.C / ws);
+  var parts = [['R', out.R], ['V', out.V], ['E', out.E], ['A', out.A], ['C', out.C]];
+  var wt = b.weights, wsum = (wt.R + wt.V + wt.E + wt.A + wt.C) || 5;
+  parts.sort(function (p, q) { return (wsum ? wt[q[0]] : 1) * Math.log(1 / Math.max(q[1], 0.001)) - (wsum ? wt[p[0]] : 1) * Math.log(1 / Math.max(p[1], 0.001)); }); out.weakest = parts[0][0];
+
+  var gates = [];
+  var gbp = function (x) { return '£' + Math.round(x).toLocaleString('en-GB'); }, hrs = function (x) { return x + (x === 1 ? ' hour' : ' hours'); };
+  gates.push({ ok: cost.total <= b.budget, text: 'Cost within the budget of ' + gbp(b.budget), fail: 'it costs ' + gbp(cost.total) + ' against a budget of ' + gbp(b.budget) });
+  if (b.relGate) gates.push({ ok: R2 >= b.relGate, text: 'Reliability of at least ' + b.relGate.toFixed(2), fail: 'its reliability of ' + R2.toFixed(2) + ' is below the minimum of ' + b.relGate.toFixed(2) });
+  gates.push({ ok: testH <= b.timeCap + 1e-9, text: 'No more than ' + hrs(b.timeCap) + ' of testing per candidate', fail: 'it has ' + hrs(testH) + ' of testing per candidate against a limit of ' + hrs(b.timeCap) });
+  out.gates = gates;
+  out.pass = gates.every(function (g) { return g.ok; });
+  out.notes = { E: En, A: An };
+  return out;
+}
+
+var SPACE = {
+  sbaH: [0, .5, 1, 1.5, 2, 2.5, 3, 3.5, 4], vsaqH: [0, .5, 1, 1.5, 2, 2.5, 3, 3.5, 4], kfH: [0, .5, 1, 1.5, 2, 2.5, 3, 3.5, 4], kfMenu: [false, true], cwN: [0, 1, 2, 3], cwMark: [1, 2], cwDraft: [false, true], essayH: [0, .5, 1, 1.5, 2, 2.5, 3, 3.5, 4], essayMark: [1, 2],
+  vivaCases: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], vivaExam: [1, 2, 3], vivaRotate: [false, true], vivaStruct: [false, true],
+  portEntries: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], portRaters: [1, 2, 3], mentor: [false, true],
+  itemQuality: [0, 1, 2], blueprint: [0, 1, 2], stdset: [0, 1, 2], rule: [0, 1], sittings: [1, 2, 4], feedback: [0, 1, 2], fairness: [false, true],
+  mSba: [1, 3, 5, 7, 10], mVsaq: [1, 3, 5, 7, 10], mKf: [1, 3, 5, 7, 10], mEssay: [1, 3, 5, 7, 10], mViva: [1, 3, 5, 7, 10], mPort: [1, 3, 5, 7, 10], mCw: [1, 3, 5, 7, 10]
+};
+function lcg(seed) { var s = seed >>> 0; return function () { s = (Math.imul(s, 1664525) + 1013904223) >>> 0; return s / 4294967296; }; }
+function randomDesign(rnd) { var d = {}; for (var k in SPACE) d[k] = SPACE[k][Math.floor(rnd() * SPACE[k].length)]; return d; }
+function quickScore(d, brief, ev, ok) {
+  var e = {}; for (var k in (ev || {})) e[k] = ev[k]; e.noSim = true;
+  if (brief.ownTopics) d = Object.assign({}, d, { sbaH: 0, vsaqH: 0, kfH: 0, essayH: 0 }); // no common papers when every candidate studies their own topic
+  var o = evaluate(d, brief, e), b = o.brief, viol = 0;
+  if (o.empty) return -5000;
+  viol += Math.max(0, o.cost.total / b.budget - 1) + Math.max(0, (b.relGate || 0) - o.R) + Math.max(0, o.testH / b.timeCap - 1);
+  var s = o.U - (o.pass ? 0 : 1000 + 2000 * viol);
+  if (ok && !ok(d, o)) s -= 3000;
+  return s;
+}
+/* Best utility found by hill climbing from random starts. Used to scale the verdict bands. */
+function benchmark(brief, ev, starts, ok) {
+  var rnd = lcg(99), best = -1e9, bestD = null;
+  for (var i = 0; i < (starts || 24); i++) {
+    var d = randomDesign(rnd), s = quickScore(d, brief, ev, ok), improved = true;
+    while (improved) {
+      improved = false;
+      for (var k in SPACE) for (var j = 0; j < SPACE[k].length; j++) {
+        var v = SPACE[k][j]; if (v === d[k]) continue;
+        var t = {}; for (var kk in d) t[kk] = d[kk]; t[k] = v;
+        var st = quickScore(t, brief, ev, ok); if (st > s + 1e-9) { s = st; d = t; improved = true; }
+      }
+    }
+    if (s > best) { best = s; bestD = d; }
+  }
+  return { U: best, design: bestD };
+}
+function verdictOf(out, bestU) {
+  if (!out.pass) return 'Referred back';
+  var r = out.U / bestU;
+  return r >= 0.95 ? 'Commended' : r >= 0.88 ? 'Approved' : r >= 0.78 ? 'Approved with conditions' : 'Revise and resubmit';
+}
+
+
+this._m = { PARAMS: PARAMS, BRIEFS: BRIEFS, DEFAULT_DESIGN: Object.assign({}, DEFAULT_DESIGN, { sbaH: 0 }), CONSTRUCTS: CONSTRUCTS, evaluate: evaluate, benchmark: benchmark, verdictOf: verdictOf };
+return this._m;
+}
+store() {
+if (!this._s) {
+var M = this.getModel();
+this._s = { brief: 'A', designs: { A: Object.assign({}, M.DEFAULT_DESIGN) }, pinned: {}, tries: {}, events: {}, eventDone: {}, preVerdict: {}, bench: {}, lastKey: null, lastDelta: null, screen: 'home', submitted: {},
+  sandbox: this.contextFrom(M.BRIEFS.D), sbOpen: true, sbEvents: false };
+var r = this.parseHash();
+if (r.brief) { this.openBrief(r.brief); this._s.screen = 'design'; }
+}
+return this._s;
+}
+/* Sandbox: the context is stored as editable numbers. Construct emphasis is kept in points (0 to 10 each); the model only uses its proportions. */
+contextFrom(b) {
+return { cohort: b.cohort, budget: b.budget, staffCap: b.staffCap, timeCap: b.timeCap, relGate: b.relGate, failRate: b.failRate, stakes: b.stakes, mentorAcad: !!b.mentorAcad, acadExaminers: !!b.acadExaminers, ownTopics: !!b.ownTopics,
+  target: b.target.map(function (x) { return Math.round(x * 20); }), weights: Object.assign({}, b.weights) };
+}
+briefOf(id) {
+var M = this.getModel();
+if (id !== 'D') return M.BRIEFS[id];
+var x = this.store().sandbox;
+return Object.assign({}, M.BRIEFS.D, x, { target: x.target.slice(), weights: Object.assign({}, x.weights) });
+}
+/* Navigation. The address bar carries the screen (#finals, #pgcert/board, #about), so the browser's back button works. */
+slugs() { return { A: 'finals', B: 'ssc', C: 'pgcert', D: 'sandbox' }; }
+parseHash() {
+var h = String(window.location.hash || '').replace(/^#\/?/, '').toLowerCase(), parts = h.split('/'), S = this.slugs();
+for (var k in S) if (S[k] === parts[0]) return { brief: k, board: parts[1] === 'board', target: null };
+if (parts[0] === 'scenarios') parts[0] = 'briefs';
+return { brief: null, board: false, target: ['briefs', 'about', 'credits', 'references'].indexOf(parts[0]) >= 0 ? parts[0] : null };
+}
+openBrief(k) {
+var s = this._s, M = this.getModel();
+if (!s.designs[k]) s.designs[k] = Object.assign({}, s.designs[s.brief] || M.DEFAULT_DESIGN);
+if (s.brief !== k) { s.brief = k; s.lastKey = null; s.lastDelta = null; }
+this.dropPapers(k);
+}
+/* A brief in which every candidate studies their own topic has no common question papers. */
+dropPapers(k) {
+var s = this._s, d = s.designs[k];
+if (d && this.briefOf(k).ownTopics) { d.sbaH = 0; d.vsaqH = 0; d.kfH = 0; d.essayH = 0; }
+}
+applyHash(toTop, initial) {
+var s = this.store(), r = this.parseHash(), before = s.screen + '|' + s.brief;
+if (r.brief) { this.openBrief(r.brief); s.screen = r.board && s.submitted[r.brief] ? 'board' : 'design'; }
+else s.screen = 'home';
+var changed = before !== s.screen + '|' + s.brief, target = r.target;
+this.setTitle();
+this.forceUpdate();
+var calm = !!initial; try { calm = calm || window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) { }
+setTimeout(function () {
+  var el = target ? document.getElementById(target) : null;
+  if (el) el.scrollIntoView({ behavior: changed || calm ? 'auto' : 'smooth', block: 'start' });
+  else if (changed || toTop) window.scrollTo({ top: 0, behavior: changed || calm ? 'auto' : 'smooth' });
+}, 30);
+}
+go(h) {
+if (String(window.location.hash || '').replace(/^#/, '') === h) this.applyHash();
+else window.location.hash = h;
+}
+goHome() {
+if (!window.location.hash) { this.applyHash(true); return; }
+try { window.history.pushState(null, '', window.location.pathname + window.location.search); this.applyHash(true); }
+catch (e) { window.location.hash = ''; }
+}
+setTitle() {
+var s = this._s, N = { A: 'Finals written paper', B: 'First-year SSC', C: 'PGCert module', D: 'Sandbox' };
+try { document.title = s.screen === 'home' ? 'The Exam Board' : N[s.brief] + (s.screen === 'board' ? ': the board\'s verdict' : '') + ' · The Exam Board'; } catch (e) { }
+}
+componentDidMount() {
+var self = this;
+this._onHash = function () { self.applyHash(); };
+window.addEventListener('hashchange', this._onHash);
+this.applyHash(false, true);
+}
+componentWillUnmount() { if (this._onHash) window.removeEventListener('hashchange', this._onHash); }
+sbSet(fn) {
+var s = this.store(), before = this.utilityNow();
+fn(s.sandbox);
+this.dropPapers('D');
+this.logTry(before, null);
+}
+ev(id, noSim) {
+var s = this.store(), o = {};
+if (s.events[id]) o[s.events[id]] = true;
+if (noSim) o.noSim = true;
+return o;
+}
+utilityNow() {
+var s = this.store(), M = this.getModel();
+return Math.round(M.evaluate(s.designs[s.brief], this.briefOf(s.brief), this.ev(s.brief, true)).U);
+}
+logTry(before, key) {
+var s = this.store(), after = this.utilityNow();
+var t = s.tries[s.brief] || (s.tries[s.brief] = [before]);
+t.push(after); if (t.length > 8) t.shift();
+s.lastKey = key; s.lastDelta = after - before;
+this.forceUpdate();
+}
+change(key, value) {
+var s = this.store(), before = this.utilityNow();
+s.designs[s.brief][key] = value;
+this.logTry(before, key);
+}
+bench(id) {
+var s = this.store(), M = this.getModel(), key = id + '|' + (s.events[id] || '') + (id === 'D' ? '|' + JSON.stringify(s.sandbox) : '');
+if (!s.bench[key]) s.bench[key] = M.benchmark(this.briefOf(id), this.ev(id, true), 96).U; // 96 random starts keep the best-found utility steady to within about half a point now that the search covers the key-features paper and the coursework essay
+return s.bench[key];
+}
+/* The four constructs, in the order of CONSTRUCTS. Which components measure each one follows the fit profiles in components(). */
+abilityText() {
+return [
+['Applied knowledge', 'Using medical knowledge to answer a question about a patient or a situation. Question papers measure applied knowledge more than the other components do.'],
+['Reasoning without cues', 'Working out an answer without a list of options to choose from. Key-features papers measure reasoning without cues most and single best answer papers measure it least. Better-written questions measure it more than poorly written ones.'],
+['Explaining and defending', 'Setting out a line of reasoning and answering challenges to it. Vivas measure explaining and defending most, followed by coursework essays, and timed essays measure some of it.'],
+['Reflection over time', 'Looking back on your own work over weeks or months and learning from it. Portfolios measure reflection over time more than the other components do.']
+];
+}
+/* Home page: brief cards, navigation, about, credits and references. */
+siteVals() {
+var self = this, s = this.store(), M = this.getModel();
+var money = function (x) { return '£' + Math.round(x).toLocaleString('en-GB'); };
+var SC = {
+A: { title: 'Finals written paper', line: 'This year, 300 final-year students sit the written paper, and those who pass can graduate. The board must be able to defend each pass and each fail at an appeal.' },
+B: { title: 'First-year SSC', line: 'In this student-selected component, 250 first-year students each study a medical topic of their choice. Because the topics differ, a common question paper cannot test what they have learned.' },
+C: { title: 'PGCert module', line: 'Forty clinicians who teach are taking a module on a PGCert in Medical Education. The assessment must show that each of them can apply educational theory to their own teaching and reflect on how their teaching went.' },
+D: { title: 'Sandbox', line: 'Describe an assessment you are responsible for. You set the number of candidates, the limits and what the assessment must measure.', cls: 'scard-sb' }
+};
+function progress(k) {
+var t = s.tries[k];
+if (!s.designs[k] || !((t && t.length > 1) || s.submitted[k])) return '';
+return 'Continue (utility ' + Math.round(M.evaluate(s.designs[k], self.briefOf(k), self.ev(k, true)).U) + ')';
+}
+var go = function (h) { return function () { self.go(h); }; };
+return {
+nav: [['Home', function () { self.goHome(); }], ['Briefs', go('briefs')], ['About', go('about')], ['References', go('references')]].map(function (n) { return { label: n[0], pick: n[1] }; }),
+goHome: function () { self.goHome(); }, goTop: function () { self.goHome(); }, goScenarios: go('briefs'), goAbout: go('about'),
+abilities: this.abilityText().map(function (a) { return { name: a[0], text: a[1] }; }),
+fan: [['SBA paper', 'Single best answer questions'], ['VSAQ paper', 'Very short answer questions'], ['Essay paper', 'Four short essays per hour'], ['Viva', '30 minutes per case'], ['Portfolio', 'Written entries over the course']].map(function (c, i) {
+return { short: c[0], long: c[1], x: ((i - 2) * 58) + 'px', r: ((i - 2) * 7) + 'deg', y: ((i - 2) * (i - 2) * 7 - 20) + 'px', z: i, pips: [108, 72, 54, 90, 126][i] + 'px' };
+}),
+scenarios: ['A', 'B', 'C', 'D'].map(function (k) {
+var c = SC[k];
+return { title: c.title, line: c.line, cls: c.cls || '', action: progress(k) || 'Start', pick: go(self.slugs()[k]) };
+}),
+bands: [['Commended', 'utility at least 95% of the best design found'], ['Approved', 'at least 88%'], ['Approved with conditions', 'at least 78%'], ['Revise and resubmit', 'below 78%'], ['Referred back', 'the design does not meet every requirement of the brief']].map(function (b) { return { name: b[0], rule: b[1] }; }),
+criteria: [
+['Reliability', 'How closely candidates\' marks would repeat if they sat an equivalent assessment with different questions, cases or examiners. It depends on the reliability of each component and on its share of the marks.'],
+['Validity', 'The share of the real differences between candidates\' marks that comes from the constructs, or qualities, that the brief asks the assessment to measure, in the proportions that the brief sets.'],
+['Educational impact', 'How the assessment is likely to change what candidates study and how they study it, for example through feedback, sittings spread across the year, and formats in which candidates produce the answer themselves.'],
+['Acceptability', 'Whether candidates, faculty and the external examiner would accept the design, given its testing time, staff workload, pass mark method and fairness measures.'],
+['Cost-efficiency', 'What the design costs in staff time and money, compared with the budget. The score falls steeply once the cost goes over the budget.']
+].map(function (c) { return { name: c[0], text: c[1] }; }),
+credits: [
+['Game design and assessment model', 'Matt Bowker'],
+['Development', 'Made with the assistance of Claude Opus 5.5, an AI model by Anthropic.'],
+['Assessment framework', 'The utility model of van der Vleuten (1996).'],
+['Evidence', 'The studies and sources listed under References.'],
+['Typeface', 'Rubik, by The Rubik Project Authors, under the SIL Open Font License 1.1.'],
+['Software', 'React and ReactDOM 18.3.1, by Meta Platforms, Inc. and affiliates, under the MIT License.']
+].map(function (c) { return { role: c[0], text: c[1] }; }),
+refsNote: 'These are the sources cited in the game\'s evidence notes, setting definitions and tooltips, and the sources behind the cost figures. Journal details and DOIs come from PubMed where available, and each source was checked in November 2026 against the figures it supports.',
+refGroups: this.refData(),
+estimates: ['Time to write an essay question (2 hours)', 'Time to write a key-features case (2 hours)', 'Student writing time for a coursework essay (16 hours)', 'Time to read and comment on a draft essay (20 minutes)', 'Time to write the coursework essay instructions and marking rubric (3 hours) and to hold a moderation meeting (2 hours)', 'The error that comes from the topic of a coursework essay, which the model sets to the same size as for a portfolio entry', 'The 0.05 educational impact gain for writing about a chosen topic', 'The share of the error in a timed essay mark that comes from the marker (half)', 'The effects of the event in which some essays were written by AI. Without a viva, validity is 15% lower, or 10% lower if the design uses an AI detector. Acceptability is 0.10 lower, or 0.03 lower if the design has a viva.', 'The acceptability cost of an AI detector (0.05)', 'Angoff judging time for essay questions (5 minutes per question per judge)', 'Bias review (8 hours) and feedback profile preparation (3 hours)', 'Invigilator setup time (1 hour per sitting)', 'Time per written feedback comment (5 minutes)', 'Reliability of one hour of essays with one marker (0.40), and VSAQ reliability assumed equal to SBA per hour', 'The 10% validity reduction without a blueprint, and the 0.05 educational impact gain from sharing it', 'How much each component measures each of the four constructs, and the correlation of 0.3 between the constructs']
+};
+}
+/* Reference list, from exam-board-references.md. Each entry: a = authors and year, b = title and any text before the italic part, j = journal or book (italic), d = details after it, k = short citation, u = what the game uses it for. */
+refData() {
+var R = function (a, b, j, d, k, u, links) { return { a: a, b: b, j: j, d: d, u: 'Used for: ' + u, links: (links || []).map(function (l) { return { label: l[0], href: l[1], aria: l[0] + ', ' + k }; }) }; };
+var doi = function (x) { return ['DOI', 'https://doi.org/' + x]; };
+return [
+{ title: 'The utility model', refs: [
+R('van der Vleuten CPM (1996).', 'The assessment of professional competence: developments, research and practical implications. ', 'Advances in Health Sciences Education', ' 1:41–67.', 'van der Vleuten 1996', 'the utility model that the game uses to combine the five scores.', [doi('10.1007/BF00596229')])
+] },
+{ title: 'Reliability and validity', refs: [
+R('van der Vleuten CPM, Schuwirth LWT (2005).', 'Assessing professional competence: from methods to programmes. ', 'Medical Education', ' 39:309–317.', 'van der Vleuten & Schuwirth 2005', 'a reliability of 0.62 for one hour of multiple-choice testing and 0.32 for one hour of key-features cases, reliabilities of 0.69 and 0.82 for 2 and 4 hours of oral examination, and 0.80 as the usual minimum for high-stakes decisions.', [doi('10.1111/j.1365-2929.2005.02094.x'), ['Free PDF', 'https://www.bradfordvts.co.uk/wp-content/onlineresources/teaching-learning/assessment-competence-capability/assessing%20professional%20competence.pdf']]),
+R('Schuwirth LWT, van der Vleuten CPM (2019).', 'How to design a useful test: the principles of assessment. In Swanwick T, Forrest K, O\'Brien BC (eds), ', 'Understanding Medical Education: Evidence, Theory, and Practice', ', 3rd edn. Wiley.', 'Schuwirth & van der Vleuten 2019', 'the definition of validity in the validity tooltip.')
+] },
+{ title: 'Vivas', refs: [
+R('Swanson DB (1987).', 'A measurement framework for performance-based tests. In Hart IR, Harden RM (eds), ', 'Further Developments in Assessing Clinical Competence', ', pp. 13–45. Can-Heal. Cited in Davis & Karunathilake (2005).', 'Swanson 1987', 'reliability of 0.45 when one examiner assessed all four cases, 0.69 with a different examiner for each of four cases, and 0.82 with a different examiner for each of eight cases. The viva model is fitted to these three figures.'),
+R('Davis MH, Karunathilake I (2005).', 'The place of the oral examination in today\'s assessment systems. ', 'Medical Teacher', ' 27:294–297.', 'Davis & Karunathilake 2005', 'the figures from Swanson (1987) and from Swing & Bashook (2000).', [doi('10.1080/01421590500126437'), ['Free PDF', 'https://www.res.cmb.ac.lk/medicine/indika-karunathilake/wp-content/uploads/sites/91/2019/12/Oral-examination.pdf']]),
+R('Swing S, Bashook PG (2000).', 'Cited in Davis & Karunathilake (2005).', '', '', 'Swing & Bashook 2000', 'published reliabilities of 0.65 to 0.88 for structured oral examinations.'),
+R('Jacobsohn E, Klock PA, Avidan M (2006).', 'Poor inter-rater reliability on mock anesthesia oral examinations. ', 'Canadian Journal of Anaesthesia', ' 53:659–668.', 'Jacobsohn et al. 2006', 'examiner agreement of 0.24 when examiners mark independently.', [doi('10.1007/BF03021624')])
+] },
+{ title: 'Timed essay papers', refs: [
+R('Anatol T, Hariharan S (2009).', 'Reliability of the evaluation of students\' answers to essay-type questions. ', 'West Indian Medical Journal', ' 58:13–16.', 'Anatol & Hariharan 2009', 'weak agreement between two essay markers (kappa 0.39).', [['PubMed', 'https://pubmed.ncbi.nlm.nih.gov/19565993/'], ['Free PDF', 'https://www.mona.uwi.edu/fms/wimj/system/files/article_pdfs/anatol_reliability_of_the_evaluation_of_students_answers_to_essay-type_questions.pdf']])
+] },
+{ title: 'Coursework essays', refs: [
+R('McKinstry BH, Cameron HS, Elton RA, Riley SC (2004).', 'Leniency and halo effects in marking undergraduate short research projects. ', 'BMC Medical Education', ' 4:28.', 'McKinstry et al. 2004', 'a correlation of 0.28 between supervisors and second markers of the same project reports, and supervisors marking about half a grade higher.', [doi('10.1186/1472-6920-4-28')]),
+R('Yeo SW, Signorelli C, Vo K, Smith G (2024).', 'A retrospective cohort analysis comparing analytic and holistic marking rubrics in medical research education. ', 'Journal of Medical Education and Curricular Development', ' 11:23821205241277337.', 'Yeo et al. 2024', 'correlations of 0.36 (analytic rubric) and 0.24 (holistic rubric) between two markers of the same project manuscripts.', [doi('10.1177/23821205241277337')]),
+R('Smith B, Sinclair H, Simpson J, van Teijlingen E, Bond C, Taylor R (2002).', 'What is the role of double-marking? Evidence from an undergraduate medical course. ', 'Education for Primary Care', ' 13(4):497–503.', 'Smith et al. 2002', 'weak agreement between two markers of the same third-year community course essays (kappa 0.12).', [['Record', 'https://discovery.dundee.ac.uk/en/publications/what-is-the-role-of-double-marking-evidence-from-an-undergraduate/']]),,
+R('University of Southampton (2025).', 'Double-blind marking and moderation policy. Last updated June 2025.', '', '', 'University of Southampton marking policy', 'a moderation sample of all fails plus 5% of the other work when an essay is marked once.', [['PDF', 'https://www.southampton.ac.uk/~assets/doc/quality-handbook/Double-Blind%20Marking%20and%20Moderation%20Policy.pdf']]),
+R('Wisniewski B, Zierer K, Hattie J (2020).', 'The power of feedback revisited: a meta-analysis of educational feedback research. ', 'Frontiers in Psychology', ' 10:3087.', 'Wisniewski et al. 2020', 'an overall effect of feedback on learning of about half a standard deviation (d = 0.48, 435 studies).', [doi('10.3389/fpsyg.2019.03087')]),
+R('Ghazal L, Aijaz A, Parpio Y, Tharani A, Gul RB (2018).', 'Feed-forward: paving ways for students\' subsequent learning. ', 'Nurse Education Today', ' 71:116–120.', 'Ghazal et al. 2018', 'higher marks when nursing students had comments on a draft rather than on an outline.', [doi('10.1016/j.nedt.2018.09.010')])
+] },
+{ title: 'Essays written by AI and AI detectors', refs: [
+R('Scarfe P, Watcham K, Clarke A, Roesch E (2024).', 'A real-world test of artificial intelligence infiltration of a university examinations system: a "Turing Test" case study. ', 'PLoS ONE', ' 19(6):e0305354.', 'Scarfe et al. 2024', 'the risk in coursework written without supervision, and the "Some essays were written by AI" event. Markers missed 94% of the AI-written submissions. The model treats unsupervised writing as a source of construct-irrelevant variance, meaning differences between candidates\' marks that come from something other than the constructs being assessed. The event\'s effects are assumptions.', [doi('10.1371/journal.pone.0305354')]),
+R('Weber-Wulff D, Anohina-Naumeca A, Bjelobaba S, Foltýnek T, Guerrero-Dib J, Popoola O, Šigut P, Waddington L (2023).', 'Testing of detection tools for AI-generated text. ', 'International Journal for Educational Integrity', ' 19:26.', 'Weber-Wulff et al. 2023', 'how AI detectors performed in 2023, before the newer studies below. In this test, 14 detectors were neither accurate nor reliable, leaned towards calling text human-written, and did worse when the text was disguised.', [doi('10.1007/s40979-023-00146-z')]),
+R('Liang W, Yuksekgonul M, Mao Y, Wu E, Zou J (2023).', 'GPT detectors are biased against non-native English writers. ', 'Patterns', ' 4(7):100779.', 'Liang et al. 2023', 'how AI detectors performed in 2023. Seven detectors labelled on average 61% of essays by non-native English speakers as written by AI, while classifying US school students\' essays accurately.', [doi('10.1016/j.patter.2023.100779')]),
+R('Van Vlasselaer M, Van Droogenbroeck F, Spruyt B (2026).', 'Who wrote this? Evaluating the reliability of AI detection tools in higher education. ', 'International Journal for Educational Integrity', ' 22:16.', 'Van Vlasselaer et al. 2026', 'the finding that four detectors correctly classed as human all 40 master\'s theses by non-native English-speaking students, while on 40 long papers written entirely by AI, Pangram gave 39 a score of 60% or more and Turnitin gave all 40 a score of 20% or less.', [doi('10.1007/s40979-026-00226-w')]),
+R('Isley C, Gaebler JD, Goel S (2026).', 'AI-written admissions essays are widespread but penalized. ', 'arXiv preprint', ' 2609.22549.', 'Isley et al. 2026', 'the finding that, on admissions essays written before ChatGPT existed, two detectors gave their most confident AI label to at most 0.3% of essays, and flagged international applicants no more often than others. One detector company gave the authors free access to its detector.', [['arXiv', 'https://arxiv.org/abs/2609.22549']]),
+R('Karr JA Jr, Khvatskii G, Hua T, Chawla NV (2026).', 'Why AI detection fails for academic integrity. ', 'arXiv preprint', ' 2608.11256 (accepted to the ACM AI Leadership Summit).', 'Karr et al. 2026', 'the finding that after a humaniser (software sold to make AI writing look human) rewrote AI-written abstracts, Pangram and GPTZero missed more than 96% of them, and that Pangram flagged 64 to 80% of abstracts that had only been lightly edited with AI. One detector company let the authors use its detector.', [['arXiv', 'https://arxiv.org/abs/2608.11256']]),
+R('Webb M, Jisc National Centre for AI (2025).', 'AI detection and assessment: an update for 2025. Blog post, 24 June 2025.', '', '', 'Jisc 2025', 'UK sector guidance that decisions should never be based solely on AI detection.', [['Link', 'https://nationalcentreforai.jiscinvolve.org/wp/2025/06/24/ai-detection-assessment-2025/']])
+] },
+{ title: 'Written questions', refs: [
+R('Sam AH, Westacott R, Gurnell M, Wilson R, Meeran K, Brown C (2019).', 'Comparing single-best-answer and very-short-answer questions for the assessment of applied medical knowledge in 20 UK medical schools: cross-sectional study. ', 'BMJ Open', ' 9:e032550.', 'Sam et al. 2019', 'how very short answer questions work, the gap in marks between the two formats, and the time to mark very short answer questions (1.25 seconds of clinician time per student per question).', [doi('10.1136/bmjopen-2019-032550')]),
+R('Sam AH, Field SM, Collares CF, van der Vleuten CPM, Wass VJ, Melville C, Harris J, Meeran K (2018).', 'Very-short-answer questions: reliability, discrimination and acceptability. ', 'Medical Education', ' 52:447–455.', 'Sam et al. 2018', 'the time that staff needed to review the computer-marked answers to very short answer questions, about 1 minute 36 seconds per question for the whole year group. The model does not add this time to the cost.', [doi('10.1111/medu.13504')]),
+R('Tarrant M, Knierim A, Hayes SK, Ware J (2006).', 'The frequency of item writing flaws in multiple-choice questions used in high stakes nursing assessments. ', 'Nurse Education in Practice', ' 6:354–363.', 'Tarrant et al. 2006', 'the finding that 46% of 2,770 questions had a writing flaw and that over 90% tested low cognitive levels.', [doi('10.1016/j.nepr.2006.07.002')]),
+R('Meazure Learning (formerly Yardstick).', 'How long does it take to create a multiple choice question? Blog article.', '', '', 'Meazure Learning', 'the time to write a first draft of one question (52 minutes).', [['Link', 'https://www.meazurelearning.com/?p=8266']]),
+R('Joncas SX, St-Onge C, Bourque S, Farand P (2018).', 'Re-using questions in classroom-based assessment: an exploratory study at the undergraduate medical education level. ', 'Perspectives on Medical Education', ' 7:373–378.', 'Joncas et al. 2018', 'the share of questions reused each year and the average proportion of candidates who answer a question correctly.', [doi('10.1007/s40037-018-0482-1')]),
+R('Appelhaus S, Werner S, Grosse P, Kämmer JE (2022).', 'Feedback, fairness, and validity: effects of disclosing and reusing multiple-choice questions in medical schools. ', 'Medical Education Online', ' 28:2143298.', 'Appelhaus et al. 2022', 'the finding, with Joncas et al. (2018), that questions are answered correctly 70 to 80% of the time on average, and that disclosed questions become easier when they are reused.', [doi('10.1080/10872981.2022.2143298'), ['Free PDF', 'https://boris.unibe.ch/174630/1/Feedback_fairness_and_validity_effects_of_disclosing_and_reusing_multiple_choice_questions_in_medical_schools.pdf']]),
+R('Reznich C, Wagner DP (2013).', 'Preparing test blueprints or “grids”. ', 'MedEdPORTAL', ' 9:9376.', 'Reznich & Wagner 2013', 'the time to draw up a blueprint (1 to 2 hours).', [doi('10.15766/mep_2374-8265.9376')])
+] },
+{ title: 'Key-features papers', refs: [
+R('Page G, Bordage G, Allen T (1995).', 'Developing key-feature problems and examinations to assess clinical decision-making skills. ', 'Academic Medicine', ' 70:194–201.', 'Page, Bordage & Allen 1995', 'the definition of a key-features case and its answer formats.', [doi('10.1097/00001888-199503000-00009')]),
+R('Hatala R, Norman GR (2002).', 'Adapting the Key Features Examination for a clinical clerkship. ', 'Medical Education', ' 36:160–165.', 'Hatala & Norman 2002', 'a reliability of 0.49 for a 2-hour paper of 15 cases, which gives about 8 cases an hour.', [doi('10.1046/j.1365-2923.2002.01067.x')]),
+R('Norman G, Bordage G, Page G, Keane D (2006).', 'How specific is case specificity? ', 'Medical Education', ' 40:618–623.', 'Norman et al. 2006', 'two or three questions per case, the number that gave the best reliability.', [doi('10.1111/j.1365-2929.2006.02511.x')]),
+R('Hrynchak P, Takahashi SG, Nayer M (2014).', 'Key-feature questions for assessment of clinical reasoning: a literature review. ', 'Medical Education', ' 48:870–883.', 'Hrynchak et al. 2014', 'the finding that scores on key-features papers correlate only modestly with knowledge tests.', [doi('10.1111/medu.12509')]),
+R('Rotthoff T, Baehring T, Dicken HD, Fahron U, Richter B, Fischer MR, Scherbaum WA (2006).', 'Comparison between long-menu and open-ended questions in computerized medical assessments: a randomized controlled trial. ', 'BMC Medical Education', ' 6:50.', 'Rotthoff et al. 2006', 'the finding that answers typed and matched against a long list gave the same marks and took the same time as written answers, and need no marking.', [doi('10.1186/1472-6920-6-50')]),
+R('Bronander KA, Lang VJ, Nixon LJ, Harrell HE, Kovach R, Hingle S, Berman N (2015).', 'How we developed and piloted an electronic key features examination for the internal medicine clerkship based on a US national curriculum. ', 'Medical Teacher', ' 37:807–812.', 'Bronander et al. 2015', 'a small gain in acceptability, because 83% of the students surveyed said the examination reflected problems seen in practice. This comes from a single survey.', [doi('10.3109/0142159X.2014.990876')]),
+R('Medical Council of Canada.', '', 'MCCQE Part I Annual Technical Report 2019', '.', 'Medical Council of Canada 2019 report', 'the number of cases in a key-features examination (38 cases in up to 3.5 hours).', [['PDF', 'https://mcc.ca/media/MCCQE-Part-I-Annual-Technical-Report-2019.pdf']]),
+R('University of Toronto, Temerty Faculty of Medicine (2021).', 'Writing effective clinical decision making questions using the "key feature" approach. Guide dated 5 October 2021.', '', '', 'Toronto key-features guide', 'two or three questions per case.', [['PDF', 'https://meded.temertymedicine.utoronto.ca/sites/default/files/inline-files/CDM%20Guide%20Oct%2021.pdf']])
+] },
+{ title: 'Pass marks', refs: [
+R('Cohen-Schotanus J, van der Vleuten CPM (2010).', 'A standard setting method with the best performing students as point of reference: practical and affordable. ', 'Medical Teacher', ' 32:154–160.', 'Cohen-Schotanus & van der Vleuten 2010', 'the definition of the Cohen method, in which the pass mark is 60% of the mark of the candidate at the 95th percentile, after a correction for guessing.', [doi('10.3109/01421590903196979')]),
+R('Homer M, Darling JC (2016).', 'Setting standards in knowledge assessments: comparing Ebel and Cohen via Rasch. ', 'Medical Teacher', ' 38:1267–1277.', 'Homer & Darling 2016', 'the Cohen pass mark rising by 3.5 to 4 points between two years on papers of similar difficulty.', [doi('10.1080/0142159X.2016.1230184'), ['Free PDF', 'https://eprints.whiterose.ac.uk/id/eprint/104117/3/HomerSetting%20standards%20in%20knowledge%20assessments.pdf']]),
+R('Shulruf B, Wilkinson T, Weller J, Jones P, Poole P (2016).', 'Insights into the Angoff method: results from a simulation study. ', 'BMC Medical Education', ' 16:134.', 'Shulruf et al. 2016', 'panels of about 15 Angoff judges giving the most precise pass marks in a simulation.', [doi('10.1186/s12909-016-0656-7')])
+] },
+{ title: 'Portfolios', refs: [
+R('Michels NRM, Driessen EW, Muijtjens AMM, Van Gaal LF, Bossaert LL, De Winter BY (2009).', 'Portfolio assessment during medical internships: how to obtain a reliable and feasible assessment procedure? ', 'Education for Health', ' 22(3):313.', 'Michels et al. 2009', 'portfolio reliability, student time per entry and assessor time per entry. The portfolio model is fitted to this study.', [['PubMed', 'https://pubmed.ncbi.nlm.nih.gov/20029764/'], ['Free PDF', 'https://medialibrary.uantwerpen.be/oldcontent/container28664/files/Michels%20et%20al__Educ%20for%20Health_dec%202009.pdf']]),
+R('Driessen E, van Tartwijk J, van der Vleuten C, Wass V (2007).', 'Portfolios in medical education: why do they meet with mixed success? A systematic review. ', 'Medical Education', ' 41:1224–1233.', 'Driessen et al. 2007', 'mentoring as a condition for portfolios to work.', [doi('10.1111/j.1365-2923.2007.02944.x')]),
+R('Tochel C, Haig A, Hesketh A, et al. (2009).', 'The effectiveness of portfolios for post-graduate assessment and education: BEME Guide No 12. ', 'Medical Teacher', ' 31:299–318.', 'Tochel et al. 2009', 'mentoring as a condition for portfolios to work.', [doi('10.1080/01421590902883056')])
+] },
+{ title: 'Feedback, testing and fairness', refs: [
+R('Harrison CJ, Könings KD, Schuwirth L, Wass V, van der Vleuten C (2015).', 'Barriers to the uptake and use of feedback in the context of summative assessment. ', 'Advances in Health Sciences Education', ' 20:229–245.', 'Harrison et al. 2015', 'students making little use of feedback after summative assessment, so feedback has a smaller effect in a high-stakes brief.', [doi('10.1007/s10459-014-9524-6')]),
+R('Yang C, Luo L, Vadillo MA, Yu R, Shanks DR (2021).', 'Testing (quizzing) boosts classroom learning: a systematic and meta-analytic review. ', 'Psychological Bulletin', ' 147:399–435.', 'Yang et al. 2021', 'students who are tested scoring about half a standard deviation higher.', [doi('10.1037/bul0000309')]),
+R('Cook DA, Dupras DM, Beckman TJ, Thomas KG, Pankratz VS (2009).', 'Effect of rater training on reliability and accuracy of mini-CEX scores: a randomized, controlled trial. ', 'Journal of General Internal Medicine', ' 24:74–79.', 'Cook et al. 2009', 'the finding that rater training did not raise agreement between raters, which is why examiner training leaves reliability unchanged in the model.', [doi('10.1007/s11606-008-0842-3')]),
+R('Woolf K, Potts HWW, McManus IC (2011).', 'Ethnicity and academic performance in UK trained doctors and medical students: systematic review and meta-analysis. ', 'BMJ', ' 342:d901.', 'Woolf et al. 2011', 'the attainment gap event, which reports a gap of 0.42 standard deviations that was similar in machine-marked and examiner-marked assessments.', [doi('10.1136/bmj.d901')])
+] },
+{ title: 'Sources for the cost figures', refs: [
+R('Brown C, Ross S, Cleland J, Walsh K (2015).', 'Money makes the (medical assessment) world go round: the cost of components of a summative final year OSCE. ', 'Medical Teacher', ' 37:653–659.', 'Brown et al. 2015', 'the costs of stationery (£757 for 185 candidates), writing and reviewing a structured case, administration, the exam board (17 staff for 1.5 hours) and examiner training (about 1 hour each).', [doi('10.3109/0142159X.2015.1033389')]),
+R('Jones K, Weatherly H, et al. (2026).', '', 'Unit Costs of Health and Social Care 2025', '. PSSRU, University of Kent / University of York.', 'PSSRU Unit Costs 2025', 'consultant time at £140 per working hour.', [['Link', 'https://kar.kent.ac.uk/115569/']]),
+R('Mandel A, Hörnlein A, Ifland M, Lüneburg E, Deckert J, Puppe F (2011).', 'Cost analysis for computer supported multiple-choice paper examinations. ', 'GMS Zeitschrift für Medizinische Ausbildung', ' 28.', 'Mandel et al. 2011', '2.67 hours per exam for formatting and analysing a written paper.', [['Link', 'https://series.publisso.de/en/journals/jme/volume28/zma000767']]),
+R('University of Exeter.', 'Pay with on-costs table, August 2026.', '', '', 'University of Exeter pay table', 'the lecturer rate (spine point 38, £63,986 including on-costs) and the on-cost ratio applied to the other academic and administrator rates.', [['PDF', 'https://www.exeter.ac.uk/v8media/universityofexeter/humanresources/documents/payroll/UoE_Pay_with_oncosts_table_AUG26.pdf']]),
+R('University of Stirling.', 'Pay scales and rates (from 1 August 2026).', '', '', 'University of Stirling pay scales', 'the senior lecturer rate, which uses spine point 43 at the top of Grade 8.', [['Link', 'https://www.stir.ac.uk/about/professional-services/human-resources-and-organisation-development/pay-pensions-and-benefits/pay-scales-and-rates/']]),
+R('Oxford Brookes University.', 'Pay scale (national spine values, April 2026).', '', '', 'Oxford Brookes pay scale', 'checking national spine values for 2025/26.', [['Link', 'https://www.brookes.ac.uk/staff/working-at-brookes/employment-policies/pay-and-grading/pay/pay-scale']]),
+R('St Mary\'s University, Twickenham.', 'Workload allocation framework.', '', '', 'St Mary\'s workload framework', '1,526.4 workload hours a year, which converts each academic salary into an hourly rate.', [['PDF', 'https://www.stmarys.ac.uk/hr/docs/approved-workload-allocation-management-framework-2025-26.pdf']]),
+R('Newcastle University.', 'Exam invigilator jobs.', '', '', 'Newcastle University invigilator pay', 'invigilator pay (£14.12 per hour) and senior invigilator pay (£17.24 per hour).', [['Link', 'https://www.ncl.ac.uk/exams/invigilators/examinvigilatorjobs']]),
+R('Liverpool John Moores University.', 'Invigilation of examinations policy.', '', '', 'LJMU invigilation policy', 'one invigilator per 40 candidates, plus a chief invigilator.', [['PDF', 'https://cd-prod.ljmu.ac.uk/-/media/staff-intranet/academic-registry/files/policy-page/invigilation-of-exams.pdf']]),
+R('Faculty of Intensive Care Medicine.', 'FFICM Final SOE.', '', '', 'FFICM Final SOE', 'a 2-minute changeover between viva cases.', [['Link', 'https://ficm.ac.uk/node/726']]),
+R('Marking tariffs.', 'University of Nottingham Faculty of Arts teaching norms; University of Sussex doctoral tutor tariffs.', '', '', 'marking tariffs', '15 minutes of marking per candidate per hour of a timed essay paper, and 30 minutes to mark a 2,000-word coursework essay (Sussex).', [['Nottingham', 'https://www.nottingham.ac.uk/arts/documents/casualstaffengagementpolicy/ta-teaching-norms-v1.9.docx'], ['Sussex', 'https://sussex.ac.uk/humanresources/documents/dt-tariffs-simple-format.pdf']]),
+R('Mentor meeting length and frequency.', 'Mentor programmes at UiT, Bergen and McGill (BMC Medical Education, 2024); Loosveld et al. (Perspectives on Medical Education).', '', '', 'mentor programmes', 'one hour of mentor time per candidate, as two 30-minute meetings.', [['BMC table', 'https://bmcmededuc.biomedcentral.com/articles/10.1186/s12909-024-05344-y/tables/1'], ['Loosveld PDF', 'https://lirias.kuleuven.be/retrieve/719118']]),
+R('PebblePad.', 'Licence price quote.', '', '', 'PebblePad', 'about £11 per student per year for an e-portfolio platform. This figure could not be confirmed from public sources.'),
+R('Course lead\'s experience (Matt Bowker, 2026).', '', '', '', 'course lead\'s experience', 'the length of item-writing training (90 minutes), the size of the question review panel and the time it spends on each question (about five people, about five minutes each), and the number of questions that each writer writes a year across the school (about 30).')
+] }
+];
+}
+/* Sandbox controls. */
+sandboxVals() {
+var self = this, s = this.store(), M = this.getModel(), X = s.sandbox;
+var money = function (x) { return '£' + Math.round(x).toLocaleString('en-GB'); };
+var L = {
+cohort: [10, 15, 20, 24, 30, 40, 50, 60, 80, 100, 120, 150, 200, 250, 300, 400, 500],
+budget: [1000, 2000, 3000, 4000, 5000, 6000, 7500, 9000, 10000, 12500, 15000, 17500, 20000, 25000, 28000, 30000, 35000, 40000, 50000, 60000, 80000, 100000],
+staffCap: [20, 30, 40, 50, 60, 80, 100, 110, 120, 150, 200, 250, 300, 400, 500, 600, 750, 1000],
+timeCap: [1, 1.5, 2, 2.5, 3, 3.5, 4, 5, 6, 7, 8, 10, 12],
+relGate: [0, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9],
+failRate: [0.02, 0.05, 0.08, 0.1, 0.15, 0.2, 0.25, 0.3]
+};
+function near(list, v) { var b = 0; for (var i = 1; i < list.length; i++) if (Math.abs(list[i] - v) < Math.abs(list[b] - v)) b = i; return b; }
+function stepper(key, label, fmt) {
+var list = L[key], i = near(list, X[key]);
+return { label: label, value: fmt(X[key]), atMin: String(i <= 0), atMax: String(i >= list.length - 1), decLabel: 'Lower: ' + label, incLabel: 'Raise: ' + label,
+dec: function () { if (i > 0) self.sbSet(function (x) { x[key] = list[i - 1]; }); },
+inc: function () { if (i < list.length - 1) self.sbSet(function (x) { x[key] = list[i + 1]; }); } };
+}
+function cycle(key, label, opts) {
+var i = 0; for (var j = 0; j < opts.length; j++) if (opts[j][0] === X[key]) i = j;
+return { label: label, value: opts[i][1], pick: function () { self.sbSet(function (x) { x[key] = opts[(i + 1) % opts.length][0]; }); } };
+}
+var tot = X.target.reduce(function (a, b) { return a + b; }, 0);
+var CRIT = { R: 'Reliability', V: 'Validity', E: 'Educational impact', A: 'Acceptability', C: 'Cost-efficiency' };
+var wsum = X.weights.R + X.weights.V + X.weights.E + X.weights.A + X.weights.C;
+return {
+sbPresets: ['A', 'B', 'C', 'D'].map(function (k) {
+return { label: k === 'D' ? 'the defaults' : M.BRIEFS[k].name, pick: function () { self.sbSet(function (x) { var n = self.contextFrom(M.BRIEFS[k]); for (var f in n) x[f] = n[f]; }); } };
+}),
+sbContext: [
+stepper('cohort', 'Candidates', function (v) { return String(v); }),
+stepper('budget', 'Budget', money),
+stepper('staffCap', 'Staff time', function (v) { return v + ' hours'; }),
+stepper('timeCap', 'Testing time per candidate', function (v) { return 'up to ' + v + ' h'; }),
+stepper('relGate', 'Minimum reliability', function (v) { return v ? v.toFixed(2) : 'none'; }),
+stepper('failRate', 'Candidates below the standard', function (v) { return Math.round(v * 100) + '%'; })
+],
+sbCycles: [
+cycle('stakes', 'Stakes', [['low', 'low'], ['medium', 'medium'], ['high', 'high']]),
+cycle('ownTopics', 'Topics', [[false, 'one curriculum for everyone'], [true, 'each candidate chooses their own']]),
+cycle('acadExaminers', 'Viva examiners', [[false, 'clinicians'], [true, 'lecturers']]),
+cycle('mentorAcad', 'Portfolio mentors', [[false, 'clinicians'], [true, 'lecturers']]),
+{ label: 'Unexpected events at the board', value: s.sbEvents ? 'on' : 'off', pick: function () {
+s.sbEvents = !s.sbEvents;
+if (!s.sbEvents) { delete s.events.D; delete s.eventDone.D; delete s.preVerdict.D; }
+self.forceUpdate();
+} }
+],
+sbMeasure: M.CONSTRUCTS.map(function (c, i) {
+var p = X.target[i], last = tot - p <= 0 && p <= 1;
+return { label: c, tip: self.abilityText()[i][1], tipId: 'tip-sb-' + i, value: (tot ? Math.round(p / tot * 100) : 0) + '%', atMin: String(p <= 0 || last), atMax: String(p >= 10),
+decLabel: 'Less emphasis on ' + c.toLowerCase(), incLabel: 'More emphasis on ' + c.toLowerCase(),
+dec: function () { if (p > 0 && !last) self.sbSet(function (x) { x.target[i] = p - 1; }); },
+inc: function () { if (p < 10) self.sbSet(function (x) { x.target[i] = p + 1; }); } };
+}),
+sbWeights: ['R', 'V', 'E', 'A', 'C'].map(function (c) {
+var w = X.weights[c], last = wsum - w <= 0 && w <= 0.5;
+return { label: CRIT[c], value: String(w), atMin: String(w <= 0 || last), atMax: String(w >= 5),
+decLabel: 'Lower weight: ' + CRIT[c], incLabel: 'Higher weight: ' + CRIT[c],
+dec: function () { if (w > 0 && !last) self.sbSet(function (x) { x.weights[c] = Math.max(0, w - 0.5); }); },
+inc: function () { if (w < 5) self.sbSet(function (x) { x.weights[c] = Math.min(5, w + 0.5); }); } };
+})
+};
+}
+renderVals() {
+var self = this, M = this.getModel(), s = this.store(), id = s.brief, b0 = this.briefOf(id), d = s.designs[id], SX = s.sandbox, isD = id === 'D';
+var o = M.evaluate(d, b0, this.ev(id, false)), b = o.brief, P = M.PARAMS, N = b.cohort, q = d.itemQuality;
+if (!s.tries[id]) s.tries[id] = [Math.round(o.U)];
+var pinD = s.pinned[id] || null, po = pinD ? M.evaluate(pinD, b0, this.ev(id, false)) : null;
+var money = function (x) { return '£' + Math.round(x).toLocaleString('en-GB'); };
+var f2 = function (x) { return x.toFixed(2); };
+var CRIT = { R: 'Reliability', V: 'Validity', E: 'Educational impact', A: 'Acceptability', C: 'Cost-efficiency' };
+var sign = function (n) { return (n >= 0 ? '+' : '−') + Math.abs(n); };
+
+function cyc(key, label, list) {
+var cur = key === 'blueprint' && typeof d[key] === 'boolean' ? (d[key] ? 2 : 0) : d[key];
+var i = 0; for (var j = 0; j < list.length; j++) if (cur === list[j][0]) i = j;
+var longest = 0; for (var j2 = 0; j2 < list.length; j2++) longest = Math.max(longest, list[j2][1].length);
+return { label: label, value: list[i][1], w: Math.ceil((label.length + 2 + longest) * 15 * 0.56 + 36) + 'px', pick: function () { s.explain = key; self.change(key, list[(i + 1) % list.length][0]); } };
+}
+function comp(k) { for (var i = 0; i < o.comps.length; i++) if (o.comps[i].key === k) return o.comps[i]; return null; }
+var cost = o.cost.comp;
+var ROT = ['-2deg', '1.5deg', '-1deg', '2deg', '-1.5deg', '1deg', '-0.5deg'];
+var MK = { sba: 'mSba', vsaq: 'mVsaq', kf: 'mKf', essay: 'mEssay', viva: 'mViva', port: 'mPort', cw: 'mCw' };
+var SHARE = {};
+(function () {
+var raw = o.comps.map(function (c) { return { k: c.key, x: c.w * 100 }; }), used = 0;
+raw.forEach(function (r) { r.f = Math.floor(r.x); used += r.f; });
+raw.slice().sort(function (a, b2) { return (b2.x - b2.f) - (a.x - a.f); }).forEach(function (r) { if (used < 100) { r.f += 1; used += 1; } });
+raw.forEach(function (r) { SHARE[r.k] = r.f; });
+})();
+var AMOUNT = { sba: 'Testing time', vsaq: 'Testing time', kf: 'Testing time', essay: 'Testing time', viva: 'Cases', port: 'Entries', cw: 'Essays' };
+function slot(i, key, ckey, short, long, addName, unit, units, max, step, start, chips) {
+var v = d[key], c = comp(ckey), used = v > 0, mk = MK[ckey], pts = d[mk] || 5;
+var blocked = !!b.ownTopics && (ckey === 'sba' || ckey === 'vsaq' || ckey === 'kf' || ckey === 'essay'), the = addName.replace(/^an? /, 'the ');
+var STEPS = { sba: ['Shorten the SBA paper by half an hour', 'Lengthen the SBA paper by half an hour'], vsaq: ['Shorten the VSAQ paper by half an hour', 'Lengthen the VSAQ paper by half an hour'], kf: ['Shorten the KF paper by half an hour', 'Lengthen the KF paper by half an hour'], essay: ['Shorten the timed essay paper by half an hour', 'Lengthen the timed essay paper by half an hour'], viva: ['Remove one case from the viva', 'Add one case to the viva'], port: ['Remove one entry from the portfolio', 'Add one entry to the portfolio'], cw: ['Remove one coursework essay', 'Add one coursework essay'] };
+return {
+used: used && !blocked, unused: !used && !blocked, blocked: blocked, blockedNote: 'This brief has no question papers, because each student studies a different topic and a common paper cannot test what they have learned.', short: short, long: long, rot: ROT[i], amountLabel: AMOUNT[ckey],
+shareDec: function () { if (pts > 1) self.change(mk, pts - 1); }, shareInc: function () { if (pts < 10) self.change(mk, pts + 1); },
+shareDecLabel: 'Give ' + the + ' a smaller share of the marks', shareIncLabel: 'Give ' + the + ' a larger share of the marks',
+value: v + (unit !== null ? unit : (v === 1 ? ' ' + units[0] : ' ' + units[1])),
+decLabel: STEPS[ckey][0], incLabel: STEPS[ckey][1],
+dec: function () { self.change(key, Math.max(0, v - step)); },
+inc: function () { if (v < max) self.change(key, Math.min(max, v + step)); },
+add: function () { self.change(key, start); }, addLabel: 'Add ' + addName,
+remove: function () { self.change(key, 0); }, removeLabel: ckey === 'cw' ? 'Remove all the coursework essays' : 'Remove ' + the,
+hasChips: chips.length > 0, chips: chips,
+tipId: 'tip-rel-' + ckey, rel: c ? f2(c.rel) : '', share: c ? SHARE[ckey] + '%' : '', cost: money(cost[ckey])
+};
+}
+var slots = [
+slot(0, 'sbaH', 'sba', 'SBA paper', 'Single best answer questions', 'an SBA paper', ' h', null, 4, 0.5, 1, []),
+slot(1, 'vsaqH', 'vsaq', 'VSAQ paper', 'Very short answer questions', 'a VSAQ paper', ' h', null, 4, 0.5, 1, []),
+slot(2, 'kfH', 'kf', 'KF paper', 'Key-features cases, about 8 an hour', 'a KF paper', ' h', null, 4, 0.5, 1, [cyc('kfMenu', 'Answers', [[false, 'marked by a clinician'], [true, 'matched by computer']])]),
+slot(3, 'essayH', 'essay', 'Timed essay paper', 'Four short essays per hour, in an exam', 'a timed essay paper', ' h', null, 4, 0.5, 1, [cyc('essayMark', 'Markers per script', [[1, '1'], [2, '2']])]),
+slot(4, 'vivaCases', 'viva', 'Viva', '30 minutes per case', 'a viva', null, ['case', 'cases'], 12, 1, 2, [
+cyc('vivaExam', 'Examiners per case', [[1, '1'], [2, '2'], [3, '3']]),
+cyc('vivaRotate', 'Examiners', [[false, 'same for every case'], [true, 'new for each case']]),
+cyc('vivaStruct', 'Questions', [[false, 'unstructured'], [true, 'structured']])]),
+slot(5, 'portEntries', 'port', 'Portfolio', 'Written entries over the course', 'a portfolio', null, ['entry', 'entries'], 15, 1, 4, [
+cyc('portRaters', 'Raters per entry', [[1, '1'], [2, '2'], [3, '3']]),
+cyc('mentor', 'Mentor meetings', [[false, 'none'], [true, '1 hour each']])]),
+slot(6, 'cwN', 'cw', 'Coursework essay', 'About 2,000 words on the student\'s own topic', 'a coursework essay', null, ['essay', 'essays'], 3, 1, 1, [
+cyc('cwMark', 'Markers per essay', [[1, '1'], [2, '2']]),
+cyc('cwDraft', 'Draft feedback', [[false, 'none'], [true, 'one draft']]),
+cyc('aiDetect', 'AI detector', [[false, 'none'], [true, 'software checks every essay']])])
+];
+var rules = [
+cyc('itemQuality', 'Question writing', [[0, 'untrained writers, no review'], [1, 'trained writers'], [2, 'trained writers and a review panel']]),
+cyc('blueprint', 'Blueprint', [[0, 'none'], [1, 'for examiners only'], [2, 'shared with candidates']]),
+cyc('stdset', 'Pass mark', [[0, 'fixed at 50%'], [1, 'Cohen method'], [2, 'Angoff panel']]),
+cyc('rule', 'Pass rule', [[0, 'combined mark'], [1, 'pass every component']]),
+cyc('sittings', 'Sittings', [[1, 'one'], [2, 'two across the year'], [4, 'four across the year']]),
+cyc('feedback', 'Feedback', [[0, 'mark only'], [1, 'profile by domain'], [2, 'individual written feedback']]),
+cyc('fairness', 'Examiner training', [[false, 'none'], [true, 'training and bias review']])
+];
+
+var EV = {
+sbaH: ['One hour of multiple-choice testing has reliability 0.62. Each additional hour raises reliability by less than the hour before it.', 'van der Vleuten & Schuwirth 2005'],
+kfH: ['A key-features case is a short clinical scenario followed by two or three questions about the critical decisions only. A 2-hour paper of 15 cases had reliability 0.49, which corresponds to 0.32 for one hour, about half the reliability of an hour of single best answer questions. Scores on key-features papers correlate only modestly with knowledge tests, so the papers measure something partly different. The model charges 2 hours of clinician time to write each case. No study we found measured this time, so it is an estimate.', 'Page, Bordage & Allen 1995; Hatala & Norman 2002; van der Vleuten & Schuwirth 2005; Hrynchak et al. 2014'],
+kfMenu: ['Candidates can type an answer that the computer matches against a long list of accepted terms, instead of writing an answer for a clinician to mark. In a randomised trial, students got the same marks and took the same time with either format, about 100 seconds a question. The long list removes the cost of marking.', 'Rotthoff et al. 2006'],
+vsaqH: ['Candidates write an answer of one to five words instead of choosing from a list. On the same questions, single best answer marks were 21 percentage points higher.', 'Sam et al. 2019'],
+essayH: ['Only about four essay questions fit in an hour, so a timed essay paper samples little of the curriculum. In this model, one hour of essays with one marker has reliability 0.40.', 'Assumption in this model'],
+essayMark: ['When two markers marked the same final-year surgery examination answers, they agreed only weakly (kappa 0.39). In this model a second marker raises the reliability of one hour of essays from 0.40 to 0.47 and doubles the cost of marking. How much of the error in an essay mark comes from the marker is an assumption of this model.', 'Anatol & Hariharan 2009'],
+cwN: ['Each student writes an essay of about 2,000 words on their own topic during the term. When two markers marked the same medical students\' project reports, their marks correlated only 0.24 to 0.36, and in a study of third-year community course essays the two markers agreed even less (kappa 0.12). A student\'s mark also depends on the topic they chose, as it does for a portfolio entry. The model assumes that the topic matters as much for an essay as for a portfolio entry. In this model one essay marked once has reliability 0.15, and three essays each marked twice reach 0.47. The model counts 16 hours of writing for each essay, which is also an estimate. Students write coursework outside the exam, so these hours do not count towards the brief\'s limit on testing time.', 'Yeo et al. 2024; McKinstry et al. 2004; Smith et al. 2002; Michels et al. 2009'],
+cwMark: ['When supervisors marked their own students\' project reports, their marks were about half a grade higher than those of second markers. A second marker halves the error that comes from the marker, which raises the reliability of one essay from 0.15 to 0.23, but it doubles the time spent marking. Marking a 2,000-word essay takes about 30 minutes. With one marker, a moderator also re-reads every fail and a 5% sample of the other essays.', 'McKinstry et al. 2004; University of Sussex marking tariff; University of Southampton marking policy'],
+aiDetect: ['Some schools run every essay through an AI detector, software that claims to recognise writing produced by AI. A detector gives each essay a score from 0 to 100% for how strongly it judges the essay to be written by AI, and some detectors also give each essay a label, such as human, mixed or AI. An essay is flagged when its score or label suggests that AI wrote it. Early detectors were unreliable. In 2023, an independent test of 14 detectors found them neither accurate nor reliable, and seven detectors labelled on average 61% of essays by non-native English speakers as written by AI. The paid detectors tested independently in 2026 make far fewer false accusations against writing that is entirely human. In one 2026 study, four detectors flagged none of 40 master\'s theses by non-native English-speaking students. In another, on admissions essays written before ChatGPT existed, two detectors gave their most confident AI label to at most 0.3% of essays. But detectors differ widely in what they catch. In the first of these studies, Pangram gave 39 of 40 long papers written entirely by AI a score of 60% or more, while Turnitin gave all 40 a score of 20% or less. Rewriting software can still defeat the best detectors. After a humaniser, which is software sold to make AI writing look human, rewrote AI-written abstracts, Pangram and GPTZero missed more than 96% of them. Detectors also flag work that students have only polished with AI, which a course may allow, so a flag cannot show on its own that a student broke the rules. Jisc, which advises UK universities and colleges on digital technology, says that decisions should never rest on AI detection alone. In this model, the detector affects validity only when the board finds essays written by AI and the design has no viva. Validity then falls by 10% instead of 15%. Whenever the design uses a detector, acceptability is also 0.05 lower, because each flag needs investigating and a detector cannot tell allowed AI editing from AI-written work. Both effects are assumptions. The model charges nothing for the licence or for investigating flagged essays.', 'Weber-Wulff et al. 2023; Liang et al. 2023; Van Vlasselaer et al. 2026; Isley et al. 2026; Karr et al. 2026; Jisc 2025'],
+cwDraft: ['The supervisor reads one draft and writes comments before the student submits the final essay. A meta-analysis of 435 studies found that feedback improved learning by about half a standard deviation, and in one study nursing students who had comments on a draft got higher marks than students who had comments on an outline. The model charges 20 minutes of lecturer time for each draft, which is an estimate.', 'Wisniewski et al. 2020; Ghazal et al. 2018'],
+vivaCases: ['An oral examination had reliability 0.69 for 2 hours and 0.82 for 4 hours of testing. In this model each case lasts 30 minutes, and each case costs 32 minutes of each examiner\'s time per candidate, including 2 minutes of changeover.', 'van der Vleuten & Schuwirth 2005; Faculty of Intensive Care Medicine (FFICM) structured oral examination timings'],
+vivaExam: ['A second examiner on a case reduces the error that comes from examiners, but not the error that comes from the choice of case. When each case has a new examiner, the same examiner time spent on extra cases reduces both.', 'Model fitted to Swanson 1987'],
+vivaRotate: ['With four cases, reliability was 0.45 when one examiner assessed every case and 0.69 when a different examiner assessed each case. With eight cases and a new examiner for each it was 0.82. This model reproduces all three figures.', 'Swanson 1987, in Davis & Karunathilake 2005'],
+vivaStruct: ['Published reliabilities for structured orals are 0.65 to 0.88. When six experienced examiners each marked the same videotaped mock orals on their own, their agreement was 0.24.', 'Swing & Bashook 2000, in Davis & Karunathilake 2005; Jacobsohn et al. 2006'],
+portEntries: ['A portfolio of 15 entries with two raters had reliability 0.87. The study estimated reliability 0.80 for 9 entries with two raters, or 13 entries with one. Students estimated 7.6 hours of writing per entry.', 'Michels et al. 2009'],
+portRaters: ['Raters took about 3 hours to rate a portfolio of 15 entries, which this model divides into 12 minutes per entry. Adding entries raises reliability more than adding raters per entry.', 'Michels et al. 2009'],
+mentor: ['Two reviews linked the success of portfolios to support from a mentor, and one concluded that tutor support is essential. In this model a portfolio without a mentor adds nothing to educational impact.', 'Driessen et al. 2007; Tochel et al. 2009'],
+itemQuality: ['In one nursing department, 46% of 2,770 multiple-choice questions had a writing flaw and over 90% tested low cognitive levels (Tarrant et al. 2006). Subject-matter experts writing for a certification programme took an average of 52 minutes to draft one question (Meazure Learning). From the experience of the course lead who wrote this game, training is a 90-minute session and each writer writes about 30 questions a year across the school, so each question carries 3 minutes of training. From the same experience, a review panel of about 5 people spends about 5 minutes on each question, which is 25 minutes of senior lecturer time. Exams in one Canadian programme contained 25 to 60% reused questions (Joncas et al. 2018), so the model charges for 60% of the questions as new.', 'Tarrant et al. 2006; Meazure Learning; Joncas et al. 2018; course lead\'s experience'],
+blueprint: ['A blueprint maps each question to the curriculum. Experienced authors put the time to draw one up at 1 to 2 hours, and the model charges 2 hours of lecturer time for it. Sharing the blueprint with candidates costs nothing more. This model lowers validity by 10% when there is no blueprint, and raises educational impact by 0.05 when candidates can see it. No study we found measures either effect, so both figures are estimates.', 'Reznich & Wagner 2013'],
+stdset: ['Questions on medical school papers are answered correctly 70 to 80% of the time on average, so a fixed 50% pass mark is lenient and passes too many candidates. The Cohen method follows the marks of the best candidates, but its pass mark moved by 3.5 to 4 points between two years, although the two papers were of similar difficulty. In the Angoff method judges rate every question, and a simulation study found that panels of about 15 judges gave the most precise pass marks.', 'Joncas et al. 2018; Appelhaus et al. 2022; Homer & Darling 2016; Shulruf et al. 2016'],
+rule: ['When candidates must pass every component, measurement error in any one component can fail a competent candidate. The board shows the effect as false passes and false fails. The pass rule does not change the utility score.', 'Result of this model'],
+sittings: ['In a meta-analysis of 222 classroom studies, students who were tested did about half a standard deviation better than students in comparison conditions such as restudying.', 'Yang et al. 2021'],
+feedback: ['In one interview study, students made little use of feedback after summative assessment, so the model gives feedback a smaller gain in a high-stakes brief. Feedback from an unreliable result is less useful, so the gain also shrinks when reliability is below 0.70. Individual feedback releases the questions, so none of them can be reused the next year.', 'Harrison et al. 2015; Joncas et al. 2018'],
+fairness: ['A randomised trial of rater training found no significant gain in agreement between raters, so the model leaves reliability unchanged. Instead, the model assumes that candidates and external examiners are more willing to accept a design in which examiners are trained and questions are reviewed for bias, so it raises acceptability.', 'Cook et al. 2009']
+};
+EV.mSba = EV.mVsaq = EV.mKf = EV.mEssay = EV.mViva = EV.mPort = EV.mCw = ['A component\'s share of marks sets how much its measurement error affects the final mark. Giving a large share to a short or unreliable component lowers the reliability of the combined mark, and giving a share to a component that measures what the brief needs raises validity.', 'Result of this model'];
+var evNote = s.lastKey && EV[s.lastKey] ? EV[s.lastKey] : ['Add a component, or change a setting, and the evidence for that change appears here.', ''];
+
+var uNow = Math.round(o.U), deltaNum = '', deltaRest = 'This is the utility before you change anything.';
+if (po) { deltaNum = sign(uNow - Math.round(po.U)); deltaRest = 'compared with your saved design'; }
+else if (s.lastDelta !== null) { deltaNum = sign(s.lastDelta); deltaRest = 'since your last change'; }
+var notMet = o.gates.filter(function (g) { return !g.ok; }).map(function (g) { return g.fail; });
+var listed = notMet.length < 2 ? notMet.join('') : notMet.slice(0, -1).join(', ') + ' and ' + notMet[notMet.length - 1];
+var rows = ['R', 'V', 'E', 'A', 'C'].map(function (c) {
+var low = o.weakest === c && !o.empty;
+var TIP = { R: 'Reliability is how closely candidates\' marks would repeat if they sat an equivalent assessment with different questions, cases or examiners. It is a number between 0 and 1, and 0.80 is often treated as the minimum for high-stakes decisions (van der Vleuten & Schuwirth 2005). This figure is for the combined mark.', V: 'Validity is the extent to which an assessment measures the competence it claims to measure (Schuwirth & van der Vleuten, in Swanwick et al. 2019). In this model it is the share of the real differences between candidates\' marks that comes from the constructs the brief asks for. A construct is a quality that the assessment sets out to measure, such as applied knowledge. Validity is 10% lower without a blueprint.' };
+return { isRel: !!TIP[c], notRel: !TIP[c], tipText: TIP[c] || '', tipId: 'tip-row-' + c, name: CRIT[c], w: 'weight ' + b.weights[c], color: low ? '#FFB199' : '#F1FAF5', weight: low ? 600 : 400,
+valText: o.empty ? '–' : (po && !po.empty ? f2(po[c]) + ' → ' : '') + f2(o[c]), pipW: (Math.round(o[c] * 10) * 18) + 'px', pip: low ? '#FF8A66' : '#FFD447' };
+});
+var wrongNow = o.empty ? 0 : o.falsePass + o.falseFail;
+var ts = b.target.reduce(function (a, x) { return a + x; }, 0) || 1;
+var must = M.CONSTRUCTS.map(function (c, i) { return [c.toLowerCase(), b.target[i] / ts]; }).filter(function (p) { return p[1] > 0; }).sort(function (p, q2) { return q2[1] - p[1]; }).map(function (p) { return p[0] + ' ' + Math.round(p[1] * 100) + '%'; }).join(', ');
+var most = ['R', 'V', 'E', 'A', 'C'].slice().sort(function (p, q2) { return b.weights[q2] - b.weights[p]; }).map(function (c) { return CRIT[c].toLowerCase() + ' ' + b.weights[c]; }).join(', ');
+var tr = s.tries[id], over = o.cost.total > b.budget;
+var DEF = {
+itemQuality: { title: 'Question writing', intro: '', opts: [
+[0, 'Untrained writers, no review', 'Staff write questions without training in question writing, and the questions are used without being checked.'],
+[1, 'Trained writers', 'The staff who write questions have had a 90-minute training session, for example on how to avoid giving away the answer and how to test the use of knowledge rather than recall.'],
+[2, 'Trained writers and a review panel', 'In addition, a panel of about five staff checks every question for flaws and for its fit to the curriculum before it is used, taking about five minutes per question.'] ] },
+blueprint: { title: 'Blueprint', intro: 'A blueprint is a table that maps the curriculum to the assessment, for example topics against skills, and sets how many questions each part of the curriculum receives. It makes the assessment sample the curriculum in proportion to the importance of each part.', opts: [
+[0, 'None', 'Questions are chosen without a plan of what the assessment should cover.'],
+[1, 'For examiners only', 'The assessment follows a blueprint, but candidates do not see it.'],
+[2, 'Shared with candidates', 'The assessment follows a blueprint, and candidates can see which topics and outcomes it covers. Sharing it costs nothing extra.'] ] },
+stdset: { title: 'Pass mark', intro: 'This setting chooses how the pass mark is set.', opts: [
+[0, 'Fixed at 50%', 'Candidates pass if their mark is at least half of the available marks, however hard or easy this year\'s questions turn out to be.'],
+[1, 'Cohen method', 'The pass mark is 60% of the mark of the candidate at the 95th percentile, after a correction for guessing. Because it follows the marks of the best candidates, the pass mark falls when a paper turns out to be harder and rises when it turns out to be easier (Cohen-Schotanus & van der Vleuten 2010).'],
+[2, 'Angoff panel', 'Before the exam, a panel of judges estimates for each question the probability that a borderline candidate would answer it correctly. The pass mark is the sum of those estimates, averaged across the judges.'] ] },
+rule: { title: 'Pass rule', intro: '', opts: [
+[0, 'Combined mark', 'Candidates pass if their total across all components reaches the pass mark, so a strong component can make up for a weak one.'],
+[1, 'Pass every component', 'Candidates must reach the pass mark in each component separately, so a weak component cannot be made up elsewhere.'] ] },
+sittings: { title: 'Sittings', intro: 'The total amount of testing stays the same. Only the number of dates changes.', opts: [
+[1, 'One', 'All of the testing happens on one day.'],
+[2, 'Two across the year', 'Candidates sit half of the testing on each of two dates.'],
+[4, 'Four across the year', 'Candidates sit a quarter of the testing on each of four dates.'] ] },
+feedback: { title: 'Feedback', intro: '', opts: [
+[0, 'Mark only', 'Candidates learn their mark and whether they passed.'],
+[1, 'Profile by domain', 'Candidates see how they did in each part of the blueprint.'],
+[2, 'Individual written feedback', 'A member of staff writes comments for each candidate.'] ] },
+fairness: { title: 'Examiner training', intro: '', opts: [
+[false, 'None', 'Examiners and markers receive no training, and nobody reviews the questions for bias.'],
+[true, 'Training and bias review', 'Examiners and markers are trained, and the questions are reviewed for content that could disadvantage a group of candidates.'] ] },
+kfMenu: { title: 'Key-features answers', intro: '', opts: [
+[false, 'Written in', 'Candidates write each answer, and clinicians mark the answers with software that groups identical ones.'],
+[true, 'Typed from a long list', 'Candidates type each answer, and the computer matches it against a long list of accepted terms, so nobody has to mark it.'] ] },
+cwMark: { title: 'Markers per coursework essay', intro: '', opts: [
+[1, 'One', 'Each essay is marked once, usually by the student\'s supervisor, and a moderator re-reads every fail and a sample of the other essays.'],
+[2, 'Two', 'A second marker marks each essay independently, and the two marks are averaged.'] ] },
+cwDraft: { title: 'Feedback on a draft', intro: '', opts: [
+[false, 'None', 'Students submit their essay without comments on a draft.'],
+[true, 'One draft', 'The supervisor reads one draft and writes comments before the final essay is submitted.'] ] },
+aiDetect: { title: 'AI detector', intro: '', opts: [
+[false, 'None', 'Essays are marked without software that claims to detect writing produced by AI.'],
+[true, 'Software checks every essay', 'Every essay is run through software that claims to detect writing produced by AI, and the markers see its verdict.'] ] },
+essayMark: { title: 'Markers per essay script', intro: '', opts: [
+[1, 'One', 'Each script is marked once.'],
+[2, 'Two', 'Two markers mark each script independently, and their marks are averaged.'] ] },
+vivaExam: { title: 'Examiners per viva case', intro: 'The number of examiners who examine and mark each case together.', opts: [] },
+vivaRotate: { title: 'Viva examiners', intro: '', opts: [
+[false, 'Same for every case', 'One panel of examiners examines a candidate on all of their cases.'],
+[true, 'New for each case', 'A different panel examines each case, so no single panel decides the whole viva.'] ] },
+vivaStruct: { title: 'Viva questions', intro: '', opts: [
+[false, 'Unstructured', 'Each examiner chooses their own questions and marks to their own standard.'],
+[true, 'Structured', 'Every examiner asks the same planned questions and marks against the same guide.'] ] },
+portRaters: { title: 'Raters per portfolio entry', intro: 'The number of raters who mark each entry independently.', opts: [] },
+mentor: { title: 'Mentor meetings', intro: '', opts: [
+[false, 'None', 'Candidates put the portfolio together on their own.'],
+[true, '1 hour each', 'Each candidate meets a mentor for an hour to discuss their portfolio.'] ] }
+};
+var ex = s.explain && DEF[s.explain] ? s.explain : null, explainRows = [];
+if (ex) {
+if (DEF[ex].intro) explainRows.push({ opt: '', color: '#F1FAF5', text: DEF[ex].intro });
+DEF[ex].opts.forEach(function (o2) { var cur = d[ex] === o2[0]; explainRows.push({ opt: o2[1] + (cur ? ' (your current choice):' : ':'), color: cur ? '#FFD447' : '#F1FAF5', text: o2[2] }); });
+}
+var explainTabs = ['itemQuality', 'blueprint', 'stdset', 'rule', 'sittings', 'feedback', 'fairness'].map(function (k) {
+var on = k === ex;
+return { label: DEF[k].title, pressed: on ? 'true' : 'false', weight: on ? 600 : 400, thick: on ? '3px' : '1px', pick: function () { self.store().explain = on ? null : k; self.forceUpdate(); } };
+});
+
+var BT = {
+A: { tab: 'Finals written paper', who: '300 final-year medical students', purpose: 'You are responsible for the written component of final examinations at a medical school. This year, 300 final-year students will sit it. A student who passes can graduate and begin work as a doctor, so the exam board must be able to defend every pass and every fail. ' },
+B: { tab: 'First-year SSC', who: '250 first-year medical students', purpose: 'You lead a student-selected component (SSC) in the first year of a medical degree. Each of the 250 students chooses a medical topic and studies it over the term with an academic supervisor. Because every student has a different topic, no common question paper can test what they have learned, and a different person marks each piece of work. Students must pass the SSC to progress, but they can resubmit, so the assessment should mostly measure how well students explain and defend what they have found, and how well they reflect on their own learning.' },
+C: { tab: 'PGCert module', who: '40 clinicians on a PGCert in Medical Education', purpose: 'You run a module on a PGCert in Medical Education, and its 40 students are practising clinicians who teach. The module assessment must show whether each of them can apply educational theory to their own teaching and reflect on what happened when they did. The result counts towards the award, so the combined mark needs a reliability of at least 0.65, although the stakes are lower than in a final examination.' },
+D: { tab: 'Sandbox', who: SX.cohort + ' candidates', purpose: 'You have described your own assessment. It has ' + SX.cohort + ' candidates and ' + SX.stakes + ' stakes, and you expect about ' + Math.round(SX.failRate * 100) + '% of them to fall short of the standard. The board checks your design against the budget, staff time and testing time that you set' + (SX.relGate ? ', and against the minimum reliability of ' + SX.relGate.toFixed(2) : '') + ', in the same way as for the other briefs.' }
+};
+var slug = this.slugs()[id];
+var GLOSS = {}; this.abilityText().forEach(function (a) { GLOSS[a[0]] = a[1]; });
+var measure = M.CONSTRUCTS.map(function (c, i) { return { label: c, p: b.target[i] / ts }; }).filter(function (x) { return x.p > 0; }).sort(function (x, y) { return y.p - x.p; }).map(function (x) { return { label: x.label, pct: Math.round(x.p * 100) + '%', tip: GLOSS[x.label], tipId: 'tip-m-' + x.label.replace(/\W+/g, '-').toLowerCase() }; });
+
+var vals = {
+isHome: s.screen === 'home', inGame: s.screen !== 'home', isDesign: s.screen === 'design', isBoard: s.screen === 'board',
+showBriefing: s.screen !== 'home' && (!isD || s.screen === 'board' || !s.sbOpen), showEditor: isD && s.screen === 'design' && s.sbOpen, showSbEdit: isD && s.screen === 'design',
+briefingTitle: isD ? 'Your context' : 'Your briefing',
+chipText: isD ? 'Sandbox' : { A: 'Brief A', B: 'Brief B', C: 'Brief C' }[id] + ': ' + BT[id].tab,
+openEditor: function () { s.sbOpen = true; self.forceUpdate(); }, closeEditor: function () { s.sbOpen = false; self.forceUpdate(); },
+purpose: BT[id].purpose, measure: measure, explainTabs: explainTabs, hasExplain: !!ex, explainTitle: ex ? DEF[ex].title : '', explainRows: explainRows,
+facts: [
+{ label: 'Candidates', value: BT[id].who },
+{ label: 'Budget', value: money(b.budget) },
+{ label: 'Staff time', value: Math.round(b.staffCap) + ' hours' },
+{ label: 'Testing time', value: 'up to ' + b.timeCap + (b.timeCap === 1 ? ' hour' : ' hours') + ' each' },
+{ label: 'Reliability', value: b.relGate ? 'at least ' + f2(b.relGate) : 'no minimum' }
+],
+spentText: money(o.empty ? 0 : o.cost.total) + ' of ' + money(b.budget) + ' budget', spentColor: over ? '#FFB199' : '#F1FAF5',
+spentWidth: o.empty ? '0%' : Math.min(100, Math.round(100 * o.cost.total / b.budget)) + '%', spentBar: over ? '#FF8A66' : '#FFD447',
+slots: slots.filter(function (c) { return !c.blocked; }), blockedNotice: b.ownTopics ? 'This brief has no question papers (single best answer, very short answer, key-features or timed essay), because each student studies a different topic and a common paper cannot test what they have learned.' : '', rules: rules,
+evTitle: s.lastKey ? 'Evidence for your last change:' : 'Evidence:', evText: evNote[0], evSource: evNote[1],
+triesText: tr.length > 1 ? 'Utility at the start and after each change: ' + tr.join(', ') + '.' : 'Utility at the start: ' + tr[0] + '.',
+u: o.empty ? '–' : String(uNow), deltaNum: o.empty ? '' : deltaNum, deltaRest: o.empty ? 'Add a component to see the utility of your design.' : deltaRest,
+gatesText: o.empty ? 'Your design has no components yet.' : notMet.length ? 'The design does not meet the brief yet, because ' + listed + '.' : 'The design meets every requirement of the brief.', gatesColor: notMet.length ? '#FFB199' : '#F1FAF5',
+rows: rows, pinNote: po ? 'Each figure above shows your saved design first and your current design second.' : 'Save a design you like. Your later changes are then shown against it, and you can return to it if a change makes the design worse.',
+wrongText: o.empty ? '–' : (po && !po.empty ? (po.falsePass + po.falseFail) + ' → ' : '') + wrongNow + ' of ' + b.cohort + ' candidates',
+backColor: pinD ? '#F1FAF5' : '#8CCBB1',
+pin: function () { s.pinned[id] = Object.assign({}, d); self.forceUpdate(); },
+backToPinned: function () { if (!s.pinned[id]) return; var before = self.utilityNow(); s.designs[id] = Object.assign({}, s.pinned[id]); self.logTry(before, null); },
+reset: function () { s.designs[id] = Object.assign({}, M.DEFAULT_DESIGN); delete s.pinned[id]; delete s.tries[id]; delete s.events[id]; delete s.eventDone[id]; delete s.preVerdict[id]; s.lastKey = null; s.lastDelta = null; self.forceUpdate(); },
+submit: function () {
+if (!s.eventDone[id] && (!isD || s.sbEvents)) {
+var o0 = M.evaluate(d, b0, {});
+if (!o0.empty && o0.pass) {
+s.preVerdict[id] = M.verdictOf(o0, self.bench(id));
+var c = ['budgetCut', 'staffCut'];
+if (d.itemQuality === 0 && (d.sbaH + d.vsaqH + d.kfH) > 0) c.push('leak');
+if ((d.vivaCases > 0 || d.essayH > 0 || d.portEntries > 0 || d.cwN > 0) && !d.fairness) c.push('gap');
+if (o0.nearCut !== null) c.push('appeal');
+if (d.cwN > 0) c.push('ai');
+s.events[id] = c[Math.floor(Math.random() * c.length)]; s.eventDone[id] = true;
+}
+}
+s.submitted[id] = true; self.go(slug + '/board');
+},
+backToDesign: function () { self.go(slug); },
+clearEvent: function () { delete s.events[id]; self.forceUpdate(); },
+verdict: '', verdictColor: '#F1FAF5', verdictLine: '', verdictScale: '', members: [], hasEvent: false, eventTitle: '', eventText: '', eventBefore: '',
+dots: [], tcutLeft: '50%', xcutTop: '50%', xcutShow: 'none', fp: '0', fn: '0', failsText: ''
+};
+Object.assign(vals, this.siteVals(), isD ? this.sandboxVals() : { sbPresets: [], sbContext: [], sbCycles: [], sbMeasure: [], sbWeights: [] });
+
+if (s.screen === 'board') {
+if (o.empty) {
+vals.verdict = 'Referred back'; vals.verdictColor = '#FFB199'; vals.verdictLine = 'The design has no components, so the board has nothing to consider.';
+} else {
+var bestU = this.bench(id), v = M.verdictOf(o, bestU), good = v === 'Approved' || v === 'Commended';
+vals.verdict = v; vals.verdictColor = good ? '#FFD447' : (v === 'Approved with conditions' ? '#F1FAF5' : '#FFB199');
+vals.verdictLine = notMet.length ? 'The board cannot approve the design, because ' + listed + '.' : 'The utility is ' + uNow + '. The score that limits it most is ' + CRIT[o.weakest].toLowerCase() + ' at ' + f2(o[o.weakest]) + ', because the five scores are multiplied and each is weighted for this brief.';
+vals.verdictScale = 'A computer search of this brief found designs with a utility of up to ' + Math.round(Math.max(bestU, o.U)) + '.';
+var L = [], k, NAMES = { writing: 'writing questions and cases', review: 'the question review panel', marking: 'marking', examiners: 'viva examiners', portfolio: 'portfolio raters and mentors', coursework: 'the coursework essays (writing the instructions, marking and commenting on drafts)', standard: 'setting the pass mark', feedback: 'feedback', fairness: 'examiner training and bias review', blueprint: 'the blueprint', vivaAdmin: 'organising the viva', analysis: 'formatting and analysing the papers', invigilation: 'invigilation', printing: 'printing', platform: 'the portfolio platform', board: 'the exam board' };
+for (k in o.cost.money) if (o.cost.money[k] > 0) L.push([NAMES[k], o.cost.money[k]]);
+for (k in o.cost.cash) if (o.cost.cash[k] > 0) L.push([NAMES[k], o.cost.cash[k]]);
+L.sort(function (p, q2) { return q2[1] - p[1]; });
+var tc = o.comps.slice().sort(function (p, q2) { return q2.w - p.w; })[0], written = d.sbaH + d.vsaqH + d.kfH + d.essayH, stat, stud, fin, ext;
+var NAME = { sba: 'SBA paper', vsaq: 'VSAQ paper', kf: 'key-features paper', essay: 'timed essay paper', viva: 'viva', port: 'portfolio', cw: 'coursework essay' };
+if (b.relGate && o.R2 < b.relGate) stat = 'The combined mark has reliability ' + f2(o.R) + ', but this brief needs ' + f2(b.relGate) + '. The largest share of the marks, ' + Math.round(tc.w * 100) + '%, comes from the ' + NAME[tc.key] + ', which has reliability ' + f2(tc.rel) + '. Adding questions, cases, entries or essays raises reliability much more than adding markers per answer.';
+else if (d.rule === 1 && o.comps.length > 1) stat = 'You require a pass in each of ' + o.comps.length + ' components, so the measurement error in each component can fail a competent candidate. I expect ' + o.falseFail + ' competent candidates to fail and ' + o.falsePass + ' candidates who are not competent to pass.';
+else stat = 'Reliability is ' + f2(o.R) + '. In a cohort of ' + N + ', I expect ' + o.falsePass + ' false passes and ' + o.falseFail + ' false fails' + (o.nearCut !== null ? ', and ' + o.nearCut + ' candidates have a mark within one standard error of measurement of the pass mark, which means that measurement error alone could have put them on either side of it.' : '.');
+if (d.vivaCases > 1 && !d.vivaRotate) stat += ' The same examiners assess each candidate on every viva case, so their stringency affects the whole viva mark.';
+if (o.testH > b.timeCap) stud = 'The design has ' + o.testH.toFixed(1) + ' hours of testing, which is more than the ' + b.timeCap + ' hours allowed. I expect candidates to object.';
+else if (d.feedback === 0) stud = 'Candidates receive only a mark, so they cannot tell what to work on.';
+else if (d.itemQuality === 0 && written > 0) stud = 'Questions that nobody has reviewed reward recall and cue-spotting, so candidates will practise recall and cue-spotting.';
+else if (d.sittings === 1 && (written > 0 || d.vivaCases > 0) && b.stakes !== 'low') stud = 'The whole result depends on one day. If the testing were spread across the year, candidates who study steadily would benefit.';
+else if (d.portEntries > 6) stud = d.portEntries + ' portfolio entries at 7.6 hours each need about ' + Math.round(d.portEntries * 7.6) + ' hours of writing from each candidate.';
+else stud = 'Candidates can see what is expected of them and they receive feedback they can use, so I have no objection.';
+fin = (over ? 'This design costs ' + money(o.cost.total) + ', which is more than the budget of ' + money(b.budget) + '. ' : 'This design costs ' + money(o.cost.total) + ' of the ' + money(b.budget) + ' budget, or ' + money(o.cost.perStudent) + ' per candidate. ') + 'The largest cost is ' + L[0][0] + ' at ' + money(L[0][1]) + '.';
+if (Math.round(o.cost.staffH) > Math.round(b.staffCap)) fin += ' The design needs ' + Math.round(o.cost.staffH).toLocaleString('en-GB') + ' staff hours and only ' + Math.round(b.staffCap).toLocaleString('en-GB') + ' are available.';
+if (o.match < 0.75) ext = 'Of the differences between candidates that the assessment measures reliably, only ' + Math.round(o.match * 100) + '% come from the constructs, or qualities, that the brief asks the assessment to measure. The mark is repeatable, but part of it reflects qualities that the brief does not ask for.';
+else if (d.stdset === 0) ext = 'With a fixed 50% pass mark, the pass rate depends on how hard this year\'s questions are, and I could not defend that at an appeal.';
+else if (d.vivaCases > 0 && !d.vivaStruct) ext = 'In an unstructured viva, each examiner asks different questions and applies a personal standard, so candidates are not assessed in the same way.';
+else if (!d.blueprint) ext = 'There is no blueprint, so I cannot check that the questions sample the curriculum.';
+else if ((d.vivaCases > 0 || d.essayH > 0 || d.portEntries > 0) && !d.fairness) ext = 'The examiners and markers have had no training, and nobody has reviewed the questions for bias. Training may not raise reliability, but I would have to explain its absence at an appeal.';
+else ext = 'The content matches the brief, and I can defend the pass mark.';
+vals.members = [{ role: 'Psychometrician', text: stat }, { role: 'Student representative', text: stud }, { role: 'Finance lead', text: fin }, { role: 'External examiner', text: ext }];
+var e = s.events[id];
+if (e) {
+var ET = {
+budgetCut: ['The budget is cut by 20%', 'The Dean has cut every assessment budget by 20%, so your budget is now ' + money(b.budget) + '.'],
+staffCut: ['A third of your staff are unavailable', 'Because of winter pressures, a third of your examiners and markers must return to clinical work. You now have ' + Math.round(b.staffCap) + ' staff hours.'],
+leak: ['Last year\'s questions have been shared', 'Candidates are sharing last year\'s questions in a chat group. If a design reuses questions without review, its validity falls by 20% and its acceptability also falls.'],
+gap: ['An attainment gap is reported', 'An equality report finds an attainment gap between groups of candidates in components that examiners mark. In a meta-analysis of UK data, the gap was 0.42 standard deviations and was similar in machine-marked and examiner-marked assessments (Woolf et al. 2011). In this game, a design that has examiner-marked components but no examiner training or bias review loses acceptability, because the board cannot show that it has checked those components for bias.'],
+ai: ['Some essays were written by AI', 'The board learns that some candidates submitted coursework essays written by AI. When researchers at a UK university put essays written entirely by AI into its marking, the markers missed 94% of them, and the AI essays got higher marks on average than real students\' work (Scarfe et al. 2024).' + (d.vivaCases > 0 ? ' Your design includes a viva, which checks who wrote the work, so acceptability falls only a little.' + (d.aiDetect ? ' Your AI detector adds nothing to that check.' : '') : d.aiDetect ? ' Your AI detector catches some of these essays, but it often misses AI text that students have passed through rewriting software. When the detector flags an essay as possibly written by AI, the school still needs other evidence before changing the student\'s mark. Validity and acceptability both fall, although validity falls a little less than it would without the detector.' : ' Nothing in your design checks who wrote the essays, so validity and acceptability both fall.')],
+appeal: ['A candidate appeals', 'A candidate who missed the pass mark by one mark asks how certain the result is. With reliability ' + f2(o.R) + ', ' + (o.nearCut === null ? 'some' : o.nearCut + ' of ' + N) + ' candidates have a mark within one standard error of measurement of the pass mark, so close that measurement error alone could have put them on either side of it. This event does not change any of the five criterion scores. Think about whether you could defend the result to this candidate.']
+};
+vals.hasEvent = true; vals.eventTitle = ET[e][0]; vals.eventText = ET[e][1];
+vals.eventBefore = 'Before this event, the verdict on the design you submitted was ' + (s.preVerdict[id] || 'not recorded') + '. The verdict shown above includes the event.';
+}
+var sim = o.sim, n = Math.min(N, 300), cl = function (x) { return Math.max(-3, Math.min(3, x)); }, dots = [];
+var COL = ['#C6E6D8', '#5FA58A', '#FF8A66', '#FFD447'];
+for (var i = 0; i < n; i++) {
+var cls = sim.cls[i];
+dots.push({ l: ((cl(sim.T[i]) + 3) / 6 * 100).toFixed(1) + '%', t: (100 - (cl((sim.X[i] - sim.mean) / sim.sd) + 3) / 6 * 100).toFixed(1) + '%', s: cls > 1 ? '9px' : '6px', bg: COL[cls], op: cls > 1 ? '1' : '0.55' });
+}
+vals.dots = dots;
+vals.tcutLeft = ((cl(sim.tcut) + 3) / 6 * 100).toFixed(1) + '%';
+vals.xcutTop = (100 - (cl((sim.xcut - sim.mean) / sim.sd) + 3) / 6 * 100).toFixed(1) + '%';
+vals.xcutShow = d.rule === 0 ? 'block' : 'none';
+vals.fp = String(o.falsePass); vals.fn = String(o.falseFail); vals.failsText = o.fails + ' of ' + N;
+}
+}
+return vals;
+}
+}
+</script>
+
+
+</body></html>
